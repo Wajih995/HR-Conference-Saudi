@@ -35,20 +35,8 @@ const handleAccordion = (key: any) => {
 				</div>
 				<div className="mobile-nav mobile-nav1">
 					<ul className="mobile-nav-list nav-list1">
-						<li className="has-sub hash-has-sub"><span className={`submenu-button ${isAccordion  == 1 ? "submenu-opened" : ""}`}onClick={() => handleAccordion (1)}><em /></span>
+						<li className="hash-has-sub">
 							<Link href="/#" className="hash-nav">Home </Link>
-							<ul className={`sub-menu ${isAccordion  == 1 ? "open-sub" : ""}`} style={{ display: `${isAccordion  == 1 ? "block" : "none"}` }}>
-								<li className="hash-has-sub"><Link href="/" className="hash-nav">Home One</Link></li>
-								<li className="hash-has-sub"><Link href="/index2" className="hash-nav">Home Two</Link></li>
-								<li className="hash-has-sub"><Link href="/index3" className="hash-nav">Home Three</Link></li>
-								<li className="hash-has-sub"><Link href="/index4" className="hash-nav">Home Four</Link></li>
-								<li className="hash-has-sub"><Link href="/index5" className="hash-nav">Home Five</Link></li>
-								<li className="hash-has-sub"><Link href="/index6" className="hash-nav">Home Six</Link></li>
-								<li className="hash-has-sub"><Link href="/index7" className="hash-nav">Home Seven</Link></li>
-								<li className="hash-has-sub"><Link href="/index8" className="hash-nav">Home Eight</Link></li>
-								<li className="hash-has-sub"><Link href="/index9" className="hash-nav">Home Nine</Link></li>
-								<li className="hash-has-sub"><Link href="/index10" className="hash-nav">Home Ten</Link></li>
-							</ul>
 						</li>
 						<li className="hash-has-sub"><Link href="/about" className="hash-nav">About Event</Link></li>
 						<li className="has-sub hash-has-sub"><span className={`submenu-button ${isAccordion  == 2 ? "submenu-opened" : ""}`}onClick={() => handleAccordion (2)}><em /></span>
