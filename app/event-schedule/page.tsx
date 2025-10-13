@@ -7,7 +7,7 @@ export default function EventSchedule() {
 	return (
 		<>
 
-			<Layout headerStyle={1} footerStyle={1}>
+			<Layout headerStyle={3} footerStyle={3}>
 				<div>
 					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/bg/header-bg10.png)' }}>
 						<div className="container">

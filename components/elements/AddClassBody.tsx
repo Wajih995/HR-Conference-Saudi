@@ -25,6 +25,7 @@ export default function AddClassBody() {
 
 			// Map pathname to corresponding class
 			const classMap: { [key: string]: string } = {
+				'/': 'homepage3-body',
 				'/index2': 'homepage2-body',
 				'/index3': 'homepage3-body',
 				'/index4': 'homepage4-body',
@@ -37,7 +38,7 @@ export default function AddClassBody() {
 			}
 
 			// Add class based on pathname or default
-			const className = classMap[pathname || ''] || 'homepage1-body'
+			const className = classMap[pathname || ''] || 'homepage3-body'
 			bodyElement.classList.add(className)
 		}
 

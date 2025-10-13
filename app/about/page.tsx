@@ -9,7 +9,7 @@ export default function About() {
 	return (
 		<>
 
-			<Layout headerStyle={1} footerStyle={1}>
+			<Layout headerStyle={3} footerStyle={1}>
 				<div>
 					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/bg/header-bg5.png)' }}>
 						<div className="container">
