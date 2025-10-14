@@ -25,27 +25,27 @@ export default function Section2() {
 						</div>
 						<div className="col-lg-6">
 							<div className="about-header heading5">
-								<h5 data-aos="fade-left" data-aos-duration={800}>about our Designer conferences</h5>
+								<h5 data-aos="fade-left" data-aos-duration={800}>About Our Conference</h5>
 								<div className="space18" />
-								<h2 className="text-anime-style-3">Explore Future Of Design At Our Yearly Conference</h2>
+								<h2 className="text-anime-style-3" style={{fontSize: 'var(--ztc-font-size-font-s26)', lineHeight: '33px'}}>Discover the Future of HR Leadership at the Women Leadership Conference & Awards 2026 — a premier platform celebrating women shaping workplaces across the GCC.</h2>
 								<div className="space18" />
-								<p data-aos="fade-left" data-aos-duration={900}>The Yearly Designer Conferences designed to challenge, Event inspire, and push the boundaries of what is possible in design. From emerging technologies to sustainable design practices.</p>
+								<p data-aos="fade-left" data-aos-duration={900}>Focused on inclusion, equity, resilience, and Vision 2030, the event brings together top HR leaders and experts to share insights, inspire change, and build the future of work.</p>
 								<div className="space12" />
 								<div className="counter-area" data-aos="fade-left" data-aos-duration={1000}>
 									<div className="counter-box">
-										<h3><CountUp className="odometer" enableScrollSpy={true} end={250} />+</h3>
+										<h3><CountUp className="odometer" enableScrollSpy={true} end={80} />+</h3>
 										<div className="space18" />
-										<p>Our Journalist</p>
+										<p>Top HR Leaders</p>
 									</div>
 									<div className="counter-box">
 										<h3><CountUp className="odometer" enableScrollSpy={true} end={15} />+</h3>
 										<div className="space18" />
-										<p>Our Speaker</p>
+										<p>Top Industry Speakers</p>
 									</div>
 									<div className="counter-box" style={{ border: 'none' }}>
-										<h3><CountUp className="odometer" enableScrollSpy={true} end={7} />K+</h3>
+										<h3><CountUp className="odometer" enableScrollSpy={true} end={20} />+</h3>
 										<div className="space18" />
-										<p>Attendees</p>
+										<p>Awardees honored </p>
 									</div>
 								</div>
 								<div className="space32" />

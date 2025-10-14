@@ -24,7 +24,7 @@ export default function Section10() {
 								<div className="col-lg-4 col-md-4">
 									<div className="cta-counter-box">
 										<img src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" />
-										<h2><CountUp className="odometer" enableScrollSpy={true} end={49} /></h2>
+										<h2><CountUp className="odometer" enableScrollSpy={true} end={100} />+</h2>
 										<div className="space14" />
 										<p>Attendance</p>
 									</div>
@@ -32,7 +32,7 @@ export default function Section10() {
 								<div className="col-lg-4 col-md-4">
 									<div className="cta-counter-box">
 										<img src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" />
-										<h2><CountUp className="odometer" enableScrollSpy={true} end={5} /></h2>
+										<h2><CountUp className="odometer" enableScrollSpy={true} end={20} />+</h2>
 										<div className="space14" />
 										<p>Guest</p>
 									</div>
