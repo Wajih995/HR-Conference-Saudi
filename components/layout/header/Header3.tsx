@@ -29,6 +29,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 										<ul>
 											<li><Link href="/">Home</Link></li>
 											<li><Link href="/about">About Event</Link></li>
+                                            <li><Link href="/awards">Awards</Link></li>
 											<li>
 												<Link href="/#">Speakers <i className="fa-solid fa-angle-down" /></Link>
 												<ul className="dropdown-padding">

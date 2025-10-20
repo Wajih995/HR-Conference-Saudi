@@ -26,7 +26,7 @@ export default function About() {
 					</div>
 					{/*===== HERO AREA ENDS =======*/}
 					{/*===== ABOUT AREA STARTS =======*/}
-					<div className="about1-section-area sp1">
+                    <div className="about1-section-area sp1">
 						<div className="container">
 							<div className="row align-items-center">
 								<div className="col-lg-6">
@@ -62,47 +62,78 @@ export default function About() {
 									</div>
 								</div>
 								<div className="col-lg-6">
-									<div className="about-header-area heading2">
-										<h5 data-aos="fade-left" data-aos-duration={800}>about our Business conferences</h5>
-										<div className="space16" />
-										<h2 className="text-anime-style-3">Explore Future Of Design At Our Yearly Conference</h2>
-										<div className="space16" />
-										<p data-aos="fade-left" data-aos-duration={900}>The Yearly Designer Conferences designed to challenge, Event inspire, and push the boundaries of what is possible in design. From emerging technologies to sustainable design practices.</p>
-										<div className="space32" />
-										<div className="about-counter-area">
-											<div className="counter-box">
-												<h2><CountUp className="odometer" enableScrollSpy={true} end={250} />+</h2>
-												<div className="space18" />
-												<p>Our Journalist</p>
-											</div>
-											<div className="counter-box box2">
-												<h2><CountUp className="odometer" enableScrollSpy={true} end={15} />+</h2>
-												<div className="space18" />
-												<p>Our Speaker</p>
-											</div>
-											<div className="counter-box box3" style={{ border: 'none' }}>
-												<h2><CountUp className="odometer" enableScrollSpy={true} end={7} />K+</h2>
-												<div className="space18" />
-												<p>Attendees</p>
-											</div>
-										</div>
-										<div className="space32" />
-										<div className="btn-area1" data-aos="fade-left" data-aos-duration={1200}>
-											<Link href="/contact" className="vl-btn1">Become an Attendee</Link>
-										</div>
-									</div>
+                                    <div className="about-header-area heading2">
+                                        <h5 data-aos="fade-left" data-aos-duration={800}>About Our Business Conferences</h5>
+                                        <div className="space16" />
+                                        <h2 className="text-anime-style-3">Explore the Future of HR Leadership</h2>
+                                        <div className="space16" />
+                                        <p data-aos="fade-left" data-aos-duration={900}>Explore the Future of HR Leadership at our flagship annual conference — a premier platform dedicated to empowering women leaders and transforming workplaces across the GCC. The HR Women Leadership Conference & Awards 2026 is designed to inspire, challenge, and redefine how organizations approach inclusion, equity, leadership, and talent development. From building resilient workplaces and advancing DEI strategies to aligning people practices with Saudi Vision 2030, this event brings together the brightest minds shaping the future of HR.</p>
+                                        <div className="space32" />
+                                        <div className="about-counter-area">
+                                            <div className="counter-box">
+											<h2><CountUp className="odometer" enableScrollSpy={true} end={80} />+</h2>
+                                                <div className="space18" />
+                                                <p>Top HR Leaders shaping people strategy</p>
+                                            </div>
+                                            <div className="counter-box box2">
+											<h2><CountUp className="odometer" enableScrollSpy={true} end={15} />+</h2>
+                                                <div className="space18" />
+                                                <p>Top Industry Speakers</p>
+                                            </div>
+                                            <div className="counter-box box3" style={{ border: 'none' }}>
+											<h2><CountUp className="odometer" enableScrollSpy={true} end={20} />+</h2>
+                                                <div className="space18" />
+                                                <p>Awardees across the GCC</p>
+                                            </div>
+                                        </div>
+                                        <div className="space32" />
+                                        <div className="btn-area1" data-aos="fade-left" data-aos-duration={1200}>
+                                            <Link href="/contact" className="vl-btn1">Become an Attendee</Link>
+                                        </div>
+                                    </div>
 								</div>
 							</div>
 						</div>
 					</div>
-					{/*===== ABOUT AREA ENDS =======*/}
+                    {/*===== ABOUT AREA ENDS =======*/}
+
+                    {/*===== ABOUT THE EVENT (TEXT) STARTS =======*/}
+                    <div className="about-text-section sp2">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-10 m-auto">
+                                    <div className="heading2 text-center space-margin60">
+                                        <h5>About the Event</h5>
+                                        <div className="space18" />
+                                        <h2 className="text-anime-style-3" style={{fontSize: '32px', lineHeight: '40px'}}>Women Leading Change: Inclusive, Resilient & Vision-Driven HR in the GCC</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-lg-10 m-auto">
+                                    <div className="choose-widget-boxarea">
+                                        <div className="content-area heading2">
+                                            <p>Women Leading Change: Inclusive, Resilient & Vision-Driven HR in the GCC is a pioneering leadership conference and awards platform dedicated to celebrating and empowering women shaping the future of Human Resources in the Gulf region.</p>
+                                            <div className="space16" />
+                                            <p>Taking place in January 2026 in [City, Saudi Arabia], this one-of-a-kind event brings together visionary CHROs, HR Directors, People Leaders, policymakers, and industry pioneers who are transforming workplaces and rewriting leadership narratives across the GCC.</p>
+                                            <div className="space16" />
+                                            <p>Anchored in the principles of Saudi Vision 2030, the conference spotlights how women leaders are driving organizational transformation, championing inclusive cultures, and breaking long-standing barriers in male-dominated industries. Through insightful keynotes, high-impact panel discussions, case studies, and strategic networking, we explore the evolving role of HR as a driver of business resilience, equity, and innovation.</p>
+                                            <div className="space16" />
+                                            <p>From pay equity to maternity acceleration, from measurable DEI outcomes to next-generation leadership pipelines — this platform isn’t just about dialogue, it’s about actionable strategies, real-world impact, and future-ready HR leadership.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/*===== ABOUT THE EVENT (TEXT) ENDS =======*/}
 					{/*===== OTHERS AREA STARTS =======*/}
 					<div className="brands3-section-area sp2">
 						<div className="container">
 							<div className="row">
-								<div className="col-lg-5 m-auto">
+								<div className="col-lg-7 m-auto">
 									<div className="brand-header heading4 space-margin60 text-center">
-										<h3>Join 4,000+ companies already growing</h3>
+                                        <h3>Be part of the region’s most forward-thinking companies shaping the future of work.</h3>
 									</div>
 								</div>
 							</div>
@@ -114,113 +145,102 @@ export default function About() {
 						</div>
 					</div>
 					{/*===== OTHERS AREA ENDS =======*/}
-					{/*===== OTHERS AREA STARTS =======*/}
-					<div className="choose-section-area sp2">
-						<div className="container">
-							<div className="row">
-								<div className="col-lg-4 m-auto">
-									<div className="heading2 text-center space-margin60">
-										<h5>why choose us</h5>
-										<div className="space18" />
-										<h2>Why Attend Event?</h2>
-									</div>
-								</div>
-							</div>
-							<div className="row">
-								<div className="col-lg-4 col-md-6">
-									<div className="choose-widget-boxarea">
-										<div className="icons">
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" />
-										</div>
-										<div className="space24" />
-										<div className="content-area">
-											<Link href="/event-single">Make Ideas Happen</Link>
-											<div className="space16" />
-											<p>Eventify 2024 brings together the brightest minds and industry leaders for best of transformative business.</p>
-											<div className="space24" />
-											<Link href="/event-single" className="readmore">Read More <i className="fa-solid fa-arrow-right" /></Link>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-4 col-md-6">
-									<div className="choose-widget-boxarea">
-										<div className="icons">
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" />
-										</div>
-										<div className="space24" />
-										<div className="content-area">
-											<Link href="/event-single">Great Speakers</Link>
-											<div className="space16" />
-											<p>Whether you're looking to elevate your business strategy, discover the latest industry trends, or connect.</p>
-											<div className="space24" />
-											<Link href="/event-single" className="readmore">Read More <i className="fa-solid fa-arrow-right" /></Link>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-4 col-md-6">
-									<div className="choose-widget-boxarea">
-										<div className="icons">
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" />
-										</div>
-										<div className="space24" />
-										<div className="content-area">
-											<Link href="/event-single">One Day Ticket</Link>
-											<div className="space16" />
-											<p>We empower businesses to thrive in an ever-evolving marketplace. This conference more than just an event.</p>
-											<div className="space24" />
-											<Link href="/event-single" className="readmore">Read More <i className="fa-solid fa-arrow-right" /></Link>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-4 col-md-6">
-									<div className="choose-widget-boxarea">
-										<div className="icons">
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" />
-										</div>
-										<div className="space24" />
-										<div className="content-area">
-											<Link href="/event-single">Develop Your Skills</Link>
-											<div className="space16" />
-											<p>Eventify is your gateway to future of business. By bringing together best experts from various sectors.</p>
-											<div className="space24" />
-											<Link href="/event-single" className="readmore">Read More <i className="fa-solid fa-arrow-right" /></Link>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-4 col-md-6">
-									<div className="choose-widget-boxarea">
-										<div className="icons">
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" />
-										</div>
-										<div className="space24" />
-										<div className="content-area">
-											<Link href="/event-single">Entry Verification</Link>
-											<div className="space16" />
-											<p>You'll walk away with a deeper best understanding of emerging trends and actionable strategies that can.</p>
-											<div className="space24" />
-											<Link href="/event-single" className="readmore">Read More <i className="fa-solid fa-arrow-right" /></Link>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-4 col-md-6">
-									<div className="choose-widget-boxarea">
-										<div className="icons">
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" />
-										</div>
-										<div className="space24" />
-										<div className="content-area">
-											<Link href="/event-single">Workshops Offer</Link>
-											<div className="space16" />
-											<p>Designed for forward-thinking and professionals, this event delivers the tools, connections, and insights you.</p>
-											<div className="space24" />
-											<Link href="/event-single" className="readmore">Read More <i className="fa-solid fa-arrow-right" /></Link>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					{/*===== OTHERS AREA ENDS =======*/}
+                    {/*===== WHY ATTEND AREA STARTS =======*/}
+                    <div className="choose-section-area sp2">
+                        <div className="container">
+                            <div className="row">
+                                <div className=" m-auto">
+                                    <div className="heading2 text-center space-margin60">
+                                        <h5 >Why Attend the Event?</h5>
+                                        <div className="space18" />
+                                        <h2 style={{fontSize: '32px', lineHeight: '40px'}}>Women Leading Change: Inclusive, Resilient & Vision-Driven HR</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-lg-4 col-md-6 d-flex mb-5">
+                                    <div className="choose-widget-boxarea h-100 w-100">
+                                        <div className="icons">
+                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
+                                        </div>
+                                        <div className="space24" />
+                                        <div className="content-area">
+                                            <Link href="/#">Join Movement</Link>
+                                            <div className="space16" />
+                                            <p>Be part of a regional platform driving women-led HR transformation and leadership change.</p>
+                                        </div>
+                                    </div>
+                                </div>
+								
+                                <div className="col-lg-4 col-md-6 d-flex mb-5">
+                                    <div className="choose-widget-boxarea h-100 w-100">
+                                        <div className="icons">
+                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
+                                        </div>
+                                        <div className="space24" />
+                                        <div className="content-area">
+                                            <Link href="/#">Learn Leaders</Link>
+                                            <div className="space16" />
+                                            <p>Hear from top CHROs and experts sharing innovative strategies shaping future workplaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 d-flex mb-5">
+                                    <div className="choose-widget-boxarea h-100 w-100">
+                                        <div className="icons">
+                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
+                                        </div>
+                                        <div className="space24" />
+                                        <div className="content-area">
+                                            <Link href="/#">Gain Strategies</Link>
+                                            <div className="space16" />
+                                            <p>Access proven frameworks to advance equity, leadership pipelines, inclusion, and measurable DEI outcomes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 d-flex mb-5">
+                                    <div className="choose-widget-boxarea h-100 w-100">
+                                        <div className="icons">
+                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
+                                        </div>
+                                        <div className="space24" />
+                                        <div className="content-area">
+                                            <Link href="/#">Build Networks</Link>
+                                            <div className="space16" />
+                                            <p>Connect with HR leaders, policymakers, and decision-makers shaping inclusive, future-ready organizations.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 d-flex mb-5">
+                                    <div className="choose-widget-boxarea h-100 w-100">
+                                        <div className="icons">
+                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
+                                        </div>
+                                        <div className="space24" />
+                                        <div className="content-area">
+                                            <Link href="/#">Celebrate Leaders</Link>
+                                            <div className="space16" />
+                                            <p>Honor women breaking barriers and transforming HR through impactful leadership and innovation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-6 d-flex mb-5">
+                                    <div className="choose-widget-boxarea h-100 w-100">
+                                        <div className="icons">
+                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
+                                        </div>
+                                        <div className="space24" />
+                                        <div className="content-area">
+                                            <Link href="/#">Shape Future</Link>
+                                            <div className="space16" />
+                                            <p>Contribute to discussions defining the GCC’s future of work aligned with Vision 2030.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/*===== WHY ATTEND AREA ENDS =======*/}
 					{/*===== CTA AREA STARTS =======*/}
 					<div className="cta1-section-area d-lg-block d-block">
 						<div className="container">
