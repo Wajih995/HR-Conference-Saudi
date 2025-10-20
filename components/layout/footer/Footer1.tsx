@@ -4,25 +4,24 @@ import Link from 'next/link'
 export default function Footer1() {
 	return (
 		<>
-			<div className="footer1-sertion-area">
+			<div className="footer3-sertion-area">
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
-								<img src="/assets/img/logo/logo2.png" alt="" />
+								<img src="/assets/img/logo/logo1.png" alt="" />
 								<div className="space16" />
-								<p>We are committed to creating a platform where business leaders, innovators, and professionals
-									can come together to exchange ideas</p>
+								<p>We are committed to creating a platform where business leaders, innovators, and professionals can come together to exchange ideas</p>
 								<div className="space24" />
 								<ul>
 									<li>
 										<Link href="/#"><i className="fa-brands fa-facebook-f" /></Link>
 									</li>
 									<li>
-										<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
+										<Link href="https://www.instagram.com/brxeventsksa/"><i className="fa-brands fa-instagram" /></Link>
 									</li>
 									<li>
-										<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+										<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
 									</li>
 									<li>
 										<Link href="/#" className="m-0"><i className="fa-brands fa-pinterest-p" /></Link>
@@ -47,22 +46,20 @@ export default function Footer1() {
 								<h3>Contact Us</h3>
 								<ul>
 									<li>
-										<Link href="/tel:+11234567890"><img src="/assets/img/icons/phn1.svg" alt="" />+1 123 456
-											7890</Link>
+										<Link href="/tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745</Link>
+										<Link href="/tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</Link>
 									</li>
 									<li>
-										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Secret Location In The
-											UK</Link>
+										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Cerekon Building, Olaya St, Al Olaya, Riyadh 12213</Link>
 									</li>
 									<li>
-										<Link href="/mailto:eventifyevent@gmail.com"><img src="/assets/img/icons/mail1.svg" alt="" />eventifyevent@gmail.com</Link>
-									</li>
-									<li>
-										<Link href="/#"> <img src="/assets/img/icons/world1.svg" alt="" />eventifyevent.com</Link>
+										<Link href="/mailto:eventifyevent@gmail.com"><img src="/assets/img/icons/mail1.svg" alt="" />Yasir@theboredroomx.com</Link>
 									</li>
 								</ul>
 							</div>
 						</div>
+						
+
 						<div className="col-lg-4 col-md-6">
 							<div className="footer-social-box">
 								<h3>Our Recent Event Gallery</h3>
@@ -130,7 +127,6 @@ export default function Footer1() {
 					</div>
 				</div>
 			</div>
-
 		</>
 	)
 }

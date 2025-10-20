@@ -4,6 +4,23 @@ import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
 import BrandSlider from '@/components/slider/BrandSlider'
 import Link from "next/link"
+// Function to create laurel wreath with text
+const LaurelWreathWithText = ({ title, fontSize = '16px' }: { title: string, fontSize?: string }) => {
+	const lines = title.split(',');
+	return (
+		<div style={{position: 'relative', display: 'inline-block'}}>
+			<img src="/assets/img/icons/laurel-wreath.svg" alt="" style={{width: '300px', height: '260px', filter: 'brightness(0) invert(1)'}} />
+			<div style={{position: 'absolute', top: '44%', left: '50%', transform: 'translate(-50%, -50%)', width: '80%', textAlign: 'center'}}>
+				<div style={{color: '#C9A545', fontSize, fontWeight: 'bold', fontFamily: 'Arial, sans-serif', lineHeight: '1.2'}}>
+					{lines.map((line, index) => (
+						<div key={index}>{line}</div>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+};
+
 export default function Awards() {
 
 	return (
@@ -142,7 +159,7 @@ export default function Awards() {
 							</div>
                             {/* Desktop timeline (alternating cards) */}
                             <div className="d-none d-lg-block mt-5" style={{position:'relative', paddingTop:120, paddingBottom:120}}>
-                                <div style={{position:'absolute', left:0, right:0, top:'50%', height:4, background:'#0B0B0B', borderRadius:2}} />
+                                <div style={{position:'absolute', left:0, right:0, top:'50%', height:4, background:'rgb(160 15 161)', borderRadius:2}} />
                                 <div className="row text-center">
                                     {/* 01 - above the line */}
                                     <div className="col-lg-3" style={{position:'relative'}}>
@@ -242,51 +259,40 @@ export default function Awards() {
 							<div className="row">
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST DIVERSITY INCLUSION STRATEGY" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Diversity & Inclusion Strategy</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours initiatives that successfully foster diverse, equitable, and inclusive workplaces.</p>
-
 										</div>
 									</div>
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST EMPLOYEE ENGAGEMENT STRATEGY" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Employee Engagement Strategy</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates innovative strategies that significantly enhance employee motivation and satisfaction.</p>
-
 										</div>
 									</div>
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST EMPLOYEE WELLBEING PROGRAMME" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Employee Wellbeing Programme</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Recognizes organizations that prioritize holistic employee wellness and support.</p>
-
 										</div>
 									</div>
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST EXECUTIVE ,&, LEADERSHIP DEVELOPMENT" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Executive & Leadership Development</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Awards organizations with outstanding programs designed to nurture leadership capabilities.</p>
 
 										</div>
@@ -294,12 +300,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST HR TECHNOLOGY IMPLEMENTATION" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best HR Technology Implementation</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Acknowledges organizations that leverage cutting-edge HR technology to enhance processes.</p>
 
 										</div>
@@ -307,12 +311,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST HR TRANSFORMATION STRATEGY" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best HR Transformation Strategy</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours strategic initiatives that redefine HR functions, processes, and culture.</p>
 
 										</div>
@@ -320,12 +322,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST FLEXIBLE WORKING, INITIATIVE" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Flexible Working Initiative</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates forward-thinking approaches to flexible work that balance organizational needs.</p>
 
 										</div>
@@ -333,12 +333,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST INNOVATIVE ,HR INITIATIVE" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Innovative HR Initiative</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours pioneering ideas reshaping HR practices and delivering measurable results.</p>
 
 										</div>
@@ -346,12 +344,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST L&D ,INITIATIVE, (PRIVATE SECTOR)" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best L&D Initiative (Private Sector)</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Awards impactful learning and development initiatives that upskill and empower employees.</p>
 
 										</div>
@@ -359,12 +355,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST ,RECRUITMENT, & ONBOARDING STRATEGY" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Recruitment & Onboarding Strategy</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates exceptional recruitment and onboarding practices that attract top talent.</p>
 
 										</div>
@@ -372,12 +366,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST REWARDS & RECOGNITION STRATEGY" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Rewards & Recognition Strategy</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Acknowledges outstanding reward and recognition programs that motivate employees.</p>
 
 										</div>
@@ -385,12 +377,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST SOCIAL IMPACT INITIATIVE" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Social Impact Initiative</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours organizations delivering significant social change through HR-driven initiatives.</p>
 
 										</div>
@@ -398,12 +388,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST TALENT MANAGEMENT STRATEGY" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Talent Management Strategy</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates comprehensive strategies that effectively attract, develop, and retain talent.</p>
 
 										</div>
@@ -411,12 +399,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="BEST WOMEN IN LEADERSHIP DEVELOPMENT" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Best Women in Leadership Development</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Recognizes initiatives dedicated to advancing women into leadership roles.</p>
 
 										</div>
@@ -424,12 +410,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="CHRO, OF THE YEAR" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>CHRO of the Year</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours an exceptional Chief Human Resources Officer demonstrating visionary leadership.</p>
 
 										</div>
@@ -437,12 +421,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="EMPLOYER OF THE YEAR" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>Employer of the Year</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates organizations that set new benchmarks for workplace excellence.</p>
 
 										</div>
@@ -450,12 +432,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="HR TEAM OF THE YEAR" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>HR Team of the Year</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours collaborative HR teams delivering exceptional results across people strategy.</p>
 
 										</div>
@@ -463,12 +443,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="HR'S RISING STAR OF THE YEAR" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>HR's Rising Star of the Year</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Recognizes an emerging HR professional making significant contributions early in their career.</p>
 
 										</div>
@@ -476,12 +454,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="DEI, CHANGEMAKER AWARD" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>DEI Changemaker Award</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours individuals or teams driving meaningful diversity, equity, and inclusion impact.</p>
 
 										</div>
@@ -489,12 +465,10 @@ export default function Awards() {
 								</div>
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
-										<div className="icons" style={{marginBottom: '16px'}}>
-											<img src="/assets/img/icons/choose-icons1.svg" alt="" style={{filter: 'brightness(0) invert(1)', width: '48px', height: '48px'}} />
+										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
+											<LaurelWreathWithText title="PEOPLE, ANALYTICS LEADER" fontSize="16px" />
 										</div>
-										<div style={{marginBottom: '20px'}} />
 										<div className="content-area">
-											<h4 style={{color: 'white', fontSize: '18px', fontWeight: '600', lineHeight: '1.3', marginBottom: '12px'}}>People Analytics Leader</h4>
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates excellence in leveraging data and analytics for strategic HR decisions.</p>
 
 										</div>
@@ -506,7 +480,7 @@ export default function Awards() {
 					{/*===== AWARDS CATEGORIES ENDS =======*/}
 
 					{/*===== BRANDS =======*/}
-					<div className="brands3-section-area sp2">
+					{/* <div className="">
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-7 m-auto">
@@ -521,7 +495,7 @@ export default function Awards() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 					{/*===== BRANDS ENDS =======*/}
 
 					{/*===== CTA AREA STARTS =======*/}
