@@ -1,8 +1,10 @@
 'use client'
+import { useState } from 'react'
 import CountUp from 'react-countup'
 import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
 import BrandSlider from '@/components/slider/BrandSlider'
+import NominationModal from '@/components/layout/NominationModal'
 import Link from "next/link"
 // Function to create laurel wreath with text
 const LaurelWreathWithText = ({ title, fontSize = '16px' }: { title: string, fontSize?: string }) => {
@@ -22,6 +24,7 @@ const LaurelWreathWithText = ({ title, fontSize = '16px' }: { title: string, fon
 };
 
 export default function Awards() {
+	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	return (
 		<>
@@ -81,10 +84,10 @@ export default function Awards() {
 												<p style={{color: 'white'}}>Exciting Evening</p>
 											</div>
 										</div>
-										<div className="space32" />
-										<div className="btn-area1" data-aos="fade-left" data-aos-duration={1200}>
-											<Link href="/contact" className="vl-btn1">Submit Nomination</Link>
-										</div>
+									<div className="space32" />
+									<div className="btn-area1" data-aos="fade-left" data-aos-duration={1200}>
+										<button onClick={() => setIsModalOpen(true)} className="vl-btn1" style={{ border: 'none', cursor: 'pointer' }}>Submit Nomination</button>
+									</div>
 									</div>
 								</div>
 							</div>
@@ -507,7 +510,7 @@ export default function Awards() {
 										<div className="timer-btn-area">
 											<Countdown />
 											<div className="btn-area1">
-												<Link href="/contact" className="vl-btn1">Submit Nomination</Link>
+												<button onClick={() => setIsModalOpen(true)} className="vl-btn1" style={{ border: 'none', cursor: 'pointer' }}>Submit Nomination</button>
 											</div>
 										</div>
 										<ul>
@@ -527,6 +530,8 @@ export default function Awards() {
 				</div>
 
 			</Layout>
+
+			<NominationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 		</>
 	)
 }

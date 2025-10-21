@@ -50,7 +50,7 @@ export default function Footer1() {
 										<Link href="/tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</Link>
 									</li>
 									<li>
-										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Cerekon Building, Olaya St, Al Olaya, Riyadh 12213</Link>
+										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 									</li>
 									<li>
 										<Link href="/mailto:eventifyevent@gmail.com"><img src="/assets/img/icons/mail1.svg" alt="" />Yasir@theboredroomx.com</Link>
