@@ -9,22 +9,16 @@ export default function Footer3() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
-								<img src="/assets/img/logo/logo1.png" alt="" />
+								<img src="/assets/img/logo/w-master-logo.png" alt="" />
 								<div className="space16" />
 								<p>We are committed to creating a platform where business leaders, innovators, and professionals can come together to exchange ideas</p>
 								<div className="space24" />
 								<ul>
 									<li>
-										<Link href="/#"><i className="fa-brands fa-facebook-f" /></Link>
+										<Link href="https://www.instagram.com/brxeventsksa/"><i className="fa-brands fa-instagram" /></Link>
 									</li>
 									<li>
-										<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-									</li>
-									<li>
-										<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-									</li>
-									<li>
-										<Link href="/#" className="m-0"><i className="fa-brands fa-pinterest-p" /></Link>
+										<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
 									</li>
 								</ul>
 							</div>

@@ -7157,7 +7157,7 @@ Location:
 
 .footer3-sertion-area .footer-logo-area img {
 	width: 150px;
-	height: 46px;
+	height: 80px;
 	object-fit: cover;
 }
 
@@ -7197,7 +7197,7 @@ Location:
 }
 
 .footer3-sertion-area .link-content {
-	padding-left: 50px;
+	padding-left: 20px;
 }
 
 @media (max-width: 767px) {
@@ -10464,8 +10464,8 @@ html {
 }
 
 .homepage3-body .header-area.homepage3 .header-elements .site-logo img {
-	width: 150px;
-	height: 45px;
+	width: 85px;
+	height: 85px;
 	object-fit: contain;
 }
 
@@ -18882,7 +18882,7 @@ html {
 .contact-bg-section .contact-boxarea {
 	border-radius: 8px;
 	background: #FFF;
-	padding: 24px;
+	padding: 20px 12px 20px 5px;
 	position: relative;
 	z-index: 1;
 }

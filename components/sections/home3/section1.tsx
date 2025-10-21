@@ -1,8 +1,12 @@
-
+'use client'
+import { useState } from 'react'
 import CircleText from '@/components/elements/CircleText'
+import NominationModal from '@/components/layout/NominationModal'
 import Link from 'next/link'
 
 export default function Section1() {
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	
 	return (
 		<>
 
@@ -13,15 +17,15 @@ export default function Section1() {
 					<div className="row">
 						<div className="col-lg-8 m-auto">
 							<div className="hero3-header text-center">
-								<h5><img src="/assets/img/icons/sub-logo1.svg" alt="" />Join the Future of HR Leadership</h5>
-
-								<h1 className="text-anime-style-3" style={{fontSize: '50px'}}>Women Who Lead</h1>
-								<h1 className="text-anime-style-3" style={{fontSize: '30px'}}>HR Leadership Conference & Awards 2026</h1>
+								<h1 className="text-anime-style-3 conferences" style={{fontSize: '50px'}}>Women Who Lead</h1>
+								<h1 className="text-anime-style-3" style={{fontSize: '51px'}}>HR Leadership Conference</h1>
+								<h1 className="text-anime-style-3" style={{fontSize: '51px'}}>& Awards 2026</h1>
+								
 								<div className="space24" />
 								<div className="btn-area1">
-									<Link href="/event-schedule" className="vl-btn3" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px'}}>Reserve premium Seat</Link>
-									<Link href="/pricing-plan" className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px'}}>buy ticket now</Link>
-									<Link href="/pricing-plan" className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px'}}>Submit Your Nomination</Link>
+									<button onClick={() => setIsModalOpen(true)} className="vl-btn3" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Reserve premium Seat</button>
+									<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>buy ticket now</button>
+									<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Submit Your Nomination</button>
 								</div>
 								<div className="arrow-btnarea">
 									<Link href="/about">
@@ -44,6 +48,7 @@ export default function Section1() {
 				</div>
 			</div>
 
+			<NominationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 		</>
 	)
 }

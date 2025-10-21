@@ -51,7 +51,7 @@ export default function Popup() {
 				<div className="popup-content">
 					<span className="close-btn" id="close-popup">×</span>
 					<div className="popup-icon">
-						<img src="/assets/img/logo/popup-logo.png" alt="" />
+						<img src="/assets/img/logo/w-master-logo.png" alt="" />
 					</div>
 					<div className="space32" />
 					<div className="heading2">

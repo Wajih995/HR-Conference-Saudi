@@ -15,16 +15,10 @@ export default function Footer1() {
 								<div className="space24" />
 								<ul>
 									<li>
-										<Link href="/#"><i className="fa-brands fa-facebook-f" /></Link>
-									</li>
-									<li>
 										<Link href="https://www.instagram.com/brxeventsksa/"><i className="fa-brands fa-instagram" /></Link>
 									</li>
 									<li>
 										<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
-									</li>
-									<li>
-										<Link href="/#" className="m-0"><i className="fa-brands fa-pinterest-p" /></Link>
 									</li>
 								</ul>
 							</div>

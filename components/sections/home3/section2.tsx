@@ -13,13 +13,13 @@ export default function Section2() {
 							<div className="about3-images">
 								<img src="/assets/img/all-images/about/about-img10.png" alt="" className="about-img10 aniamtion-key-1" />
 								<div className="img1" data-aos="zoom-in" data-aos-duration={1000}>
-									<img src="/assets/img/all-images/about/about-img7.png" alt="" />
+									<img src="/assets/img/all-images/about/about-1.jpeg" alt="" />
 								</div>
 								<div className="img2" data-aos="zoom-in" data-aos-duration={1100}>
-									<img src="/assets/img/all-images/about/about-img8.png" alt="" />
+									<img src="/assets/img/all-images/about/about-2.webp" alt="" />
 								</div>
 								<div className="img3" data-aos="zoom-in" data-aos-duration={1200}>
-									<img src="/assets/img/all-images/about/about-img9.png" alt="" />
+									<img src="/assets/img/all-images/about/about-3.jpg" alt="" />
 								</div>
 							</div>
 						</div>

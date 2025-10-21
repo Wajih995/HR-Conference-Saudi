@@ -10,20 +10,21 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 							<div className="col-lg-12">
 								<div className="menu-top-area">
 									<div className="top-menu-area">
-										<p>Are you Ready to Enenify Conferences?<Link href="/#">Buy Ticket</Link></p>
+										<p>Join the Future of HR Leadership<Link href="/#">Buy Ticket</Link></p>
 										<ul>
 											<li>
-												<Link href="/mailto:eventifyconference@.com"><img src="/assets/img/icons/mail1.svg" alt="" />eventifyconference@.com <span> | </span></Link>
+												<Link href="/mailto:eventifyconference@.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com<span> | </span></Link>
 											</li>
 											<li>
-												<Link href="/tel:(234)345-4574"><img src="/assets/img/icons/phn1.svg" alt="" />(234) 345-4574</Link>
+												<Link href="/tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745 <span> | </span></Link>
+												<Link href="/tel:+966597183683">+966 59 718 3683</Link>
 											</li>
 										</ul>
 									</div>
 								</div>
 								<div className="header-elements">
 									<div className="site-logo">
-										<Link href="/"><img src="/assets/img/logo/logo2.png" alt="" /></Link>
+										<Link href="/"><img src="/assets/img/logo/w-master-logo.png" alt="" /></Link>
 									</div>
 									<div className="main-menu">
 										<ul>
@@ -64,21 +65,12 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 										</ul>
 									</div>
 									<div className="btn-area">
-										<div className="search-icon header__search header-search-btn" onClick={handleSearch}>
-											<a><img src="/assets/img/icons/search1.svg" alt="" /></a>
-										</div>
 										<ul>
 											<li>
-												<Link href="/#"><i className="fa-brands fa-facebook-f" /></Link>
+												<Link href="https://www.instagram.com/brxeventsksa/"><i className="fa-brands fa-instagram" /></Link>
 											</li>
 											<li>
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</li>
-											<li>
-												<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-											</li>
-											<li>
-												<Link href="/#" className="m-0"><i className="fa-brands fa-pinterest-p" /></Link>
+												<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
 											</li>
 										</ul>
 									</div>
