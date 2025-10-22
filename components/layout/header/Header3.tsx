@@ -16,15 +16,15 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 												<Link href="/mailto:eventifyconference@.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com<span> | </span></Link>
 											</li>
 											<li>
-												<Link href="/tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745 <span> | </span></Link>
-												<Link href="/tel:+966597183683">+966 59 718 3683</Link>
+												<Link href="/tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683 <span> | </span></Link>
+												<Link href="/tel:+971522916745">+971 52 291 6745</Link>
 											</li>
 										</ul>
 									</div>
 								</div>
 								<div className="header-elements">
 									<div className="site-logo">
-										<Link href="/"><img src="/assets/img/logo/main-logo.jpg" alt="" /></Link>
+										<Link href="/"><img src="/assets/img/logo/final-logo.png" alt="" /></Link>
 									</div>
 									<div className="main-menu">
 										<ul>

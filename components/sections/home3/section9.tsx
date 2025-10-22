@@ -63,9 +63,9 @@ export default function Section9() {
 					<div className="row">
 						<div className="col-lg-6 m-auto">
 							<div className="memory3-header text-center heading5 space-margin60">
-								<h5>recent year Memories</h5>
+								
 								<div className="space18" />
-								<h2 className="text-anime-style-3">Recent Memories 2024</h2>
+								<h2 className="text-anime-style-4">Recent Memories</h2>
 							</div>
 						</div>
 					</div>
@@ -76,79 +76,79 @@ export default function Section9() {
 									<div className="img1">
 										<img src="/assets/img/all-images/used-images/slider-1.jpg" alt="" />
 									</div>
-									<div className="content-area">
+									{/* <div className="content-area">
 										<p>Event 2024</p>
 										<div className="space12" />
 										<Link href="/memories">Freelancer Meetup</Link>
 										<div className="plus">
 											<Link href="/memories"><i className="fa-solid fa-plus" /></Link>
 										</div>
-									</div>
+									</div> */}
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
 										<img src="/assets/img/all-images/used-images/slider-2.jpg" alt="" />
 									</div>
-									<div className="content-area">
+									{/* <div className="content-area">
 										<p>Event 2024</p>
 										<div className="space12" />
 										<Link href="/memories">Freelancer Meetup</Link>
 										<div className="plus">
 											<Link href="/memories"><i className="fa-solid fa-plus" /></Link>
 										</div>
-									</div>
+									</div> */}
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-3.jpg" alt="" />
+										<img src="/assets/img/all-images/used-images/slider-4.jpg" alt="" />
 									</div>
-									<div className="content-area">
+									{/* <div className="content-area">
 										<p>Event 2024</p>
 										<div className="space12" />
 										<Link href="/memories">Freelancer Meetup</Link>
 										<div className="plus">
 											<Link href="/memories"><i className="fa-solid fa-plus" /></Link>
 										</div>
-									</div>
+									</div> */}
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
 										<img src="/assets/img/all-images/used-images/slider-1.jpg" alt="" />
 									</div>
-									<div className="content-area">
+									{/* <div className="content-area">
 										<p>Event 2024</p>
 										<div className="space12" />
 										<Link href="/memories">Freelancer Meetup</Link>
 										<div className="plus">
 											<Link href="/memories"><i className="fa-solid fa-plus" /></Link>
 										</div>
-									</div>
+									</div> */}
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
 										<img src="/assets/img/all-images/used-images/slider-2.jpg" alt="" />
 									</div>
-									<div className="content-area">
+									{/* <div className="content-area">
 										<p>Event 2024</p>
 										<div className="space12" />
 										<Link href="/memories">Freelancer Meetup</Link>
 										<div className="plus">
 											<Link href="/memories"><i className="fa-solid fa-plus" /></Link>
 										</div>
-									</div>
+									</div> */}
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-3.jpg" alt="" />
+										<img src="/assets/img/all-images/used-images/slider-4.jpg" alt="" />
 									</div>
-									<div className="content-area">
+									{/* <div className="content-area">
 										<p>Event 2024</p>
 										<div className="space12" />
 										<Link href="/memories">Freelancer Meetup</Link>
 										<div className="plus">
 											<Link href="/memories"><i className="fa-solid fa-plus" /></Link>
 										</div>
-									</div>
+									</div> */}
 								</SwiperSlide>
 							</Swiper>
 						</div>

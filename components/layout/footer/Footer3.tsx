@@ -9,7 +9,7 @@ export default function Footer3() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
-								<img src="/assets/img/logo/w-master-logo.png" alt="" />
+								<img src="/assets/img/logo/final-logo.png" alt="" />
 								<div className="space16" />
 								<p> We are dedicated to building a platform that brings together business leaders, innovators, and professionals to share insights, inspire collaboration, and drive meaningful impact.</p>
 								<div className="space24" />
@@ -40,8 +40,8 @@ export default function Footer3() {
 								<h3>Contact Us</h3>
 								<ul>
 									<li>
-										<Link href="/tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745</Link>
 										<Link href="/tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</Link>
+										<Link href="/tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745</Link>
 									</li>
 									<li>
 										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
@@ -53,53 +53,53 @@ export default function Footer3() {
 							</div>
 						</div>
 						<div className="col-lg-4 col-md-6">
-							<div className="footer-social-box">
+						<div className="footer-social-box">
 								<h3>Our Recent Event Gallery</h3>
 								<div className="space12" />
 								<div className="row">
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img1.png" alt="" />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+											<img src="/assets/img/all-images/used-images/footer-1.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img2.png" alt="" />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+											<img src="/assets/img/all-images/used-images/footer-2.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img3.png" alt="" />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+											<img src="/assets/img/all-images/used-images/footer-3.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img4.png" alt="" />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+											<img src="/assets/img/all-images/used-images/footer-4.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img5.png" alt="" />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+											<img src="/assets/img/all-images/used-images/footer-5.webp" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1">
-											<img src="/assets/img/all-images/footer/footer-img6.png" alt="" />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+											<img src="/assets/img/all-images/used-images/footer-6.avif" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>

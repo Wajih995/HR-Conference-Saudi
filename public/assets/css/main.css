@@ -7231,8 +7231,8 @@ Location:
 }
 
 .footer3-sertion-area .footer-logo-area img {
-	width: 150px;
-	height: 80px;
+	width: 250px;
+	height: 100px;
 	object-fit: cover;
 }
 
@@ -10539,8 +10539,8 @@ html {
 }
 
 .homepage3-body .header-area.homepage3 .header-elements .site-logo img {
-	/* width: 85px;
-	height: 85px; */
+	width: 200px;
+	height: 65px;
 	object-fit: contain;
 }
 

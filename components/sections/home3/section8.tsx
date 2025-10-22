@@ -103,7 +103,8 @@ export default function Section8() {
 					background: 'rgba(0, 0, 0, 0.1)',
 					zIndex: 1
 				}}></div>
-				<div style={{position: 'relative', zIndex: 2}}>
+			<div style={{position: 'relative', zIndex: 2}}>
+				<Link href="https://doratnajd.sa/" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
 					<h2 className="venue-heading" style={{
 						fontFamily: 'var(--dancing-script), cursive, "Brush Script MT", cursive',
 						fontSize: '3.5rem',
@@ -128,6 +129,7 @@ export default function Section8() {
 					>
 						Venue: Dorat Najd Resort
 					</h2>
+				</Link>
 					<div style={{
 						width: '100px',
 						height: '3px',
