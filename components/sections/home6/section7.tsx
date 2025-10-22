@@ -69,12 +69,12 @@ export default function Section7() {
 									<li><img src="/assets/img/icons/check4.svg" alt="" />Breakfast, Snaks, and Buffet Lunch</li>
 									<li><img src="/assets/img/icons/check4.svg" alt="" />Post Event Cocktail Reception</li>
 									<li><img src="/assets/img/icons/check4.svg" alt="" />Exclusive Speaker &amp; VIP Welcome Party on
-										15 January 2025</li>
+										20th January 2025</li>
 									<li><img src="/assets/img/icons/check4.svg" alt="" />Fast-Track VIP Check In</li>
 									<li><img src="/assets/img/icons/check4.svg" alt="" />60 Min Site Clinic (On Site or within a
 										Month)</li>
 									<li><img src="/assets/img/icons/check4.svg" alt="" />Semrush Certification Workshop of Your
-										Choice On January 2025</li>
+										Choice On 20th January 2025</li>
 								</ul>
 							</div>
 						</div>

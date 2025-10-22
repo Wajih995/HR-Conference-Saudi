@@ -11,7 +11,7 @@ export default function Section10() {
 				<img src="/assets/img/elements/elements18.png" alt="" className="elements18" />
 				<img src="/assets/img/elements/elements24.png" alt="" className="elements24" />
 				<div className="date-btn aniamtion-key-1">
-					<h4>15</h4>
+					<h4>20</h4>
 					<div className="space14" />
 					<p>January</p>
 					<div className="space20" />
@@ -50,7 +50,7 @@ export default function Section10() {
 						<div className="col-lg-1" />
 						<div className="col-lg-3">
 							<div className="img1">
-								<img src="/assets/img/all-images/cta/cta-img1.png" alt="" />
+								<img src="/assets/img/all-images/used-images/about-1-removebg.png" alt="" />
 							</div>
 						</div>
 					</div>

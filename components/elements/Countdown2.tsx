@@ -18,9 +18,18 @@ const getPartsOfTimeDuration = (duration: number) => {
 export default function Countdown2() {
 	const [timeDif, setTimeDif] = useState(() => {
 		const now = Date.now()
-		const endDateTime = new Date()
-		endDateTime.setDate(endDateTime.getDate() + 2) // Set end date 2 days from now
-		return endDateTime.getTime() - now
+		// Set countdown to January 20, 2026 at 12:00 PM
+		const endDateTime = new Date('2026-01-20T12:00:00')
+		const timeDifference = endDateTime.getTime() - now
+		
+		// Debug logging
+		console.log('Countdown Target Date:', endDateTime.toLocaleString())
+		console.log('Current Time:', new Date(now).toLocaleString())
+		console.log('Time Difference (ms):', timeDifference)
+		console.log('Time Difference (days):', Math.floor(timeDifference / msInDay))
+		
+		// If the date has already passed, return 0
+		return timeDifference > 0 ? timeDifference : 0
 	})
 
 	useEffect(() => {

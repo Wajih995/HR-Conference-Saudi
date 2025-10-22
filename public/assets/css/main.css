@@ -3043,6 +3043,81 @@ Location:
 	padding: 8px;
 }
 
+/* Custom line height for HR Conference titles - desktop only */
+.hero3-section-area .hero3-header h1.hr-conference-title {
+	line-height: 55px;
+}
+
+/* Reset line height for mobile devices */
+@media (max-width: 767px) {
+	.hero3-section-area .hero3-header h1.hr-conference-title {
+		line-height: 60px;
+		
+	}
+}
+
+/* Reset line height for tablet devices */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.hero3-section-area .hero3-header h1.hr-conference-title {
+		line-height: 60px;
+	}
+}
+
+/* Venue heading animations */
+@keyframes shimmer {
+	0% { opacity: 0.5; transform: translateX(-100px); }
+	50% { opacity: 1; transform: translateX(0px); }
+	100% { opacity: 0.5; transform: translateX(100px); }
+}
+
+/* Venue heading responsive styles */
+@media (max-width: 768px) {
+	.venue-heading {
+		font-size: 2.5rem !important;
+		letter-spacing: 1px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.venue-heading {
+		font-size: 2rem !important;
+		letter-spacing: 0.5px !important;
+	}
+}
+
+/* Equal size images for memory section */
+.memory3-section-area .memory3-boxarea .img1 {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.memory3-section-area .memory3-boxarea .img1 img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	transition: transform 0.3s ease;
+}
+
+.memory3-section-area .memory3-boxarea:hover .img1 img {
+	transform: scale(1.05);
+}
+
+/* Responsive adjustments for memory images */
+@media (max-width: 768px) {
+	.memory3-section-area .memory3-boxarea .img1 {
+		height: 250px;
+	}
+}
+
+@media (max-width: 480px) {
+	.memory3-section-area .memory3-boxarea .img1 {
+		height: 200px;
+	}
+}
+
 .hero3-section-area .hero3-header .btn-area1 .vl-btn3.btn2 {
 	background: var(--ztc-bg-bg-1);
 	color: var(--ztc-text-text-10);
@@ -10464,8 +10539,8 @@ html {
 }
 
 .homepage3-body .header-area.homepage3 .header-elements .site-logo img {
-	width: 85px;
-	height: 85px;
+	/* width: 85px;
+	height: 85px; */
 	object-fit: contain;
 }
 
@@ -20012,7 +20087,7 @@ html {
 }
 
 .cta3-section-area .img1 img {
-	height: 100%;
+	height: 80%;
 	width: 100%;
 	object-fit: contain;
 }

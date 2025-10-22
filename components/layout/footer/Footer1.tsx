@@ -9,9 +9,9 @@ export default function Footer1() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
-								<img src="/assets/img/logo/logo1.png" alt="" />
+								<img src="/assets/img/logo/w-master-logo.png" alt="" />
 								<div className="space16" />
-								<p>We are committed to creating a platform where business leaders, innovators, and professionals can come together to exchange ideas</p>
+								<p> We are dedicated to building a platform that brings together business leaders, innovators, and professionals to share insights, inspire collaboration, and drive meaningful impact.</p>
 								<div className="space24" />
 								<ul>
 									<li>

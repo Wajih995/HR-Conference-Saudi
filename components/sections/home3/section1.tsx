@@ -17,9 +17,9 @@ export default function Section1() {
 					<div className="row">
 						<div className="col-lg-8 m-auto">
 							<div className="hero3-header text-center">
-								<h1 className="text-anime-style-3 conferences" style={{fontSize: '50px'}}>Women Who Lead</h1>
-								<h1 className="text-anime-style-3" style={{fontSize: '51px'}}>HR Leadership Conference</h1>
-								<h1 className="text-anime-style-3" style={{fontSize: '51px'}}>& Awards 2026</h1>
+								<h1 className="text-anime-style-3 conferences" style={{fontSize: '45px'}}>Women Who Lead:</h1>
+								<h1 className="text-anime-style-3 hr-conference-title" style={{fontSize: '57px'}}>HR Leadership Conference</h1>
+								<h1 className="text-anime-style-3 hr-conference-title" style={{fontSize: '57px'}}>& Awards 2026</h1>
 								
 								<div className="space24" />
 								<div className="btn-area1">
@@ -36,7 +36,7 @@ export default function Section1() {
 									</Link>
 								</div>
 								<div className="date-btn aniamtion-key-1" style={{right: '-300px'}}>
-									<h4>15</h4>
+									<h4>20</h4>
 									<div className="space14" />
 									<p>January</p>
 									<div className="space20" />

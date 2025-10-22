@@ -24,7 +24,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 								</div>
 								<div className="header-elements">
 									<div className="site-logo">
-										<Link href="/"><img src="/assets/img/logo/w-master-logo.png" alt="" /></Link>
+										<Link href="/"><img src="/assets/img/logo/main-logo.jpg" alt="" /></Link>
 									</div>
 									<div className="main-menu">
 										<ul>

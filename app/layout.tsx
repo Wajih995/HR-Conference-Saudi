@@ -14,7 +14,7 @@ import "/public/assets/css/vendor/odometer.css"
 import "/public/assets/css/main.css"
 
 import type { Metadata } from "next"
-import { Figtree, Space_Grotesk } from "next/font/google"
+import { Figtree, Space_Grotesk, Dancing_Script } from "next/font/google"
 
 const figtree = Figtree({
 	weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -26,6 +26,13 @@ const grotesk = Space_Grotesk({
 	weight: ['300', '400', '500', '600', '700'],
 	subsets: ['latin'],
 	variable: "--grotesk",
+	display: 'swap',
+})
+
+const dancingScript = Dancing_Script({
+	weight: ['400', '500', '600', '700'],
+	subsets: ['latin'],
+	variable: "--dancing-script",
 	display: 'swap',
 })
 
@@ -41,7 +48,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${figtree.variable} ${grotesk.variable}`}>{children}</body>
+			<body className={`${figtree.variable} ${grotesk.variable} ${dancingScript.variable}`}>{children}</body>
 		</html>
 	)
 }

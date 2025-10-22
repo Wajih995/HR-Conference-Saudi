@@ -191,7 +191,7 @@ export default function Awards() {
                                         <div className="choose-widget-boxarea" style={{position:'absolute', top:'calc(50% - 145px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
                                             <h5>03</h5>
                                             <h4 style={{fontSize: '20px',}}>Jury Selection</h4>
-                                            <p>15 January 2026</p>
+                                            <p>20th January 2026</p>
                                         </div>
                                     </div>
                                     {/* 04 - below the line */}
@@ -229,7 +229,7 @@ export default function Awards() {
 										<div className="choose-widget-boxarea text-center">
 											<h5>03</h5>
 											<h4>Jury Selection</h4>
-											<p style={{color: 'white'}}>15 January 2026</p>
+											<p style={{color: 'white'}}>20th January 2026</p>
 										</div>
 									</div>
 									<div className="col-12">
