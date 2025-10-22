@@ -26,7 +26,6 @@ interface FormData {
 }
 
 export default function NominationModal({ isOpen, onClose }: NominationModalProps) {
-    const [step, setStep] = useState<'form' | 'payment' | 'confirm'>('form')
     const [formData, setFormData] = useState<FormData>({
         nominatorFullName: '',
         nominatorEmail: '',
@@ -45,6 +44,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitMessage, setSubmitMessage] = useState('')
+    const [showPaymentLink, setShowPaymentLink] = useState(false)
 
     // Award categories from the awards page
     const categories = [
@@ -70,29 +70,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
         "People Analytics Leader"
     ]
 
-    // Load form data from localStorage on mount (for returning from Stripe)
-    useEffect(() => {
-        const savedFormData = localStorage.getItem('nominationFormData')
-        const paymentCompleted = localStorage.getItem('paymentCompleted')
-        
-        if (savedFormData && paymentCompleted === 'true') {
-            setFormData(JSON.parse(savedFormData))
-            setStep('confirm')
-            localStorage.removeItem('paymentCompleted')
-        }
-    }, [isOpen])
-
-    // Check if returning from Stripe payment
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const urlParams = new URLSearchParams(window.location.search)
-            if (urlParams.get('payment') === 'success') {
-                localStorage.setItem('paymentCompleted', 'true')
-                // Clean up URL
-                window.history.replaceState({}, '', window.location.pathname)
-            }
-        }
-    }, [])
+    // No need for localStorage or payment flow checks anymore
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value, type } = e.target
@@ -113,46 +91,75 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
         }
     }
 
-    const handlePayment = () => {
-        // Save form data to localStorage before redirecting to Stripe
-        localStorage.setItem('nominationFormData', JSON.stringify(formData))
-        
-        // Redirect to Stripe payment link
-        // The success URL should be configured in the Stripe Dashboard for this payment link
-        window.location.href = `https://buy.stripe.com/6oUcN5e1I5oadnG8954c81d`
-    }
-
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmitAndPay = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsSubmitting(true)
         setSubmitMessage('')
 
         try {
-            const response = await fetch('/api/submit-nomination', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ...formData,
-                    nomineeProfilePicture: formData.nomineeProfilePicture?.name || 'None',
-                    nomineeProject: formData.nomineeProject?.name || 'None'
-                })
+            // Create FormData to handle file uploads
+            const formDataToSend = new FormData()
+            
+            // Add text fields
+            formDataToSend.append('nominatorFullName', formData.nominatorFullName)
+            formDataToSend.append('nominatorEmail', formData.nominatorEmail)
+            formDataToSend.append('nominatorCountryCode', formData.nominatorCountryCode)
+            formDataToSend.append('nominatorMobileNumber', formData.nominatorMobileNumber)
+            formDataToSend.append('nominatorCompany', formData.nominatorCompany)
+            formDataToSend.append('nominatorDesignation', formData.nominatorDesignation)
+            formDataToSend.append('nominatorCity', formData.nominatorCity)
+            formDataToSend.append('category', formData.category)
+            formDataToSend.append('nomineeProjectDetails', formData.nomineeProjectDetails)
+            formDataToSend.append('nomineeLinkedInURL', formData.nomineeLinkedInURL)
+            formDataToSend.append('nomineeInstagramLink', formData.nomineeInstagramLink)
+            formDataToSend.append('confirmation', formData.confirmation.toString())
+            
+            // Add files if they exist
+            if (formData.nomineeProfilePicture) {
+                formDataToSend.append('nomineeProfilePicture', formData.nomineeProfilePicture)
+            }
+            if (formData.nomineeProject) {
+                formDataToSend.append('nomineeProject', formData.nomineeProject)
+            }
+
+            console.log('Submitting nomination with files:', {
+                profilePicture: formData.nomineeProfilePicture?.name || 'None',
+                projectFile: formData.nomineeProject?.name || 'None'
             })
 
+            // Submit the form via email with files
+            const response = await fetch('/api/submit-nomination', {
+                method: 'POST',
+                body: formDataToSend // Don't set Content-Type header, let browser set it with boundary
+            })
+
+            const result = await response.json()
+            console.log('API Response:', result)
+
             if (response.ok) {
-                setSubmitMessage('Nomination submitted successfully! We will contact you soon.')
-                localStorage.removeItem('nominationFormData')
-                setTimeout(() => {
-                    onClose()
-                    resetForm()
-                }, 3000)
+                setSubmitMessage('Nomination submitted successfully! Check your email for confirmation. Opening payment page...')
+                
+                // Open Stripe payment link in new tab
+                const stripeWindow = window.open('https://buy.stripe.com/test_9B67sL2sQdH3eDBdQsgbm01', '_blank')
+                
+                // Check if popup was blocked
+                if (!stripeWindow || stripeWindow.closed || typeof stripeWindow.closed == 'undefined') {
+                    setSubmitMessage('Nomination submitted successfully! Check your email for confirmation. Please click the payment link below to complete payment.')
+                    setShowPaymentLink(true)
+                } else {
+                    // Close modal and reset form after 2 seconds
+                    setTimeout(() => {
+                        onClose()
+                        resetForm()
+                    }, 2000)
+                }
             } else {
-                setSubmitMessage('Error submitting nomination. Please try again.')
+                console.error('API Error:', result)
+                setSubmitMessage(result.error || 'Error submitting nomination. Please try again.')
             }
         } catch (error) {
             console.error('Error:', error)
-            setSubmitMessage('Error submitting nomination. Please try again.')
+            setSubmitMessage('Error submitting nomination. Please check your connection and try again.')
         } finally {
             setIsSubmitting(false)
         }
@@ -175,14 +182,11 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
             nomineeInstagramLink: '',
             confirmation: false
         })
-        setStep('form')
         setSubmitMessage('')
+        setShowPaymentLink(false)
     }
 
     const handleClose = () => {
-        if (step !== 'confirm') {
-            localStorage.removeItem('nominationFormData')
-        }
         onClose()
     }
 
@@ -249,16 +253,14 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                     <div className="modal-header" style={{ marginBottom: '30px' }}>
                         <h2 style={{ color: '#C9A545', fontSize: '28px', marginBottom: '10px' }}>
-                            {step === 'confirm' ? 'Confirm Your Nomination' : 'Submit Your Nomination'}
+                            Submit Your Nomination
                         </h2>
-                        {step === 'confirm' && (
-                            <p style={{ color: '#fff', fontSize: '14px' }}>
-                                Payment successful! Please review and confirm your nomination details below.
-                            </p>
-                        )}
+                        <p style={{ color: '#fff', fontSize: '14px' }}>
+                            Fill out the form below. Upon submission, we'll send your nomination details via email and open the payment page.
+                        </p>
                     </div>
 
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmitAndPay}>
                         {/* Nominator Information */}
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
@@ -271,7 +273,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.nominatorFullName}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -293,7 +294,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.nominatorEmail}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -317,7 +317,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.nominatorCountryCode}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -346,7 +345,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.nominatorMobileNumber}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     placeholder="Enter mobile number"
                                     style={{
                                         width: '100%',
@@ -372,7 +370,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.nominatorCompany}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -394,7 +391,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.nominatorDesignation}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -419,7 +415,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.nominatorCity}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -440,7 +435,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     value={formData.category}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -460,55 +454,53 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                         </div>
 
 
-                        {step !== 'confirm' && (
-                            <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
-                                <div>
-                                    <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                        Upload your profile picture <span style={{ color: '#C9A545' }}>*</span>
-                                    </label>
-                                    <input
-                                        type="file"
-                                        onChange={(e) => handleFileChange(e, 'nomineeProfilePicture')}
-                                        accept="image/*"
-                                        required
-                                        style={{
-                                            width: '100%',
-                                            padding: '12px',
-                                            backgroundColor: '#2a2a2a',
-                                            border: '1px solid #444',
-                                            borderRadius: '6px',
-                                            color: '#fff',
-                                            fontSize: '14px'
-                                        }}
-                                    />
-                                    <small style={{ color: '#888', fontSize: '12px', marginTop: '5px', display: 'block' }}>
-                                        Upload 1 supported file. Max 10 MB
-                                    </small>
-                                </div>
-                                <div>
-                                    <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                        Upload Your Project (if any)
-                                    </label>
-                                    <input
-                                        type="file"
-                                        onChange={(e) => handleFileChange(e, 'nomineeProject')}
-                                        accept=".pdf,.doc,.docx,.ppt,.pptx"
-                                        style={{
-                                            width: '100%',
-                                            padding: '12px',
-                                            backgroundColor: '#2a2a2a',
-                                            border: '1px solid #444',
-                                            borderRadius: '6px',
-                                            color: '#fff',
-                                            fontSize: '14px'
-                                        }}
-                                    />
-                                    <small style={{ color: '#888', fontSize: '12px', marginTop: '5px', display: 'block' }}>
-                                        Upload 1 supported file. Max 10 MB
-                                    </small>
-                                </div>
+                        <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                            <div>
+                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                    Upload your profile picture <span style={{ color: '#C9A545' }}>*</span>
+                                </label>
+                                <input
+                                    type="file"
+                                    onChange={(e) => handleFileChange(e, 'nomineeProfilePicture')}
+                                    accept="image/*"
+                                    required
+                                    style={{
+                                        width: '100%',
+                                        padding: '12px',
+                                        backgroundColor: '#2a2a2a',
+                                        border: '1px solid #444',
+                                        borderRadius: '6px',
+                                        color: '#fff',
+                                        fontSize: '14px'
+                                    }}
+                                />
+                                <small style={{ color: '#888', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                                    Upload 1 supported file. Max 10 MB
+                                </small>
                             </div>
-                        )}
+                            <div>
+                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                    Upload Your Project (if any)
+                                </label>
+                                <input
+                                    type="file"
+                                    onChange={(e) => handleFileChange(e, 'nomineeProject')}
+                                    accept=".pdf,.doc,.docx,.ppt,.pptx"
+                                    style={{
+                                        width: '100%',
+                                        padding: '12px',
+                                        backgroundColor: '#2a2a2a',
+                                        border: '1px solid #444',
+                                        borderRadius: '6px',
+                                        color: '#fff',
+                                        fontSize: '14px'
+                                    }}
+                                />
+                                <small style={{ color: '#888', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                                    Upload 1 supported file. Max 10 MB
+                                </small>
+                            </div>
+                        </div>
 
                         <div style={{ marginBottom: '20px' }}>
                             <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
@@ -519,7 +511,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 value={formData.nomineeProjectDetails}
                                 onChange={handleInputChange}
                                 required
-                                disabled={step === 'confirm'}
                                 rows={5}
                                 style={{
                                     width: '100%',
@@ -540,13 +531,12 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     Provide your LinkedIn URL <span style={{ color: '#C9A545' }}>*</span>
                                 </label>
                                 <input
-                                    type="url"
+                                    type="text"
                                     name="nomineeLinkedInURL"
                                     value={formData.nomineeLinkedInURL}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
-                                    placeholder="https://linkedin.com/in/yourprofile"
+                                    placeholder="https://linkedin.com/in/yourprofile or www.linkedin.com/in/yourprofile"
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -563,13 +553,12 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     Provide your Instagram Link for collaboration post <span style={{ color: '#C9A545' }}>*</span>
                                 </label>
                                 <input
-                                    type="url"
+                                    type="text"
                                     name="nomineeInstagramLink"
                                     value={formData.nomineeInstagramLink}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
-                                    placeholder="https://instagram.com/yourprofile"
+                                    placeholder="https://instagram.com/yourprofile or www.instagram.com/yourprofile"
                                     style={{
                                         width: '100%',
                                         padding: '12px',
@@ -591,7 +580,6 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     checked={formData.confirmation}
                                     onChange={handleInputChange}
                                     required
-                                    disabled={step === 'confirm'}
                                     style={{
                                         marginRight: '10px',
                                         marginTop: '4px',
@@ -614,11 +602,32 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 fontSize: '14px'
                             }}>
                                 {submitMessage}
+                                {showPaymentLink && (
+                                    <div style={{ marginTop: '15px' }}>
+                                        <a 
+                                            href="https://buy.stripe.com/test_9B67sL2sQdH3eDBdQsgbm01" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                display: 'inline-block',
+                                                padding: '12px 24px',
+                                                backgroundColor: '#C9A545',
+                                                color: '#000',
+                                                textDecoration: 'none',
+                                                borderRadius: '6px',
+                                                fontWeight: 'bold',
+                                                fontSize: '16px'
+                                            }}
+                                        >
+                                            Complete Payment - $500
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         )}
 
                         <div style={{ display: 'flex', gap: '15px' }}>
-                            {step !== 'confirm' ? (
+                            {!showPaymentLink ? (
                                 <>
                                     <button
                                         type="button"
@@ -638,40 +647,43 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                         Cancel
                                     </button>
                                     <button
-                                        type="button"
-                                        onClick={handlePayment}
+                                        type="submit"
+                                        disabled={isSubmitting}
                                         style={{
                                             flex: 1,
                                             padding: '14px',
-                                            backgroundColor: '#C9A545',
+                                            backgroundColor: isSubmitting ? '#666' : '#C9A545',
                                             border: 'none',
                                             color: '#000',
                                             borderRadius: '6px',
-                                            cursor: 'pointer',
+                                            cursor: isSubmitting ? 'not-allowed' : 'pointer',
                                             fontSize: '16px',
                                             fontWeight: 'bold'
                                         }}
                                     >
-                                        Pay to Continue
+                                        {isSubmitting ? 'Submitting...' : 'Submit & Pay'}
                                     </button>
                                 </>
                             ) : (
                                 <button
-                                    type="submit"
-                                    disabled={isSubmitting}
+                                    type="button"
+                                    onClick={() => {
+                                        onClose()
+                                        resetForm()
+                                    }}
                                     style={{
                                         width: '100%',
                                         padding: '14px',
-                                        backgroundColor: isSubmitting ? '#666' : '#C9A545',
+                                        backgroundColor: '#C9A545',
                                         border: 'none',
                                         color: '#000',
                                         borderRadius: '6px',
-                                        cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                                        cursor: 'pointer',
                                         fontSize: '16px',
                                         fontWeight: 'bold'
                                     }}
                                 >
-                                    {isSubmitting ? 'Submitting...' : 'Confirm & Submit Nomination'}
+                                    Close
                                 </button>
                             )}
                         </div>
