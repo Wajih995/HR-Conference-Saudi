@@ -11,8 +11,11 @@ const CircleText: React.FC<CircleTextProps> = ({ text }) => {
 	useEffect(() => {
 		if (circleRef.current) {
 			const elements = circleRef.current.querySelectorAll<HTMLSpanElement>("span")
+			const totalChars = elements.length
+			const degreePerChar = 360 / totalChars // Calculate degree based on total characters
+			
 			elements.forEach((element, i) => {
-				element.style.transform = `rotate(${i * 17}deg)`
+				element.style.transform = `rotate(${i * degreePerChar}deg)`
 			})
 		}
 	}, [text]) // Dependency on text to reapply effect if text changes

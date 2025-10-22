@@ -56,15 +56,15 @@ export default function BrandSlider() {
 		<>
 			<Swiper {...swiperOptions} className="brand-slider-area owl-carousel">
 				<SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img1.png" alt="" />
+					<img src="/assets/img/all-images/used-images/Dorat-Najd-Resort-Logo.png.png" alt="" />
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img2.png" alt="" />
+					<img src="/assets/img/all-images/used-images/wings-way-logo.jpg" alt="" />
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img3.png" alt="" />
+					<img src="/assets/img/all-images/used-images/lets-media-solution-logo.png" alt="" />
 				</SwiperSlide>
-				<SwiperSlide className="brand-box">
+				{/* <SwiperSlide className="brand-box">
 					<img src="/assets/img/elements/brand-img4.png" alt="" />
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
@@ -78,7 +78,8 @@ export default function BrandSlider() {
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
 					<img src="/assets/img/elements/brand-img8.png" alt="" />
-				</SwiperSlide>
+				</SwiperSlide> */}
+
 			</Swiper>
 		</>
 	)

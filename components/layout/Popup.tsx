@@ -51,16 +51,16 @@ export default function Popup() {
 				<div className="popup-content">
 					<span className="close-btn" id="close-popup">×</span>
 					<div className="popup-icon">
-						<img src="/assets/img/logo/w-master-logo.png" alt="" />
+						<img src="/assets/img/logo/final-logo.png" alt="" />
 					</div>
 					<div className="space32" />
 					<div className="heading2">
-						<h2>Grow your business with our agency</h2>
+						<h2>Empower Your Leadership Journey</h2>
 						<div className="space8" />
 						<ul>
-							<li><img src="/assets/img/icons/check3.svg" alt="" />Elevate User Experience Expertise</li>
-							<li><img src="/assets/img/icons/check3.svg" alt="" /> Elevate Your UI/UX Skills Designer</li>
-							<li><img src="/assets/img/icons/check3.svg" alt="" />Join Leading UI/UX Event the Year</li>
+							<li><img src="/assets/img/icons/check3.svg" alt="" />Celebrate Women Transforming Workplaces</li>
+							<li><img src="/assets/img/icons/check3.svg" alt="" /> Gain Insights from Top CHROs & HR Visionaries</li>
+							<li><img src="/assets/img/icons/check3.svg" alt="" />Join the GCC’s Premier HR Leadership Conference</li>
 						</ul>
 					</div>
 					<div className="space50" />

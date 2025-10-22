@@ -4,6 +4,7 @@ import AOS from 'aos'
 import { useEffect, useState } from "react"
 import AddClassBody from '../elements/AddClassBody'
 import BackToTop from '../elements/BackToTop'
+import WhatsAppButton from '../elements/WhatsAppButton'
 import Footer1 from './footer/Footer1'
 import Footer10 from './footer/Footer10'
 import Footer2 from './footer/Footer2'
@@ -93,6 +94,7 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, chil
 			{footerStyle == 10 ? <Footer10 /> : null}
 
 			<BackToTop target="#top" />
+			<WhatsAppButton />
 		</>
 	)
 }

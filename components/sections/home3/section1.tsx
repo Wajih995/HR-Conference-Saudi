@@ -30,7 +30,7 @@ export default function Section1() {
 								<div className="arrow-btnarea">
 									<Link href="/about">
 										<div className="content" >
-											<CircleText text="Build Success Brand." />
+											<CircleText text="Build LEAD INSPIRE EMPOWER." />
 										</div>
 										<img src="/assets/img/icons/arrow1.svg" alt="" className="arrow1" />
 									</Link>

@@ -85,7 +85,7 @@ export default function Footer1() {
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-4.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+											<img src="/assets/img/all-images/used-images/footer-4.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>
@@ -101,7 +101,7 @@ export default function Footer1() {
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-6.webp" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+											<img src="/assets/img/all-images/used-images/footer-6.avif" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="icons">
 												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
 											</div>
@@ -115,7 +115,7 @@ export default function Footer1() {
 					<div className="row">
 						<div className="col-lg-12">
 							<div className="copyright">
-								<p>© Copyright {new Date().getFullYear()} -Eventify. All Right Reserved</p>
+								<p>© Copyright {new Date().getFullYear()} -BRX Events. All Right Reserved</p>
 							</div>
 						</div>
 					</div>

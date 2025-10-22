@@ -11,7 +11,7 @@ export default function About() {
 
 			<Layout headerStyle={3} footerStyle={1}>
 				<div>
-					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/bg/header-bg5.png)' }}>
+					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/all-images/used-images/about-banner.png)' }}>
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-4 m-auto">
@@ -32,19 +32,19 @@ export default function About() {
 								<div className="col-lg-6">
 									<div className="about-imges">
 										<div className="img1 reveal image-anime">
-											<img src="/assets/img/all-images/about/about-img1.png" alt="" />
+											<img src="/assets/img/all-images/used-images/about-sec-3.avif" alt="" />
 										</div>
 										<div className="row">
 											<div className="col-lg-6 col-md-6">
 												<div className="space30" />
 												<div className="img1 reveal image-anime">
-													<img src="/assets/img/all-images/about/about-img2.png" alt="" />
+													<img src="/assets/img/all-images/used-images/about-sec-1.jpg" alt="" />
 												</div>
 											</div>
 											<div className="col-lg-6 col-md-6">
 												<div className="space30" />
 												<div className="img1 reveal image-anime">
-													<img src="/assets/img/all-images/about/about-img3.png" alt="" />
+													<img src="/assets/img/all-images/used-images/about-sec-2.webp" alt="" />
 												</div>
 											</div>
 										</div>
@@ -67,7 +67,7 @@ export default function About() {
                                         <div className="space16" />
                                         <h2 className="text-anime-style-3">Explore the Future of HR Leadership</h2>
                                         <div className="space16" />
-                                        <p data-aos="fade-left" data-aos-duration={900}>Explore the Future of HR Leadership at our flagship annual conference — a premier platform dedicated to empowering women leaders and transforming workplaces across the GCC. The HR Women Leadership Conference & Awards 2026 is designed to inspire, challenge, and redefine how organizations approach inclusion, equity, leadership, and talent development. From building resilient workplaces and advancing DEI strategies to aligning people practices with Saudi Vision 2030, this event brings together the brightest minds shaping the future of HR.</p>
+                                        <p data-aos="fade-left" data-aos-duration={900}>Discover the Future of HR Leadership at the <strong>HR Women Leadership Conference & Awards 2026</strong>. The GCC’s premier platform celebrating women who are transforming workplaces and driving inclusive growth. This flagship event inspires bold ideas, sparks collaboration, and redefines leadership through <strong>resilience, equity, and innovation</strong>. From advancing DEI and talent development to shaping future-ready people strategies, it brings together the region’s most influential HR minds to lead the change.</p>
                                         <div className="space32" />
                                         <div className="about-counter-area">
                                             <div className="counter-box">
@@ -98,28 +98,28 @@ export default function About() {
                     {/*===== ABOUT AREA ENDS =======*/}
 
                     {/*===== ABOUT THE EVENT (TEXT) STARTS =======*/}
-                    <div className="about-text-section sp2">
+                    <div className="about-text-section sp2" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-10 m-auto">
                                     <div className="heading2 text-center space-margin60">
-                                        <h5>About the Event</h5>
+                                        <h5 style={{color: 'white'}}>About the Event</h5>
                                         <div className="space18" />
-                                        <h2 className="text-anime-style-3" style={{fontSize: '32px', lineHeight: '40px'}}>Women Leading Change: Inclusive, Resilient & Vision-Driven HR in the GCC</h2>
+                                        <h2 className="text-anime-style-3" style={{fontSize: '32px', lineHeight: '40px', color: 'white'}}>Women Leading Change: Inclusive, Resilient & Vision-Driven HR in the GCC</h2>
                                     </div>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-lg-10 m-auto">
                                     <div className="choose-widget-boxarea">
-                                        <div className="content-area heading2">
-                                            <p>Women Leading Change: Inclusive, Resilient & Vision-Driven HR in the GCC is a pioneering leadership conference and awards platform dedicated to celebrating and empowering women shaping the future of Human Resources in the Gulf region.</p>
+                                        <div className="content-area heading2" style={{textAlign: 'center'}}>
+                                            <p style={{color: 'white'}}><strong>Women Leading Change: Inclusive, Resilient & Vision-Driven HR in the GCC</strong> is a groundbreaking conference and awards platform celebrating women shaping the future of Human Resources across the Gulf.</p>
                                             <div className="space16" />
-                                            <p>Taking place in January 2026 in [City, Saudi Arabia], this one-of-a-kind event brings together visionary CHROs, HR Directors, People Leaders, policymakers, and industry pioneers who are transforming workplaces and rewriting leadership narratives across the GCC.</p>
+                                            <p style={{color: 'white'}}>Happening on <strong>20 January 2026 in Riyadh, Saudi Arabia</strong>, it unites <strong>CHROs, HR Directors, People Leaders, and policymakers</strong> driving transformation and rewriting leadership narratives across the region.</p>
                                             <div className="space16" />
-                                            <p>Anchored in the principles of Saudi Vision 2030, the conference spotlights how women leaders are driving organizational transformation, championing inclusive cultures, and breaking long-standing barriers in male-dominated industries. Through insightful keynotes, high-impact panel discussions, case studies, and strategic networking, we explore the evolving role of HR as a driver of business resilience, equity, and innovation.</p>
+                                            <p style={{color: 'white'}}>The event spotlights how women are redefining workplaces — championing inclusion, innovation, and organizational resilience through powerful <strong>keynotes, panels, and case studies</strong>.</p>
                                             <div className="space16" />
-                                            <p>From pay equity to maternity acceleration, from measurable DEI outcomes to next-generation leadership pipelines — this platform isn’t just about dialogue, it’s about actionable strategies, real-world impact, and future-ready HR leadership.</p>
+                                            <p style={{color: 'white'}}>From <strong>pay equity to leadership pipelines, this platform goes beyond conversation — delivering actionable insights, measurable impact, and future-ready HR leadership</strong>.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -255,10 +255,10 @@ export default function About() {
 										</div>
 										<ul>
 											<li>
-												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />30 January 2025 - 6pm to 11:30pm</Link>
+												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />20 January 2026</Link>
 											</li>
 											<li className="m-0">
-												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Secret Location In The UK</Link>
+												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 											</li>
 										</ul>
 									</div>
@@ -268,7 +268,7 @@ export default function About() {
 					</div>
 					{/*===== CTA AREA ENDS =======*/}
 					{/*===== CTA AREA STARTS =======*/}
-					<div className="cta1-section-area d-lg-none d-block">
+					{/* <div className="cta1-section-area d-lg-none d-block">
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-10 m-auto">
@@ -281,17 +281,17 @@ export default function About() {
 										</div>
 										<ul>
 											<li>
-												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />30 January 2025 - 6pm to 11:30pm</Link>
+												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />20 January 2026</Link>
 											</li>
 											<li className="m-0">
-												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Secret Location In The UK</Link>
+												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 
 			</Layout>

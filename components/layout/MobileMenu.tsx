@@ -15,7 +15,7 @@ const handleAccordion = (key: any) => {
 					<div className="col-12">
 						<div className="mobile-header-elements">
 							<div className="mobile-logo">
-								<Link href="//"><img src="/assets/img/logo/logo1.png" alt="" /></Link>
+								<Link href="//"><img src="/assets/img/logo/final-logo.png" alt="" /></Link>
 							</div>
 							<div className="mobile-nav-icon dots-menu" onClick={handleMobileMenu}>
 								<i className="fa-solid fa-bars-staggered" />

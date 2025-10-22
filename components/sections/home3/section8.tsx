@@ -11,7 +11,7 @@ export default function Section8() {
 					<div className="row">
 						<div className="col-lg-5 m-auto">
 							<div className="contact3-header text-center heading5 space-margin60">
-								<h5>how to reach</h5>
+								<h5>Contact Us</h5>
 								<div className="space18" />
 								<h2 className="text-anime-style-3">Direction To The Venue</h2>
 							</div>

@@ -148,9 +148,9 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                     setShowPaymentLink(true)
                 } else {
                     // Close modal and reset form after 2 seconds
-                    setTimeout(() => {
-                        onClose()
-                        resetForm()
+                setTimeout(() => {
+                    onClose()
+                    resetForm()
                     }, 2000)
                 }
             } else {
@@ -255,202 +255,202 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                         <h2 style={{ color: '#C9A545', fontSize: '28px', marginBottom: '10px' }}>
                             Submit Your Nomination
                         </h2>
-                        <p style={{ color: '#fff', fontSize: '14px' }}>
+                            <p style={{ color: '#fff', fontSize: '14px' }}>
                             Fill out the form below. Upon submission, we'll send your nomination details via email and open the payment page.
-                        </p>
+                            </p>
                     </div>
 
                     <form onSubmit={handleSubmitAndPay}>
                         {/* Nominator Information */}
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Full Name <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="nominatorFullName"
-                                    value={formData.nominatorFullName}
-                                    onChange={handleInputChange}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
-                            </div>
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Full Name <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="nominatorFullName"
+                                value={formData.nominatorFullName}
+                                onChange={handleInputChange}
+                                required
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
+                        </div>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Official Email ID <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
-                                    type="email"
-                                    name="nominatorEmail"
-                                    value={formData.nominatorEmail}
-                                    onChange={handleInputChange}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Official Email ID <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
+                                type="email"
+                                name="nominatorEmail"
+                                value={formData.nominatorEmail}
+                                onChange={handleInputChange}
+                                required
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
                             </div>
                         </div>
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Country Code <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <select
-                                    name="nominatorCountryCode"
-                                    value={formData.nominatorCountryCode}
-                                    onChange={handleInputChange}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                >
-                                    <option value="+971">+971 (UAE)</option>
-                                    <option value="+966">+966 (Saudi Arabia)</option>
-                                    <option value="+974">+974 (Qatar)</option>
-                                    <option value="+973">+973 (Bahrain)</option>
-                                    <option value="+965">+965 (Kuwait)</option>
-                                    <option value="+968">+968 (Oman)</option>
-                                </select>
-                            </div>
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Country Code <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <select
+                                name="nominatorCountryCode"
+                                value={formData.nominatorCountryCode}
+                                onChange={handleInputChange}
+                                required
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            >
+                                <option value="+971">+971 (UAE)</option>
+                                <option value="+966">+966 (Saudi Arabia)</option>
+                                <option value="+974">+974 (Qatar)</option>
+                                <option value="+973">+973 (Bahrain)</option>
+                                <option value="+965">+965 (Kuwait)</option>
+                                <option value="+968">+968 (Oman)</option>
+                            </select>
+                        </div>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Mobile Number <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
-                                    type="tel"
-                                    name="nominatorMobileNumber"
-                                    value={formData.nominatorMobileNumber}
-                                    onChange={handleInputChange}
-                                    required
-                                    placeholder="Enter mobile number"
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Mobile Number <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
+                                type="tel"
+                                name="nominatorMobileNumber"
+                                value={formData.nominatorMobileNumber}
+                                onChange={handleInputChange}
+                                required
+                                placeholder="Enter mobile number"
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
                             </div>
                         </div>
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Company Name <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="nominatorCompany"
-                                    value={formData.nominatorCompany}
-                                    onChange={handleInputChange}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
-                            </div>
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Company Name <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="nominatorCompany"
+                                value={formData.nominatorCompany}
+                                onChange={handleInputChange}
+                                required
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
+                        </div>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Designation <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="nominatorDesignation"
-                                    value={formData.nominatorDesignation}
-                                    onChange={handleInputChange}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Designation <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="nominatorDesignation"
+                                value={formData.nominatorDesignation}
+                                onChange={handleInputChange}
+                                required
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
                             </div>
                         </div>
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    City <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    name="nominatorCity"
-                                    value={formData.nominatorCity}
-                                    onChange={handleInputChange}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
-                            </div>
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                City <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="nominatorCity"
+                                value={formData.nominatorCity}
+                                onChange={handleInputChange}
+                                required
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
+                        </div>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Category of Nomination <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <select
-                                    name="category"
-                                    value={formData.category}
-                                    onChange={handleInputChange}
-                                    required
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                >
-                                    <option value="">Select a category</option>
-                                    {categories.map((cat, index) => (
-                                        <option key={index} value={cat}>{cat}</option>
-                                    ))}
-                                </select>
-                            </div>
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Category of Nomination <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <select
+                                name="category"
+                                value={formData.category}
+                                onChange={handleInputChange}
+                                required
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            >
+                                <option value="">Select a category</option>
+                                {categories.map((cat, index) => (
+                                    <option key={index} value={cat}>{cat}</option>
+                                ))}
+                            </select>
+                        </div>
                         </div>
 
 
@@ -527,48 +527,48 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Provide your LinkedIn URL <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Provide your LinkedIn URL <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
                                     type="text"
-                                    name="nomineeLinkedInURL"
-                                    value={formData.nomineeLinkedInURL}
-                                    onChange={handleInputChange}
-                                    required
+                                name="nomineeLinkedInURL"
+                                value={formData.nomineeLinkedInURL}
+                                onChange={handleInputChange}
+                                required
                                     placeholder="https://linkedin.com/in/yourprofile or www.linkedin.com/in/yourprofile"
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
-                            </div>
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
+                        </div>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Provide your Instagram Link for collaboration post <span style={{ color: '#C9A545' }}>*</span>
-                                </label>
-                                <input
+                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                Provide your Instagram Link for collaboration post <span style={{ color: '#C9A545' }}>*</span>
+                            </label>
+                            <input
                                     type="text"
-                                    name="nomineeInstagramLink"
-                                    value={formData.nomineeInstagramLink}
-                                    onChange={handleInputChange}
-                                    required
+                                name="nomineeInstagramLink"
+                                value={formData.nomineeInstagramLink}
+                                onChange={handleInputChange}
+                                required
                                     placeholder="https://instagram.com/yourprofile or www.instagram.com/yourprofile"
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px',
-                                        backgroundColor: '#2a2a2a',
-                                        border: '1px solid #444',
-                                        borderRadius: '6px',
-                                        color: '#fff',
-                                        fontSize: '14px'
-                                    }}
-                                />
+                                style={{
+                                    width: '100%',
+                                    padding: '12px',
+                                    backgroundColor: '#2a2a2a',
+                                    border: '1px solid #444',
+                                    borderRadius: '6px',
+                                    color: '#fff',
+                                    fontSize: '14px'
+                                }}
+                            />
                             </div>
                         </div>
 
@@ -646,21 +646,21 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     >
                                         Cancel
                                     </button>
-                                    <button
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                        style={{
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    style={{
                                             flex: 1,
-                                            padding: '14px',
-                                            backgroundColor: isSubmitting ? '#666' : '#C9A545',
-                                            border: 'none',
-                                            color: '#000',
-                                            borderRadius: '6px',
-                                            cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                                            fontSize: '16px',
-                                            fontWeight: 'bold'
-                                        }}
-                                    >
+                                        padding: '14px',
+                                        backgroundColor: isSubmitting ? '#666' : '#C9A545',
+                                        border: 'none',
+                                        color: '#000',
+                                        borderRadius: '6px',
+                                        cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                                        fontSize: '16px',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
                                         {isSubmitting ? 'Submitting...' : 'Submit & Pay'}
                                     </button>
                                 </>

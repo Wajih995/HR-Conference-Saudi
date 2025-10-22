@@ -16,14 +16,26 @@ const getPartsOfTimeDuration = (duration: number) => {
 }
 
 export default function Countdown({ style }: any) {
-	const [timeDif, setTimeDif] = useState(() => {
-		const now = Date.now()
-		const endDateTime = new Date()
-		endDateTime.setDate(endDateTime.getDate() + 2) // Set end date 2 days from now
-		return endDateTime.getTime() - now
-	})
+	const [timeDif, setTimeDif] = useState(0)
+	const [isClient, setIsClient] = useState(false)
 
 	useEffect(() => {
+		// Set client-side flag
+		setIsClient(true)
+		
+		// Initialize countdown on client side only
+		const now = Date.now()
+		const endDateTime = new Date('2026-01-20T12:00:00')
+		const timeDifference = endDateTime.getTime() - now
+		
+		// Set initial time difference
+		setTimeDif(timeDifference > 0 ? timeDifference : 0)
+	}, [])
+
+	useEffect(() => {
+		// Only run countdown on client side
+		if (!isClient) return
+
 		const interval = setInterval(() => {
 			setTimeDif((prev) => {
 				const updatedTime = prev - 1000
@@ -36,7 +48,7 @@ export default function Countdown({ style }: any) {
 		}, 1000)
 
 		return () => clearInterval(interval)
-	}, [])
+	}, [isClient])
 
 	const timeParts = getPartsOfTimeDuration(timeDif)
 

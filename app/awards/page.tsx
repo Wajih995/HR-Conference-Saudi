@@ -31,7 +31,7 @@ export default function Awards() {
 
 			<Layout headerStyle={3} footerStyle={1}>
 				<div>
-					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/bg/header-bg5.png)' }}>
+					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/all-images/used-images/Vacheron-Constantin.png)' }}>
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-4 m-auto">
@@ -151,91 +151,91 @@ export default function Awards() {
                     {/*===== WHY BE PART SECTION ENDS =======*/}
 
 					{/*===== DEADLINES TIMELINE STARTS =======*/}
-					<div className="sp2">
+					<div className="sp2" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-4 m-auto">
 									<div className="heading2 text-center space-margin60">
-										<h5>Deadlines</h5>
+										<h5 style={{color: 'white'}}>Deadlines</h5>
 									</div>
 								</div>
 							</div>
                             {/* Desktop timeline (alternating cards) */}
                             <div className="d-none d-lg-block mt-5" style={{position:'relative', paddingTop:120, paddingBottom:120}}>
-                                <div style={{position:'absolute', left:0, right:0, top:'50%', height:4, background:'rgb(160 15 161)', borderRadius:2}} />
+                                <div style={{position:'absolute', left:0, right:0, top:'50%', height:4, background:'white', borderRadius:2}} />
                                 <div className="row text-center">
                                     {/* 01 - above the line */}
                                     <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid #0B0B0B'}} />
-                                        <div style={{position:'absolute', top:'calc(50% - 80px)', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'#0B0B0B'}} />
+                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
+                                        <div style={{position:'absolute', top:'calc(50% - 80px)', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
                                         <div className="choose-widget-boxarea" style={{position:'absolute', top:'calc(50% - 145px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5>01</h5>
-                                            <h4 style={{fontSize: '20px',}}>Applications Open</h4>
-                                            <p>1st November 2025</p>
+                                            <h5 style={{color: 'white'}}>01</h5>
+                                            <h4 style={{fontSize: '20px', color: 'white'}}>Applications Open</h4>
+                                            <p style={{color: 'white'}}>25th October 2025</p>
                                         </div>
                                     </div>
                                     {/* 02 - below the line */}
                                     <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid #0B0B0B'}} />
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'#0B0B0B'}} />
+                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
+                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
                                         <div className="choose-widget-boxarea" style={{position:'absolute', bottom:'calc(50% - 170px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5>02</h5>
-                                            <h4 style={{fontSize: '20px',}}>Nomination Form Submission Deadline</h4>
-                                            <p>5 January 2026</p>
+                                            <h5 style={{color: 'white'}}>02</h5>
+                                            <h4 style={{fontSize: '20px', color: 'white'}}>Nomination Form Submission Deadline</h4>
+                                            <p style={{color: 'white'}}>15th January 2026</p>
                                         </div>
                                     </div>
                                     {/* 03 - above the line */}
                                     <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid #0B0B0B'}} />
-                                        <div style={{position:'absolute', top:'calc(50% - 80px)', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'#0B0B0B'}} />
+                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
+                                        <div style={{position:'absolute', top:'calc(50% - 80px)', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
                                         <div className="choose-widget-boxarea" style={{position:'absolute', top:'calc(50% - 145px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5>03</h5>
-                                            <h4 style={{fontSize: '20px',}}>Jury Selection</h4>
-                                            <p>20th January 2026</p>
+                                            <h5 style={{color: 'white'}}>03</h5>
+                                            <h4 style={{fontSize: '20px', color: 'white'}}>Jury Selection</h4>
+                                            <p style={{color: 'white'}}>18th January 2026</p>
                                         </div>
                                     </div>
                                     {/* 04 - below the line */}
                                     <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid #0B0B0B'}} />
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'#0B0B0B'}} />
+                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
+                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
                                         <div className="choose-widget-boxarea" style={{position:'absolute', bottom:'calc(50% - 150px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5>04</h5>
-                                            <h4 style={{fontSize: '20px',}}>Awards Ceremony</h4>
-                                            <p>20th January 2026</p>
+                                            <h5 style={{color: 'white'}}>04</h5>
+                                            <h4 style={{fontSize: '20px', color: 'white'}}>Awards Ceremony</h4>
+                                            <p style={{color: 'white'}}>20th January 2026</p>
                                         </div>
                                     </div>
                                 </div>
                                 {/* end arrow */}
-                                <div style={{position:'absolute', right:-6, top:'calc(50% - 10px)', width:0, height:0, borderTop:'10px solid transparent', borderBottom:'10px solid transparent', borderLeft:'14px solid #0B0B0B'}} />
+                                <div style={{position:'absolute', right:-6, top:'calc(50% - 10px)', width:0, height:0, borderTop:'10px solid transparent', borderBottom:'10px solid transparent', borderLeft:'14px solid white'}} />
                             </div>
 							{/* Mobile stacked */}
 							<div className="d-lg-none">
 								<div className="row">
 									<div className="col-12 mb-3">
 										<div className="choose-widget-boxarea text-center">
-											<h5>01</h5>
-											<h4>Applications Open</h4>
-											<p style={{color: 'white'}}>1st November 2025</p>
+											<h5 style={{color: 'white'}}>01</h5>
+											<h4 style={{color: 'white'}}>Applications Open</h4>
+											<p style={{color: 'white'}}>25th October 2025</p>
 										</div>
 									</div>
 									<div className="col-12 mb-3">
 										<div className="choose-widget-boxarea text-center">
-											<h5>02</h5>
-											<h4>Nomination Form Submission Deadline</h4>
-											<p style={{color: 'white'}}>5 January 2026</p>
+											<h5 style={{color: 'white'}}>02</h5>
+											<h4 style={{color: 'white'}}>Nomination Form Submission Deadline</h4>
+											<p style={{color: 'white'}}>15th January 2026</p>
 										</div>
 									</div>
 									<div className="col-12 mb-3">
 										<div className="choose-widget-boxarea text-center">
-											<h5>03</h5>
-											<h4>Jury Selection</h4>
-											<p style={{color: 'white'}}>20th January 2026</p>
+											<h5 style={{color: 'white'}}>03</h5>
+											<h4 style={{color: 'white'}}>Jury Selection</h4>
+											<p style={{color: 'white'}}>18th January 2026</p>
 										</div>
 									</div>
 									<div className="col-12">
 										<div className="choose-widget-boxarea text-center">
-											<h5>04</h5>
-											<h4>Awards Ceremony</h4>
+											<h5 style={{color: 'white'}}>04</h5>
+											<h4 style={{color: 'white'}}>Awards Ceremony</h4>
 											<p style={{color: 'white'}}>20th January 2026</p>
 										</div>
 									</div>
@@ -251,7 +251,6 @@ export default function Awards() {
 							<div className="row">
 								<div className="col-lg-8 m-auto">
 									<div className="heading2 text-center space-margin60">
-										<h5>Awards Categories</h5>
 										<div className="space18" />
 										<h2 className="text-anime-style-3">Celebrating Excellence in HR Leadership</h2>
 										<div className="space16" />
@@ -263,7 +262,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="BEST DIVERSITY INCLUSION STRATEGY" fontSize="16px" />
+											<LaurelWreathWithText title="BEST DIVERSITY INCLUSION, STRATEGY" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours initiatives that successfully foster diverse, equitable, and inclusive workplaces.</p>
@@ -273,7 +272,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="BEST EMPLOYEE ENGAGEMENT STRATEGY" fontSize="16px" />
+											<LaurelWreathWithText title="BEST EMPLOYEE ENGAGEMENT, STRATEGY" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates innovative strategies that significantly enhance employee motivation and satisfaction.</p>
@@ -304,7 +303,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="BEST HR TECHNOLOGY IMPLEMENTATION" fontSize="16px" />
+											<LaurelWreathWithText title="BEST HR, TECHNOLOGY IMPLEMENTATION" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Acknowledges organizations that leverage cutting-edge HR technology to enhance processes.</p>
@@ -370,7 +369,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="BEST REWARDS & RECOGNITION STRATEGY" fontSize="16px" />
+											<LaurelWreathWithText title="BEST REWARDS ,&, RECOGNITION, STRATEGY" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Acknowledges outstanding reward and recognition programs that motivate employees.</p>
@@ -381,7 +380,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="BEST SOCIAL IMPACT INITIATIVE" fontSize="16px" />
+											<LaurelWreathWithText title="BEST SOCIAL ,IMPACT INITIATIVE" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours organizations delivering significant social change through HR-driven initiatives.</p>
@@ -425,7 +424,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="EMPLOYER OF THE YEAR" fontSize="16px" />
+											<LaurelWreathWithText title="EMPLOYER ,OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates organizations that set new benchmarks for workplace excellence.</p>
@@ -436,7 +435,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="HR TEAM OF THE YEAR" fontSize="16px" />
+											<LaurelWreathWithText title="HR TEAM ,OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours collaborative HR teams delivering exceptional results across people strategy.</p>
@@ -458,7 +457,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="DEI, CHANGEMAKER AWARD" fontSize="16px" />
+											<LaurelWreathWithText title="DEI, CHANGEMAKER ,AWARD" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours individuals or teams driving meaningful diversity, equity, and inclusion impact.</p>
@@ -518,7 +517,7 @@ export default function Awards() {
 												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />30 January 2026 - 6pm to 11:30pm</Link>
 											</li>
 											<li className="m-0">
-												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />[City], Saudi Arabia</Link>
+												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 											</li>
 										</ul>
 									</div>

@@ -19,10 +19,10 @@ export default function Home() {
 				<Section2 />
 				{/* <Section3 />
 				<Section4 /> */}
+				<Section7 />
+				<Section8 />
 				<Section5 />
 				<Section6 />
-				<Section8 />
-				<Section7 />
 				<Section9 />
 				<Section10 />
 			</Layout>
