@@ -16,9 +16,15 @@ const getPartsOfTimeDuration = (duration: number) => {
 }
 
 export default function Countdown2() {
-	const [timeDif, setTimeDif] = useState(() => {
+	const [timeDif, setTimeDif] = useState(0)
+	const [isClient, setIsClient] = useState(false)
+
+	useEffect(() => {
+		// Set client-side flag
+		setIsClient(true)
+		
+		// Initialize countdown on client side only
 		const now = Date.now()
-		// Set countdown to January 20, 2026 at 12:00 PM
 		const endDateTime = new Date('2026-01-20T12:00:00')
 		const timeDifference = endDateTime.getTime() - now
 		
@@ -28,11 +34,14 @@ export default function Countdown2() {
 		console.log('Time Difference (ms):', timeDifference)
 		console.log('Time Difference (days):', Math.floor(timeDifference / msInDay))
 		
-		// If the date has already passed, return 0
-		return timeDifference > 0 ? timeDifference : 0
-	})
+		// Set initial time difference
+		setTimeDif(timeDifference > 0 ? timeDifference : 0)
+	}, [])
 
 	useEffect(() => {
+		// Only run countdown on client side
+		if (!isClient) return
+
 		const interval = setInterval(() => {
 			setTimeDif((prev) => {
 				const updatedTime = prev - 1000
@@ -45,9 +54,37 @@ export default function Countdown2() {
 		}, 1000)
 
 		return () => clearInterval(interval)
-	}, [])
+	}, [isClient])
 
 	const timeParts = getPartsOfTimeDuration(timeDif)
+
+	// Show loading state during hydration
+	if (!isClient) {
+		return (
+			<div className="row">
+				<div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration={900}>
+					<div className="time-box">
+						<span id="days1" className="time-value">--<span>Days</span></span>
+					</div>
+				</div>
+				<div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration={1000}>
+					<div className="time-box">
+						<span id="hours1" className="time-value">--<span>Hours</span></span>
+					</div>
+				</div>
+				<div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration={1100}>
+					<div className="time-box">
+						<span id="minutes1" className="time-value">--<span>Minutes</span></span>
+					</div>
+				</div>
+				<div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration={1200}>
+					<div className="time-box">
+						<span id="seconds1" className="time-value">--<span>Seconds</span></span>
+					</div>
+				</div>
+			</div>
+		)
+	}
 
 	return (
 		<div className="row">

@@ -13,7 +13,7 @@ export default function Section2() {
 							<div className="about3-images">
 								{/* <img src="/assets/img/all-images/about/about-img10.png" alt="" className="about-img10 aniamtion-key-1" /> */}
 								<div className="img1" data-aos="zoom-in" data-aos-duration={1000}>
-									<img src="/assets/img/all-images/about/section-image-2.jpg" alt="" />
+									<img src="/assets/img/all-images/used-images/slider-3.jpg" alt="" />
 								</div>
 								<div className="img2" data-aos="zoom-in" data-aos-duration={1100}>
 									<img src="/assets/img/all-images/about/about-2.webp" alt="" />
