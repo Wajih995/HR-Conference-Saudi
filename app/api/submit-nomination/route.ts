@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
-import { writeFile, unlink } from 'fs/promises'
-import { join } from 'path'
 
 export async function POST(request: NextRequest) {
-    let uploadedFiles: string[] = []
     
     try {
         console.log('=== Nomination API called ===')
@@ -79,7 +76,7 @@ export async function POST(request: NextRequest) {
 
         console.log('Email transporter created successfully')
 
-        // Handle file uploads
+        // Handle file uploads - use buffer instead of file system for production
         const attachments: any[] = []
         
         // Process profile picture
@@ -88,18 +85,13 @@ export async function POST(request: NextRequest) {
             console.log('Processing profile picture:', profilePictureFile.name)
             const bytes = await profilePictureFile.arrayBuffer()
             const buffer = Buffer.from(bytes)
-            const fileName = `profile_${Date.now()}_${profilePictureFile.name}`
-            const filePath = join(process.cwd(), 'uploads', fileName)
-            
-            await writeFile(filePath, buffer)
-            uploadedFiles.push(filePath)
             
             attachments.push({
                 filename: profilePictureFile.name,
-                path: filePath,
+                content: buffer, // Use content instead of path for production
                 contentType: profilePictureFile.type
             })
-            console.log('Profile picture saved:', fileName)
+            console.log('Profile picture processed:', profilePictureFile.name)
         }
         
         // Process project file
@@ -108,18 +100,13 @@ export async function POST(request: NextRequest) {
             console.log('Processing project file:', projectFile.name)
             const bytes = await projectFile.arrayBuffer()
             const buffer = Buffer.from(bytes)
-            const fileName = `project_${Date.now()}_${projectFile.name}`
-            const filePath = join(process.cwd(), 'uploads', fileName)
-            
-            await writeFile(filePath, buffer)
-            uploadedFiles.push(filePath)
             
             attachments.push({
                 filename: projectFile.name,
-                path: filePath,
+                content: buffer, // Use content instead of path for production
                 contentType: projectFile.type
             })
-            console.log('Project file saved:', fileName)
+            console.log('Project file processed:', projectFile.name)
         }
 
         console.log('Attachments prepared:', attachments.length, 'files')
@@ -473,16 +460,6 @@ The Awards Team
         await transporter.sendMail(confirmationMailOptions)
         console.log('Confirmation email sent successfully!')
 
-        // Clean up uploaded files
-        for (const filePath of uploadedFiles) {
-            try {
-                await unlink(filePath)
-                console.log('Cleaned up file:', filePath)
-            } catch (error) {
-                console.error('Error cleaning up file:', filePath, error)
-            }
-        }
-
         return NextResponse.json({ 
             message: 'Nomination submitted successfully! Confirmation email sent to your inbox.',
             attachments: attachments.length,
@@ -492,16 +469,6 @@ The Awards Team
     } catch (error) {
         console.error('=== Error submitting nomination ===')
         console.error('Error details:', error)
-        
-        // Clean up uploaded files on error
-        for (const filePath of uploadedFiles) {
-            try {
-                await unlink(filePath)
-                console.log('Cleaned up file after error:', filePath)
-            } catch (cleanupError) {
-                console.error('Error cleaning up file after error:', filePath, cleanupError)
-            }
-        }
         
         let errorMessage = 'Failed to submit nomination. Please try again.'
         
