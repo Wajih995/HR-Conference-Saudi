@@ -31,7 +31,7 @@ export default function Awards() {
 
 			<Layout headerStyle={3} footerStyle={1}>
 				<div>
-					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/all-images/used-images/Vacheron-Constantin.png)' }}>
+					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/all-images/used-images/1.jpg)' }}>
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-4 m-auto">

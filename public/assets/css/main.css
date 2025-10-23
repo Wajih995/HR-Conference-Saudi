@@ -3298,10 +3298,10 @@ Location:
 .inner-page-header {
 	position: relative;
 	z-index: 1;
-	background-position: center;
+	background-position-x: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 220px 0 220px;
+	padding: 260px 0 260px;
 }
 
 .inner-page-header .heading1 a {
