@@ -29,7 +29,7 @@ export default function Section1() {
 								</div>
 								<div className="arrow-btnarea">
 									<Link href="/about">
-										<div className="content" >
+										<div className="content aniamtion-key-1" >
 											{/* <CircleText text="Build LEAD INSPIRE EMPOWER." /> */}
 											<img src="/assets/img/all-images/used-images/cpd-circle.jpeg" alt="" className="arrow1" />
 										</div>

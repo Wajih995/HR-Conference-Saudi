@@ -2852,7 +2852,7 @@ Location:
 }
 
 .hero3-section-area .hero3-header .arrow-btnarea a {
-	background: rgba(255, 255, 255, 0.2);
+	/* background: rgba(255, 255, 255, 0.2); */
 	border-width: 1px;
 	border: rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(5px);
