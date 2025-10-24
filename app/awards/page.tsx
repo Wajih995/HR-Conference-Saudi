@@ -387,7 +387,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="HR'S RISING STAR OF THE YEAR" fontSize="16px" />
+											<LaurelWreathWithText title="HR's RISING STAR, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Recognizes an emerging HR professional making significant contributions early in their career.</p>
@@ -398,7 +398,7 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="DEI, CHANGEMAKER ,AWARD" fontSize="16px" />
+											<LaurelWreathWithText title="DEI, CHANGE MAKER ,AWARD" fontSize="16px" />
 										</div>
 										<div className="content-area">
 											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honours individuals or teams driving meaningful diversity, equity, and inclusion impact.</p>

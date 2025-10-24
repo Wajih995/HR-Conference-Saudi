@@ -64,10 +64,10 @@ export default function BrandSlider() {
 				<SwiperSlide className="brand-box">
 					<img src="/assets/img/all-images/used-images/lets-media-solution-logo.png" alt="" />
 				</SwiperSlide>
-				{/* <SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img4.png" alt="" />
-				</SwiperSlide>
 				<SwiperSlide className="brand-box">
+					<img src="/assets/img/all-images/used-images/cpd-logo.png" alt="" />
+				</SwiperSlide>
+				{/* <SwiperSlide className="brand-box">
 					<img src="/assets/img/elements/brand-img5.png" alt="" />
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
