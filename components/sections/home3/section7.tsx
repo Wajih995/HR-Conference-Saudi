@@ -13,7 +13,7 @@ export default function Section7() {
 		<>
 
 			<div className="event3-section-area sp1" style={{
-				backgroundImage: 'url(/assets/img/bg/header-bg4.png)',
+				backgroundImage: 'url(/assets/img/all-images/used-images/1.jpg)',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				backgroundRepeat: 'no-repeat',

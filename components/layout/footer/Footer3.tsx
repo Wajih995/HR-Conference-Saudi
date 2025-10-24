@@ -9,7 +9,7 @@ export default function Footer3() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
-								<img src="/assets/img/logo/final-logo.png" alt="" />
+								<img src="/assets/img/all-images/used-images/BRX-logo.webp" alt="" />
 								<div className="space16" />
 								<p> We are dedicated to building a platform that brings together business leaders, innovators, and professionals to share insights, inspire collaboration, and drive meaningful impact.</p>
 								<div className="space24" />
@@ -21,6 +21,19 @@ export default function Footer3() {
 										<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
 									</li>
 								</ul>
+								<div className="cpd-logo-container" style={{marginTop: '30px'}}>
+									<img 
+										src="/assets/img/all-images/used-images/cpd-logo.png" 
+										alt="CPD Standards Office" 
+										style={{
+											maxWidth: '300px',
+											height: 'auto',
+                                            backgroundColor: 'white',
+                                            borderRadius: '10px',
+											// filter: 'brightness(0) invert(1)'
+										}}
+									/>
+								</div>
 							</div>
 						</div>
 						<div className="col-lg-2 col-md-6">

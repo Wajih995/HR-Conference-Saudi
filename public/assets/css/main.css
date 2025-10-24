@@ -1725,7 +1725,7 @@ Location:
 
 /*============= COMMON CSS AREA ENDS===============*/
 .sp1 {
-	padding: 100px 0 100px;
+	padding: 150px 0 150px;
 }
 
 @media (max-width: 767px) {
@@ -2867,12 +2867,14 @@ Location:
 }
 
 .hero3-section-area .hero3-header .arrow-btnarea a .arrow1 {
-	position: absolute;
+	/* position: absolute;
 	left: 42%;
-	top: 42%;
-	height: 40px;
-	width: 40px;
-	filter: brightness(0) invert(1);
+	top: 42%; */
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+	filter: none;
 }
 
 .hero3-section-area .hero3-header .arrow-btnarea a .circle {
@@ -7231,8 +7233,8 @@ Location:
 }
 
 .footer3-sertion-area .footer-logo-area img {
-	width: 250px;
-	height: 100px;
+	width: 200px;
+	height: 122px;
 	object-fit: cover;
 }
 

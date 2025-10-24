@@ -30,9 +30,10 @@ export default function Section1() {
 								<div className="arrow-btnarea">
 									<Link href="/about">
 										<div className="content" >
-											<CircleText text="Build LEAD INSPIRE EMPOWER." />
+											{/* <CircleText text="Build LEAD INSPIRE EMPOWER." /> */}
+											<img src="/assets/img/all-images/used-images/cpd-circle.jpeg" alt="" className="arrow1" />
 										</div>
-										<img src="/assets/img/icons/arrow1.svg" alt="" className="arrow1" />
+										{/* <img src="/assets/img/icons/arrow1.svg" alt="" className="arrow1" /> */}
 									</Link>
 								</div>
 								<div className="date-btn aniamtion-key-1" style={{right: '-300px'}}>

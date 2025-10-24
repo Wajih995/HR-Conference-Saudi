@@ -6,6 +6,7 @@ import Section3 from '@/components/sections/home3/section3'
 import Section4 from '@/components/sections/home3/section4'
 import Section5 from '@/components/sections/home3/section5'
 import Section6 from '@/components/sections/home3/section6'
+import Section6CPD from '@/components/sections/home3/section6-cpd'
 import Section7 from '@/components/sections/home3/section7'
 import Section8 from '@/components/sections/home3/section8'
 import Section9 from '@/components/sections/home3/section9'
@@ -19,6 +20,7 @@ export default function Home() {
 				<Section2 />
 				{/* <Section3 />
 				<Section4 /> */}
+				<Section6CPD />
 				<Section7 />
 				<Section8 />
 				<Section5 />

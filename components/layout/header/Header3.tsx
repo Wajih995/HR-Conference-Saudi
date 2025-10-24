@@ -59,7 +59,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 													<li><Link href="/blog-single">Blog Details</Link></li>
 												</ul>
 											</li> */}
-											<li>
+											{/* <li>
 												<Link href="/#">Pages <i className="fa-solid fa-angle-down" /></Link>
 												<ul className="dropdown-padding">
 													<li><Link href="/memories">Our Memories</Link></li>
@@ -67,7 +67,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 													<li><Link href="/faq">FAQ,s</Link></li>
 													<li><Link href="/contact">Contact Us</Link></li>
 												</ul>
-											</li>
+											</li> */}
 										</ul>
 									</div>
 									<div className="btn-area">
