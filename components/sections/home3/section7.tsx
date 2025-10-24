@@ -13,7 +13,7 @@ export default function Section7() {
 		<>
 
 			<div className="event3-section-area sp1" style={{
-				backgroundImage: 'url(/assets/img/all-images/used-images/1.jpg)',
+				backgroundImage: 'url(/assets/img/all-images/used-images/awards-background.jpg)',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				backgroundRepeat: 'no-repeat',
@@ -39,10 +39,11 @@ export default function Section7() {
 					</div>
 					<div className="row">
 						<div className="btn-area1" data-aos="fade-left" data-aos-duration={1000} style={{display: 'flex', justifyContent: 'center'}}>
-							<button onClick={() => setIsModalOpen(true)} className="vl-btn3" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Submit Your Nominee for Recognition</button>
+							<button onClick={() => setIsModalOpen(true)} className="vl-btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer', background: 'var(--ztc-bg-bg-1)', color: 'var(--ztc-text-text-10)'}}>Submit Your Nominee for Recognition</button>
 						</div>
 						<div className="space24" />
-						<p data-aos="fade-left" data-aos-duration={900} style={{ color: 'white', fontFamily: 'var(--grotesk)', fontSize: 'var(--ztc-font-size-font-s18)', fontStyle: 'normal', fontWeight: 'var(--ztc-weight-medium)', lineHeight: '26px', textAlign: 'center'}}>Nominate women leaders who have made significant contributions to the GCC's HR industry. Your nominations will be reviewed by our esteemed panel of judges, ensuring recognition for those who have demonstrated exceptional leadership and innovation.</p>
+						<p data-aos="fade-left" data-aos-duration={900} style={{ color: 'white', fontFamily: 'var(--grotesk)', fontSize: 'var(--ztc-font-size-font-s20)', fontStyle: 'normal', fontWeight: 'var(--ztc-weight-medium)', lineHeight: '26px', textAlign: 'center'}}>Nominate women leaders who have made significant contributions to the GCC's HR industry. </p>
+						<p data-aos="fade-left" data-aos-duration={900} style={{ color: 'white', fontFamily: 'var(--grotesk)', fontSize: 'var(--ztc-font-size-font-s20)', fontStyle: 'normal', fontWeight: 'var(--ztc-weight-medium)', lineHeight: '26px', textAlign: 'center'}}>Your nominations will be reviewed by our esteemed panel of judges, ensuring recognition for those who have demonstrated exceptional leadership and innovation.</p>
 					</div>
 				</div>
 			</div>
