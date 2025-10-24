@@ -38,6 +38,12 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 													<li><Link href="/speakers-single">Speakers Details</Link></li>
 												</ul>
 											</li>
+											<li>
+												<Link href="/#">Sponsors <i className="fa-solid fa-angle-down" /></Link>
+												<ul className="dropdown-padding">
+													<li><Link href="/packages">Packages</Link></li>
+												</ul>
+											</li>
 											{/* <li>
 												<Link href="/#">Schedule <i className="fa-solid fa-angle-down" /></Link>
 												<ul className="dropdown-padding">
