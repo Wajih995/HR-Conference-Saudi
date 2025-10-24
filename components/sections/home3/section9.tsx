@@ -113,7 +113,7 @@ export default function Section9() {
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-1.jpg" alt="" />
+										<img src="/assets/img/all-images/used-images/rec-memory.jpg" alt="" />
 									</div>
 									{/* <div className="content-area">
 										<p>Event 2024</p>

@@ -1725,7 +1725,7 @@ Location:
 
 /*============= COMMON CSS AREA ENDS===============*/
 .sp1 {
-	padding: 150px 0 150px;
+	padding: 50px 0 50px;
 }
 
 @media (max-width: 767px) {
@@ -3303,7 +3303,7 @@ Location:
 	background-position-x: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 260px 0 260px;
+	padding: 270px 0 270px;
 }
 
 .inner-page-header .heading1 a {
@@ -7233,8 +7233,8 @@ Location:
 }
 
 .footer3-sertion-area .footer-logo-area img {
-	width: 200px;
-	height: 122px;
+	width: 150px;
+	height: 100px;
 	object-fit: cover;
 }
 

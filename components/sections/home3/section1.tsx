@@ -24,7 +24,6 @@ export default function Section1() {
 								<div className="space24" />
 								<div className="btn-area1">
 									<button onClick={() => setIsModalOpen(true)} className="vl-btn3" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Reserve premium Seat</button>
-									<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>buy ticket now</button>
 									<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Submit Your Nomination</button>
 								</div>
 								<div className="arrow-btnarea">
@@ -36,12 +35,12 @@ export default function Section1() {
 										{/* <img src="/assets/img/icons/arrow1.svg" alt="" className="arrow1" /> */}
 									</Link>
 								</div>
-								<div className="date-btn aniamtion-key-1" style={{right: '-300px'}}>
-									<h4>20</h4>
+								<div className="date-btn aniamtion-key-1" style={{right: '-300px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
+									<h4 style={{fontSize: '48px', fontWeight: 'bold', margin: 0, lineHeight: 1}}>20</h4>
 									<div className="space14" />
-									<p>January</p>
-									<div className="space20" />
-									<Link href="/pricing-plan">Buy Ticket</Link>
+									<p style={{fontSize: '16px', margin: 0, textTransform: 'uppercase', letterSpacing: '1px'}}>January</p>
+									<div className="space10" />
+									<h4 style={{fontSize: '28px', fontWeight: 'bold', margin: 0, lineHeight: 1}}>2026</h4>
 								</div>
 							</div>
 						</div>

@@ -31,13 +31,13 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 											<li><Link href="/">Home</Link></li>
 											<li><Link href="/about">About Event</Link></li>
                                             <li><Link href="/awards">Awards</Link></li>
-											<li>
+											{/* <li>
 												<Link href="/#">Speakers <i className="fa-solid fa-angle-down" /></Link>
 												<ul className="dropdown-padding">
 													<li><Link href="/speakers">Speakers</Link></li>
 													<li><Link href="/speakers-single">Speakers Details</Link></li>
 												</ul>
-											</li>
+											</li> */}
 											<li>
 												<Link href="/#">Sponsors <i className="fa-solid fa-angle-down" /></Link>
 												<ul className="dropdown-padding">

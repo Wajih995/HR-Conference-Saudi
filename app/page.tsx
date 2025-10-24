@@ -15,7 +15,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Layout headerStyle={3} footerStyle={3}>
+			<Layout headerStyle={3} footerStyle={1}>
 				<Section1 />
 				<Section2 />
 				{/* <Section3 />
@@ -29,7 +29,7 @@ export default function Home() {
 				<Section10 />
 			</Layout>
 			
-			<Popup />
+			{/* <Popup /> */}
 		</>
 	)
 }

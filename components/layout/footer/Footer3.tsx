@@ -11,8 +11,6 @@ export default function Footer3() {
 							<div className="footer-logo-area">
 								<img src="/assets/img/all-images/used-images/BRX-logo.webp" alt="" />
 								<div className="space16" />
-								<p> We are dedicated to building a platform that brings together business leaders, innovators, and professionals to share insights, inspire collaboration, and drive meaningful impact.</p>
-								<div className="space24" />
 								<ul>
 									<li>
 										<Link href="https://www.instagram.com/brxeventsksa/"><i className="fa-brands fa-instagram" /></Link>
@@ -40,11 +38,10 @@ export default function Footer3() {
 							<div className="link-content">
 								<h3>Quick Links</h3>
 								<ul>
-									<li><Link href="/about">About Us</Link></li>
-									<li><Link href="/blog">Our Blogs</Link></li>
-									<li><Link href="/event">Event Listing</Link></li>
-									<li><Link href="/pricing-plan">Pricing Plan</Link></li>
-									<li><Link href="/contact">Contact Us</Link></li>
+									{/* <li><Link href="/">Home</Link></li> */}
+									<li><Link href="/about">About Event</Link></li>
+									<li><Link href="/awards">Awards</Link></li>
+									<li><Link href="/packages">Packages</Link></li>
 								</ul>
 							</div>
 						</div>
@@ -73,49 +70,37 @@ export default function Footer3() {
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
 											<img src="/assets/img/all-images/used-images/footer-1.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
 											<img src="/assets/img/all-images/used-images/footer-2.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
 											<img src="/assets/img/all-images/used-images/footer-3.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
 											<img src="/assets/img/all-images/used-images/footer-4.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
 											<img src="/assets/img/all-images/used-images/footer-5.webp" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
 										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
 											<img src="/assets/img/all-images/used-images/footer-6.avif" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 								</div>

@@ -34,7 +34,7 @@ export default function Section10() {
 										<img src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" />
 										<h2><CountUp className="odometer" enableScrollSpy={true} end={20} />+</h2>
 										<div className="space14" />
-										<p>Guest</p>
+										<p>Award Categories</p>
 									</div>
 								</div>
 								<div className="col-lg-4 col-md-4">

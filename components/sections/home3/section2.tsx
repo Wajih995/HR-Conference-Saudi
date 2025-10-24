@@ -27,7 +27,7 @@ export default function Section2() {
 							<div className="about-header heading5">
 								<h5 data-aos="fade-left" data-aos-duration={800}>About Our Conference</h5>
 								<div className="space18" />
-								<h2 className="text-anime-style-3" style={{fontSize: 'var(--ztc-font-size-font-s26)', lineHeight: '33px'}}>Discover the Future of HR Leadership at the Women Leadership Conference & Awards 2026. A premier platform celebrating women shaping workplaces across the GCC.</h2>
+								<h2 className="text-anime-style-3" style={{fontSize: 'var(--ztc-font-size-font-s26)', lineHeight: '33px'}}>Discover the Future of HR at the Women Leadership Conference & Awards 2026. A premier platform celebrating women shaping workplaces across the GCC.</h2>
 								<div className="space18" />
 								<p data-aos="fade-left" data-aos-duration={900}>Focused on inclusion, equity, resilience, and Vision 2030, the event brings together top HR leaders and experts to share insights, inspire change, and build the future of work.</p>
 								<div className="space12" />

@@ -1,7 +1,7 @@
+
 import Link from 'next/link'
 
-
-export default function Footer1() {
+export default function Footer3() {
 	return (
 		<>
 			<div className="footer3-sertion-area">
@@ -11,8 +11,6 @@ export default function Footer1() {
 							<div className="footer-logo-area">
 								<img src="/assets/img/all-images/used-images/BRX-logo.webp" alt="" />
 								<div className="space16" />
-								<p> We are dedicated to building a platform that brings together business leaders, innovators, and professionals to share insights, inspire collaboration, and drive meaningful impact.</p>
-								<div className="space24" />
 								<ul>
 									<li>
 										<Link href="https://www.instagram.com/brxeventsksa/"><i className="fa-brands fa-instagram" /></Link>
@@ -21,17 +19,29 @@ export default function Footer1() {
 										<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
 									</li>
 								</ul>
+								<div className="cpd-logo-container" style={{marginTop: '30px'}}>
+									<img 
+										src="/assets/img/all-images/used-images/cpd-logo.png" 
+										alt="CPD Standards Office" 
+										style={{
+											maxWidth: '300px',
+											height: 'auto',
+                                            backgroundColor: 'white',
+                                            borderRadius: '10px',
+											// filter: 'brightness(0) invert(1)'
+										}}
+									/>
+								</div>
 							</div>
 						</div>
 						<div className="col-lg-2 col-md-6">
 							<div className="link-content">
 								<h3>Quick Links</h3>
 								<ul>
-									<li><Link href="/about">About Us</Link></li>
-									<li><Link href="/blog">Our Blogs</Link></li>
-									<li><Link href="/event">Event Listing</Link></li>
-									<li><Link href="/pricing-plan">Pricing Plan</Link></li>
-									<li><Link href="/contact">Contact Us</Link></li>
+									{/* <li><Link href="/">Home</Link></li> */}
+									<li><Link href="/about">About Event</Link></li>
+									<li><Link href="/awards">Awards</Link></li>
+									<li><Link href="/packages">Packages</Link></li>
 								</ul>
 							</div>
 						</div>
@@ -52,59 +62,53 @@ export default function Footer1() {
 								</ul>
 							</div>
 						</div>
-						
-
 						<div className="col-lg-4 col-md-6">
-							<div className="footer-social-box">
+						<div className="footer-social-box">
 								<h3>Our Recent Event Gallery</h3>
 								<div className="space12" />
+								<style jsx>{`
+									.img1 img {
+										image-rendering: -webkit-optimize-contrast;
+										image-rendering: crisp-edges;
+										backface-visibility: hidden;
+										transform: translateZ(0);
+									}
+								`}</style>
 								<div className="row">
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px'}}>
 											<img src="/assets/img/all-images/used-images/footer-1.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-2.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px'}}>
+											<img src="/assets/img/all-images/used-images/A1.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-3.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px'}}>
+											<img src="/assets/img/all-images/used-images/A2.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-4.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px'}}>
+											<img src="/assets/img/all-images/used-images/A3.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px'}}>
 											<img src="/assets/img/all-images/used-images/footer-5.webp" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px'}}>
 											<img src="/assets/img/all-images/used-images/footer-6.avif" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-											<div className="icons">
-												<Link href="/#"><i className="fa-brands fa-instagram" /></Link>
-											</div>
+											
 										</div>
 									</div>
 								</div>
@@ -121,6 +125,7 @@ export default function Footer1() {
 					</div>
 				</div>
 			</div>
+
 		</>
 	)
 }

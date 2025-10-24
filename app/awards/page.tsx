@@ -31,14 +31,43 @@ export default function Awards() {
 
 			<Layout headerStyle={3} footerStyle={1}>
 				<div>
-					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/all-images/used-images/awards-banner.jpg)' }}>
-						<div className="container">
+					<div className="inner-page-header" style={{ position: 'relative', overflow: 'hidden' }}>
+						{/* Video Background */}
+						<video
+							autoPlay
+							loop
+							muted
+							playsInline
+							style={{
+								position: 'absolute',
+								top: '50%',
+								left: '50%',
+								minWidth: '100%',
+								minHeight: '100%',
+								width: 'auto',
+								height: 'auto',
+								transform: 'translate(-50%, -50%)',
+								zIndex: 0,
+								objectFit: 'cover'
+							}}
+						>
+							<source src="/assets/img/all-images/used-images/N.mp4" type="video/mp4" />
+						</video>
+						{/* Dark overlay for better text visibility */}
+						<div style={{
+							position: 'absolute',
+							top: 0,
+							left: 0,
+							right: 0,
+							bottom: 0,
+							backgroundColor: 'rgba(0, 0, 0, 0.5)',
+							zIndex: 1
+						}}></div>
+						<div className="container" style={{ position: 'relative', zIndex: 2 }}>
 							<div className="row">
 								<div className="col-lg-4 m-auto">
 									<div className="heading1 text-center">
-										<h1>Awards</h1>
-										<div className="space20" />
-										<Link href="/">Home <i className="fa-solid fa-angle-right" /> <span>Awards</span></Link>
+										<h1 style={{ color: 'white', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Awards</h1>
 									</div>
 								</div>
 							</div>
@@ -61,27 +90,27 @@ export default function Awards() {
 											<div className="counter-box">
 												<h2><CountUp className="odometer" enableScrollSpy={true} end={100} />+</h2>
 												<div className="space18" />
-												<p style={{color: 'white'}}>Award Submissions</p>
+												<p>Award Submissions</p>
 											</div>
 											<div className="counter-box box2">
 												<h2><CountUp className="odometer" enableScrollSpy={true} end={80} />+</h2>
 												<div className="space18" />
-												<p style={{color: 'white'}}>Attendees </p>
+												<p>Attendees </p>
 											</div>
 											<div className="counter-box box2">
 												<h2><CountUp className="odometer" enableScrollSpy={true} end={15} />+</h2>
 												<div className="space18" />
-												<p style={{color: 'white'}}>Expert Judges</p>
+												<p>Expert Judges</p>
 											</div>
                                             <div className="counter-box box2">
 												<h2><CountUp className="odometer" enableScrollSpy={true} end={20} />+</h2>
 												<div className="space18" />
-												<p style={{color: 'white'}}>Award Categories</p>
+												<p>Award Categories</p>
 											</div>
                                             <div className="counter-box box3" style={{ border: 'none' }}>
 												<h2><CountUp className="odometer" enableScrollSpy={true} end={1} /></h2>
 												<div className="space18" />
-												<p style={{color: 'white'}}>Exciting Evening</p>
+												<p>Exciting Evening</p>
 											</div>
 										</div>
 									<div className="space32" />
@@ -151,97 +180,9 @@ export default function Awards() {
                     {/*===== WHY BE PART SECTION ENDS =======*/}
 
 					{/*===== DEADLINES TIMELINE STARTS =======*/}
-					<div className="sp2" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-						<div className="container">
-							<div className="row">
-								<div className="col-lg-4 m-auto">
-									<div className="heading2 text-center space-margin60">
-										<h5 style={{color: 'white'}}>Deadlines</h5>
-									</div>
-								</div>
-							</div>
-                            {/* Desktop timeline (alternating cards) */}
-                            <div className="d-none d-lg-block mt-5" style={{position:'relative', paddingTop:120, paddingBottom:120}}>
-                                <div style={{position:'absolute', left:0, right:0, top:'50%', height:4, background:'white', borderRadius:2}} />
-                                <div className="row text-center">
-                                    {/* 01 - above the line */}
-                                    <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
-                                        <div style={{position:'absolute', top:'calc(50% - 80px)', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
-                                        <div className="choose-widget-boxarea" style={{position:'absolute', top:'calc(50% - 145px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5 style={{color: 'white'}}>01</h5>
-                                            <h4 style={{fontSize: '20px', color: 'white'}}>Applications Open</h4>
-                                            <p style={{color: 'white'}}>25th October 2025</p>
-                                        </div>
-                                    </div>
-                                    {/* 02 - below the line */}
-                                    <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
-                                        <div className="choose-widget-boxarea" style={{position:'absolute', bottom:'calc(50% - 170px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5 style={{color: 'white'}}>02</h5>
-                                            <h4 style={{fontSize: '20px', color: 'white'}}>Nomination Form Submission Deadline</h4>
-                                            <p style={{color: 'white'}}>15th January 2026</p>
-                                        </div>
-                                    </div>
-                                    {/* 03 - above the line */}
-                                    <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
-                                        <div style={{position:'absolute', top:'calc(50% - 80px)', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
-                                        <div className="choose-widget-boxarea" style={{position:'absolute', top:'calc(50% - 145px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5 style={{color: 'white'}}>03</h5>
-                                            <h4 style={{fontSize: '20px', color: 'white'}}>Jury Selection</h4>
-                                            <p style={{color: 'white'}}>18th January 2026</p>
-                                        </div>
-                                    </div>
-                                    {/* 04 - below the line */}
-                                    <div className="col-lg-3" style={{position:'relative'}}>
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', width:18, height:18, borderRadius:'50%', background:'#C9A545', border:'4px solid white'}} />
-                                        <div style={{position:'absolute', top:'50%', left:'50%', transform:'translateX(-50%)', width:2, height:80, background:'white'}} />
-                                        <div className="choose-widget-boxarea" style={{position:'absolute', bottom:'calc(50% - 150px)', left:'50%', transform:'translateX(-50%)', width:260, fontSize: '14px'}}>
-                                            <h5 style={{color: 'white'}}>04</h5>
-                                            <h4 style={{fontSize: '20px', color: 'white'}}>Awards Ceremony</h4>
-                                            <p style={{color: 'white'}}>20th January 2026</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* end arrow */}
-                                <div style={{position:'absolute', right:-6, top:'calc(50% - 10px)', width:0, height:0, borderTop:'10px solid transparent', borderBottom:'10px solid transparent', borderLeft:'14px solid white'}} />
-                            </div>
-							{/* Mobile stacked */}
-							<div className="d-lg-none">
-								<div className="row">
-									<div className="col-12 mb-3">
-										<div className="choose-widget-boxarea text-center">
-											<h5 style={{color: 'white'}}>01</h5>
-											<h4 style={{color: 'white'}}>Applications Open</h4>
-											<p style={{color: 'white'}}>25th October 2025</p>
-										</div>
-									</div>
-									<div className="col-12 mb-3">
-										<div className="choose-widget-boxarea text-center">
-											<h5 style={{color: 'white'}}>02</h5>
-											<h4 style={{color: 'white'}}>Nomination Form Submission Deadline</h4>
-											<p style={{color: 'white'}}>15th January 2026</p>
-										</div>
-									</div>
-									<div className="col-12 mb-3">
-										<div className="choose-widget-boxarea text-center">
-											<h5 style={{color: 'white'}}>03</h5>
-											<h4 style={{color: 'white'}}>Jury Selection</h4>
-											<p style={{color: 'white'}}>18th January 2026</p>
-										</div>
-									</div>
-									<div className="col-12">
-										<div className="choose-widget-boxarea text-center">
-											<h5 style={{color: 'white'}}>04</h5>
-											<h4 style={{color: 'white'}}>Awards Ceremony</h4>
-											<p style={{color: 'white'}}>20th January 2026</p>
-										</div>
-									</div>
-								</div>
-							</div>
-                        </div>
+					<div>
+						<img src="/assets/img/all-images/used-images/WWL-Roadmap.jpg" alt="" />
+
                         </div>
 					{/*===== DEADLINES TIMELINE ENDS =======*/}
 

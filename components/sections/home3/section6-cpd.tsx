@@ -33,7 +33,6 @@ export default function Section6CPD() {
 											height: 'auto',
                                             backgroundColor: 'white',
                                             borderRadius: '10px',
-                                            border: '12px solid #000',
 											// filter: 'brightness(0) invert(1)'
 										}}
 									/>
@@ -45,30 +44,17 @@ export default function Section6CPD() {
 					<div className="row">
 						<div className="col-lg-10 m-auto">
 							<div className="cpd-content" style={{textAlign: 'center'}}>
-								<p data-aos="fade-up" data-aos-duration={800} style={{ 
-									color: 'white', 
-									fontFamily: 'var(--grotesk)', 
-									fontSize: 'var(--ztc-font-size-font-s18)', 
-									fontStyle: 'normal', 
-									fontWeight: 'var(--ztc-weight-medium)', 
-									lineHeight: '28px', 
-									textAlign: 'center',
-									marginBottom: '20px'
-								}}>
-									The Women Who Lead: HR Leadership Conference & Awards 2026 is a CPD-accredited event, recognizing your participation as part of your ongoing professional development.
-								</p>
-								
+																
 								<p data-aos="fade-up" data-aos-duration={900} style={{ 
 									color: 'white', 
 									fontFamily: 'var(--grotesk)', 
 									fontSize: 'var(--ztc-font-size-font-s18)', 
 									fontStyle: 'normal', 
-									fontWeight: 'var(--ztc-weight-medium)', 
 									lineHeight: '28px', 
 									textAlign: 'center',
 									marginBottom: '20px'
 								}}>
-									By attending the conference, delegates will earn CPD points for each hour of accredited learning and receive an official CPD certificate immediately after the event, issued in partnership with the CPD Standards Office.
+									By attending the conference, <a href="https://www.cpdstandards.com/" target="_blank" rel="noopener noreferrer" style={{color: '#C9A545', fontWeight: 'bold', textDecoration: 'none', borderBottom: '2px solid #C9A545', transition: 'all 0.3s ease'}}>Delegates will earn CPD points</a> for each hour of accredited learning and receive an official CPD certificate immediately after the event, issued in partnership with the CPD Standards Office.
 								</p>
 								
 								<p data-aos="fade-up" data-aos-duration={1000} style={{ 
@@ -76,26 +62,13 @@ export default function Section6CPD() {
 									fontFamily: 'var(--grotesk)', 
 									fontSize: 'var(--ztc-font-size-font-s18)', 
 									fontStyle: 'normal', 
-									fontWeight: 'var(--ztc-weight-medium)', 
 									lineHeight: '28px', 
 									textAlign: 'center',
 									marginBottom: '20px'
 								}}>
-									In addition, every participant will enjoy a complimentary LinkedIn Professional Headshot captured on our exclusive Media Wall, the perfect way to refresh your professional profile and celebrate your participation.
+									In addition, every participant will enjoy a <strong style={{color: '#C9A545', fontWeight: 'bold'}}>Complimentary LinkedIn Professional Headshot</strong> captured on our exclusive Media Wall, the perfect way to refresh your professional profile and celebrate your participation.
 								</p>
 								
-								<p data-aos="fade-up" data-aos-duration={1100} style={{ 
-									color: 'white', 
-									fontFamily: 'var(--grotesk)', 
-									fontSize: 'var(--ztc-font-size-font-s18)', 
-									fontStyle: 'normal', 
-									fontWeight: 'var(--ztc-weight-medium)', 
-									lineHeight: '28px', 
-									textAlign: 'center',
-									marginBottom: '30px'
-								}}>
-									Enhance your learning, expand your network, and walk away with both recognition and visibility as a future-ready HR leader.
-								</p>
 							</div>
 						</div>
 					</div>
