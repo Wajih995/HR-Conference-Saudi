@@ -1,47 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { writeFile, mkdir } from 'fs/promises'
-import { join } from 'path'
-import { existsSync } from 'fs'
+import { put } from '@vercel/blob'
 
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData()
-    
-    // Create temp directory if it doesn't exist
-    const tempDir = join(process.cwd(), 'temp-uploads')
-    if (!existsSync(tempDir)) {
-      await mkdir(tempDir, { recursive: true })
-    }
 
     const fileIds: { profilePictureId: string; projectFileId: string } = {
       profilePictureId: '',
       projectFileId: ''
     }
 
-    // Handle profile picture
+    // Handle profile picture upload to Vercel Blob
     const profilePictureFile = formData.get('nomineeProfilePicture') as File
     if (profilePictureFile && profilePictureFile.size > 0) {
-      const fileId = `profile-${Date.now()}-${Math.random().toString(36).substring(7)}`
-      const bytes = await profilePictureFile.arrayBuffer()
-      const buffer = Buffer.from(bytes)
+      const fileName = `profile-${Date.now()}-${profilePictureFile.name}`
+      const blob = await put(fileName, profilePictureFile, {
+        access: 'public',
+      })
       
-      const filePath = join(tempDir, `${fileId}-${profilePictureFile.name}`)
-      await writeFile(filePath, buffer)
-      
-      fileIds.profilePictureId = `${fileId}-${profilePictureFile.name}`
+      fileIds.profilePictureId = blob.url
     }
 
-    // Handle project file
+    // Handle project file upload to Vercel Blob
     const projectFile = formData.get('nomineeProject') as File
     if (projectFile && projectFile.size > 0) {
-      const fileId = `project-${Date.now()}-${Math.random().toString(36).substring(7)}`
-      const bytes = await projectFile.arrayBuffer()
-      const buffer = Buffer.from(bytes)
+      const fileName = `project-${Date.now()}-${projectFile.name}`
+      const blob = await put(fileName, projectFile, {
+        access: 'public',
+      })
       
-      const filePath = join(tempDir, `${fileId}-${projectFile.name}`)
-      await writeFile(filePath, buffer)
-      
-      fileIds.projectFileId = `${fileId}-${projectFile.name}`
+      fileIds.projectFileId = blob.url
     }
 
     return NextResponse.json({ fileIds })
@@ -52,5 +40,14 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     )
   }
+}
+
+// Increase the limit for file uploads
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb',
+    },
+  },
 }
 

@@ -84,47 +84,49 @@ export async function POST(request: NextRequest) {
         const projectFileId = formData.get('projectFileId') as string
         
         if (profilePictureId || projectFileId) {
-            // Files were uploaded temporarily, retrieve them
-            const { readFile } = await import('fs/promises')
-            const { join } = await import('path')
+            // Files were uploaded to Vercel Blob, download them
             
             if (profilePictureId) {
                 try {
-                    const filePath = join(process.cwd(), 'temp-uploads', profilePictureId)
-                    const buffer = await readFile(filePath)
-                    const originalName = profilePictureId.split('-').slice(2).join('-') // Extract original filename
+                    // Download file from Vercel Blob URL
+                    const response = await fetch(profilePictureId)
+                    const arrayBuffer = await response.arrayBuffer()
+                    const buffer = Buffer.from(arrayBuffer)
+                    
+                    // Extract original filename from URL
+                    const urlParts = profilePictureId.split('/')
+                    const fileName = urlParts[urlParts.length - 1]
+                    const originalName = fileName.split('-').slice(2).join('-') || 'profile-picture'
                     
                     attachments.push({
-                        filename: originalName || 'profile-picture',
+                        filename: originalName,
                         content: buffer,
                     })
-                    console.log('Profile picture retrieved from temp:', profilePictureId)
-                    
-                    // Delete temp file after reading
-                    const { unlink } = await import('fs/promises')
-                    await unlink(filePath).catch(() => {}) // Ignore errors
+                    console.log('Profile picture downloaded from Blob:', originalName)
                 } catch (error) {
-                    console.error('Error reading profile picture:', error)
+                    console.error('Error downloading profile picture:', error)
                 }
             }
             
             if (projectFileId) {
                 try {
-                    const filePath = join(process.cwd(), 'temp-uploads', projectFileId)
-                    const buffer = await readFile(filePath)
-                    const originalName = projectFileId.split('-').slice(2).join('-') // Extract original filename
+                    // Download file from Vercel Blob URL
+                    const response = await fetch(projectFileId)
+                    const arrayBuffer = await response.arrayBuffer()
+                    const buffer = Buffer.from(arrayBuffer)
+                    
+                    // Extract original filename from URL
+                    const urlParts = projectFileId.split('/')
+                    const fileName = urlParts[urlParts.length - 1]
+                    const originalName = fileName.split('-').slice(2).join('-') || 'project-file'
                     
                     attachments.push({
-                        filename: originalName || 'project-file',
+                        filename: originalName,
                         content: buffer,
                     })
-                    console.log('Project file retrieved from temp:', projectFileId)
-                    
-                    // Delete temp file after reading
-                    const { unlink } = await import('fs/promises')
-                    await unlink(filePath).catch(() => {}) // Ignore errors
+                    console.log('Project file downloaded from Blob:', originalName)
                 } catch (error) {
-                    console.error('Error reading project file:', error)
+                    console.error('Error downloading project file:', error)
                 }
             }
         } else {
