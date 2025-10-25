@@ -134,43 +134,61 @@ export default function Awards() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="row justify-content-center">
                                 <div className="col-lg-4 col-md-6 d-flex mb-5">
-                                    <div className="choose-widget-boxarea h-100 w-100">
-                                        <div className="icons">
-                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
-                                        </div>
-                                        <div className="space24" />
+                                    <div className="choose-widget-boxarea h-100 w-100 text-center d-flex align-items-center justify-content-center" style={{
+                                        background: 'linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%)',
+                                        border: '2px solid #C9A545',
+                                        padding: '40px 30px'
+                                    }}>
                                         <div className="content-area">
-                                            <Link href="/#">Showcase Your Leadership</Link>
-                                            <div className="space16" />
-                                            <p>Being part of the Women Leadership in HR Awards 2026 positions your brand as a champion of inclusion, equity, and innovation. It highlights your commitment to empowering women in leadership and enhances your visibility across leading media and industry platforms.</p>
+                                            <h3 style={{ 
+                                                color: '#0e062e', 
+                                                fontSize: '24px', 
+                                                fontWeight: '700', 
+                                                lineHeight: '1.4',
+                                                marginBottom: 0
+                                            }}>
+                                                Gain Recognition for Your Leadership Journey
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-6 d-flex mb-5">
-                                    <div className="choose-widget-boxarea h-100 w-100">
-                                        <div className="icons">
-                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
-                                        </div>
-                                        <div className="space24" />
+                                    <div className="choose-widget-boxarea h-100 w-100 text-center d-flex align-items-center justify-content-center" style={{
+                                        background: 'linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%)',
+                                        border: '2px solid #C9A545',
+                                        padding: '40px 30px'
+                                    }}>
                                         <div className="content-area">
-                                            <Link href="/#">Recognize & Inspire Your Team</Link>
-                                            <div className="space16" />
-                                            <p>Submitting nominations is an excellent way to celebrate and honor the women driving transformation within your organization. It boosts morale, showcases achievements, and demonstrates that you value leadership growth, diversity, and future-focused HR practices.</p>
+                                            <h3 style={{ 
+                                                color: '#0e062e', 
+                                                fontSize: '24px', 
+                                                fontWeight: '700', 
+                                                lineHeight: '1.4',
+                                                marginBottom: 0
+                                            }}>
+                                                Inspire Others Through Your Achievements
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-6 d-flex mb-5">
-                                    <div className="choose-widget-boxarea h-100 w-100">
-                                        <div className="icons">
-                                            <img src="/assets/img/icons/choose-icons1.svg" alt="" />
-                                        </div>
-                                        <div className="space24" />
+                                    <div className="choose-widget-boxarea h-100 w-100 text-center d-flex align-items-center justify-content-center" style={{
+                                        background: 'linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%)',
+                                        border: '2px solid #C9A545',
+                                        padding: '40px 30px'
+                                    }}>
                                         <div className="content-area">
-                                            <Link href="/#">Celebrate Excellence Together</Link>
-                                            <div className="space16" />
-                                            <p>Join industry leaders, senior HR professionals, and decision-makers from across the GCC in an inspiring evening dedicated to celebrating women shaping the future of work. It’s an unmatched opportunity to network, share insights, and learn from the best.</p>
+                                            <h3 style={{ 
+                                                color: '#0e062e', 
+                                                fontSize: '24px', 
+                                                fontWeight: '700', 
+                                                lineHeight: '1.4',
+                                                marginBottom: 0
+                                            }}>
+                                                Join a Powerful Network of HR Changemakers
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>

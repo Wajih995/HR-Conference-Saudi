@@ -11,14 +11,14 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isSear
 								<div className="menu-top-area">
 									<div className="top-menu-area">
 										<p>Are you Ready to Enenify Conferences?<Link href="/#">Buy Ticket</Link></p>
-										<ul>
-											<li>
-												<Link href="/mailto:eventifyconference@.com"><img src="/assets/img/icons/mail1.svg" alt="" />eventifyconference@.com <span> | </span></Link>
-											</li>
-											<li>
-												<Link href="/tel:(234)345-4574"><img src="/assets/img/icons/phn1.svg" alt="" />(234) 345-4574</Link>
-											</li>
-										</ul>
+									<ul>
+										<li>
+											<a href="mailto:yasir@theboredroomx.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com <span> | </span></a>
+										</li>
+										<li>
+											<a href="tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</a>
+										</li>
+									</ul>
 									</div>
 								</div>
 								<div className="header-elements">

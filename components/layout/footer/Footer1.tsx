@@ -50,14 +50,14 @@ export default function Footer3() {
 								<h3>Contact Us</h3>
 								<ul>
 									<li>
-										<Link href="/tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</Link>
-										<Link href="/tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745</Link>
+										<a href="tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</a>
+										<a href="tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745</a>
 									</li>
 									<li>
 										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 									</li>
 									<li>
-										<Link href="/mailto:eventifyevent@gmail.com"><img src="/assets/img/icons/mail1.svg" alt="" />Yasir@theboredroomx.com</Link>
+										<a href="mailto:yasir@theboredroomx.com"><img src="/assets/img/icons/mail1.svg" alt="" />Yasir@theboredroomx.com</a>
 									</li>
 								</ul>
 							</div>

@@ -18,11 +18,11 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 										<p>Join the Future of HR Leadership<button onClick={() => setIsRegistrationOpen(true)} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline', padding: 0, marginLeft: '5px'}}>Buy Ticket</button></p>
 										<ul>
 											<li>
-												<Link href="/mailto:eventifyconference@.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com<span> | </span></Link>
+												<a href="mailto:yasir@theboredroomx.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com<span> | </span></a>
 											</li>
 											<li>
-												<Link href="/tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683 <span> | </span></Link>
-												<Link href="/tel:+971522916745">+971 52 291 6745</Link>
+												<a href="tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683 <span> | </span></a>
+												<a href="tel:+971522916745">+971 52 291 6745</a>
 											</li>
 										</ul>
 									</div>

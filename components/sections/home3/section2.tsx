@@ -1,8 +1,11 @@
 'use client'
 import CountUp from 'react-countup'
-import Link from 'next/link'
+import { useState } from 'react'
+import RegistrationModal from '@/components/layout/RegistrationModal'
 
 export default function Section2() {
+	const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false)
+
 	return (
 		<>
 
@@ -48,16 +51,26 @@ export default function Section2() {
 										<p>Awardees honored </p>
 									</div>
 								</div>
-								<div className="space32" />
-								<div className="btn-area1" data-aos="fade-left" data-aos-duration={1200}>
-									<Link href="/event-schedule" className="vl-btn3">Reserve premium Seat</Link>
-								</div>
+							<div className="space32" />
+							<div className="btn-area1" data-aos="fade-left" data-aos-duration={1200}>
+								<button 
+									onClick={() => setIsRegistrationModalOpen(true)} 
+									className="vl-btn3"
+									style={{ cursor: 'pointer' }}
+								>
+									Reserve premium Seat
+								</button>
+							</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<RegistrationModal 
+				isOpen={isRegistrationModalOpen} 
+				onClose={() => setIsRegistrationModalOpen(false)} 
+			/>
 		</>
 	)
 }

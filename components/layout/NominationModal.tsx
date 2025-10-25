@@ -87,10 +87,21 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
             const file = e.target.files[0]
             const maxSize = 3 * 1024 * 1024 // 3MB in bytes
             
+            // Validate file size
             if (file.size > maxSize) {
                 alert('File size must be less than 3MB. Please choose a smaller file.')
                 e.target.value = '' // Clear the input
                 return
+            }
+            
+            // Validate image file type for profile picture
+            if (fieldName === 'nomineeProfilePicture') {
+                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png']
+                if (!allowedTypes.includes(file.type.toLowerCase())) {
+                    alert('Only JPG, JPEG, and PNG image formats are allowed. WebP and other formats are not supported.')
+                    e.target.value = '' // Clear the input
+                    return
+                }
             }
             
             setFormData(prev => ({
@@ -112,7 +123,9 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
             // Upload profile picture
             if (formData.nomineeProfilePicture) {
                 const { upload } = await import('@vercel/blob/client')
-                const blob = await upload(formData.nomineeProfilePicture.name, formData.nomineeProfilePicture, {
+                const timestamp = Date.now()
+                const fileName = `nomination-profile-${timestamp}-${formData.nomineeProfilePicture.name}`
+                const blob = await upload(fileName, formData.nomineeProfilePicture, {
                     access: 'public',
                     handleUploadUrl: '/api/upload-url',
                 })
@@ -122,7 +135,9 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
             // Upload project file
             if (formData.nomineeProject) {
                 const { upload } = await import('@vercel/blob/client')
-                const blob = await upload(formData.nomineeProject.name, formData.nomineeProject, {
+                const timestamp = Date.now()
+                const fileName = `nomination-project-${timestamp}-${formData.nomineeProject.name}`
+                const blob = await upload(fileName, formData.nomineeProject, {
                     access: 'public',
                     handleUploadUrl: '/api/upload-url',
                 })
@@ -448,7 +463,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 <input
                                     type="file"
                                     onChange={(e) => handleFileChange(e, 'nomineeProfilePicture')}
-                                    accept="image/*"
+                                    accept=".jpg,.jpeg,.png"
                                     required
                                     style={{
                                         width: '100%',
@@ -461,7 +476,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     }}
                                 />
                                 <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
-                                    Upload 1 supported file. Max 3 MB
+                                    Only JPG, JPEG, or PNG formats. Max 3 MB
                                 </small>
                             </div>
                             <div>

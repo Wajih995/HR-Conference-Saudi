@@ -83,7 +83,7 @@ const handleAccordion = (key: any) => {
 										<span><i className="fa-solid fa-phone-volume" /></span>
 									</div>
 									<div className="contact-info-text">
-										<Link href="//tel:+3(924)4596512">+3(924)4596512</Link>
+										<a href="tel:+966597183683">+966 59 718 3683</a>
 									</div>
 								</div>
 								<div className="contact-info-single">
@@ -91,7 +91,7 @@ const handleAccordion = (key: any) => {
 										<span><i className="fa-solid fa-envelope" /></span>
 									</div>
 									<div className="contact-info-text">
-										<Link href="//mailto:info@example.com">info@example.com</Link>
+										<a href="mailto:yasir@theboredroomx.com">yasir@theboredroomx.com</a>
 									</div>
 								</div>
 								<div className="single-footer">
@@ -101,8 +101,7 @@ const handleAccordion = (key: any) => {
 											<span><i className="fa-solid fa-location-dot" /></span>
 										</div>
 										<div className="contact-info-text">
-											<Link href="//mailto:info@example.com">55 East Birchwood Ave.Brooklyn, <br />
-												New York 11201,United States</Link>
+											<Link href="/#">Riyadh, Saudi Arabia</Link>
 										</div>
 									</div>
 								</div>

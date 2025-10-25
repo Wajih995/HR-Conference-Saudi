@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
       ? {
           name: 'Conference Registration - Women Leadership HR 2026',
           description: 'Full access to the conference, networking, CPD certification, and professional headshot',
-          amount: 50000, // $500 in cents
+          amount: 17000, // $170 in cents
         }
       : {
           name: 'Award Nomination - Women Leadership HR 2026',

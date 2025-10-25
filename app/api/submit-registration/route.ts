@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
         const mailOptions = {
             from: emailUser,
             to: 'Yasir@theboredroomx.com',
-            subject: `New Conference Registration - ${fullName}`,
+            subject: `New Registration - ${fullName}`,
             html: `
                 <!DOCTYPE html>
                 <html>
@@ -132,7 +132,7 @@ export async function POST(request: NextRequest) {
                 <body>
                     <div class="container">
                         <div class="header">
-                            <h1 style="margin: 0;">New Conference Registration Received</h1>
+                            <h1 style="margin: 0;">New Registration Received</h1>
                             <p style="margin: 10px 0 0 0;">Women Leadership in HR Conference & Awards 2026</p>
                         </div>
                         <div class="content">

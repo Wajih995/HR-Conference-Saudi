@@ -46,16 +46,16 @@ export default function Footer2() {
 								<h3>Contact Us</h3>
 								<ul>
 									<li>
-										<Link href="/tel:+11234567890"><img src="/assets/img/icons/phn1.svg" alt="" />+1 123 456 7890</Link>
+										<a href="tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</a>
 									</li>
 									<li>
-										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Secret Location In The UK</Link>
+										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 									</li>
 									<li>
-										<Link href="/mailto:eventifyevent@gmail.com"><img src="/assets/img/icons/mail1.svg" alt="" />eventifyevent@gmail.com</Link>
+										<a href="mailto:yasir@theboredroomx.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com</a>
 									</li>
 									<li>
-										<Link href="/#"> <img src="/assets/img/icons/world1.svg" alt="" />eventifyevent.com</Link>
+										<Link href="/#"> <img src="/assets/img/icons/world1.svg" alt="" />hrconferencesaudi.com</Link>
 									</li>
 								</ul>
 							</div>
