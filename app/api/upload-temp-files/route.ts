@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { put } from '@vercel/blob'
 
+export const maxDuration = 60 // Maximum execution time (seconds)
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData()
@@ -40,14 +43,5 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     )
   }
-}
-
-// Increase the limit for file uploads
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '10mb',
-    },
-  },
 }
 
