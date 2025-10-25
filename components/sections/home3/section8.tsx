@@ -6,14 +6,12 @@ export default function Section8() {
 	return (
 		<>
 
-			<div className="contact3-section-area sp8">
+			<div className="contact3-section-area sp2">
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-5 m-auto">
-							<div className="contact3-header text-center heading5 space-margin60">
+							<div className="contact3-header text-center heading5">
 								<h5>Contact Us</h5>
-								<div className="space18" />
-								<h2 className="text-anime-style-3">Direction To The Venue</h2>
 							</div>
 						</div>
 					</div>
@@ -106,7 +104,7 @@ export default function Section8() {
 			<div style={{position: 'relative', zIndex: 2}}>
 				<Link href="https://doratnajd.sa/" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
 					<h2 className="venue-heading" style={{
-						fontFamily: 'var(--dancing-script), cursive, "Brush Script MT", cursive',
+						fontFamily: 'var(--grotesk)',
 						fontSize: '3.5rem',
 						fontWeight: '700',
 						color: 'white',
