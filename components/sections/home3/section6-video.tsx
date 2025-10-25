@@ -32,6 +32,7 @@ export default function Section6Video() {
 									loop
 									playsInline
 								>
+                                    
 									<source src="/assets/img/all-images/used-images/IMG_5799.MP4" type="video/mp4" />
 									Your browser does not support the video tag.
 								</video>
