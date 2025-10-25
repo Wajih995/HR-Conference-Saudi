@@ -3,6 +3,7 @@ import { put } from '@vercel/blob'
 
 export const maxDuration = 60 // Maximum execution time (seconds)
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs' // Use Node.js runtime for larger payloads
 
 export async function POST(request: NextRequest) {
   try {

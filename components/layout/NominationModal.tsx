@@ -84,9 +84,18 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: string) => {
         if (e.target.files && e.target.files[0]) {
+            const file = e.target.files[0]
+            const maxSize = 3 * 1024 * 1024 // 3MB in bytes
+            
+            if (file.size > maxSize) {
+                alert('File size must be less than 3MB. Please choose a smaller file.')
+                e.target.value = '' // Clear the input
+                return
+            }
+            
             setFormData(prev => ({
                 ...prev,
-                [fieldName]: e.target.files![0]
+                [fieldName]: file
             }))
         }
     }
@@ -97,32 +106,27 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
         setSubmitMessage('')
 
         try {
-            // First, upload files and get temporary IDs
-            const formDataToUpload = new FormData()
-            
-            // Add files if they exist
-            if (formData.nomineeProfilePicture) {
-                formDataToUpload.append('nomineeProfilePicture', formData.nomineeProfilePicture)
-            }
-            if (formData.nomineeProject) {
-                formDataToUpload.append('nomineeProject', formData.nomineeProject)
-            }
-
-            // Upload files and get temporary file IDs
+            // Upload files directly to Vercel Blob (client-side)
             let fileIds = { profilePictureId: '', projectFileId: '' }
             
-            if (formData.nomineeProfilePicture || formData.nomineeProject) {
-                const uploadResponse = await fetch('/api/upload-temp-files', {
-                    method: 'POST',
-                    body: formDataToUpload
+            // Upload profile picture
+            if (formData.nomineeProfilePicture) {
+                const { upload } = await import('@vercel/blob/client')
+                const blob = await upload(formData.nomineeProfilePicture.name, formData.nomineeProfilePicture, {
+                    access: 'public',
+                    handleUploadUrl: '/api/upload-url',
                 })
-
-                if (!uploadResponse.ok) {
-                    throw new Error('Failed to upload files')
-                }
-
-                const uploadResult = await uploadResponse.json()
-                fileIds = uploadResult.fileIds
+                fileIds.profilePictureId = blob.url
+            }
+            
+            // Upload project file
+            if (formData.nomineeProject) {
+                const { upload } = await import('@vercel/blob/client')
+                const blob = await upload(formData.nomineeProject.name, formData.nomineeProject, {
+                    access: 'public',
+                    handleUploadUrl: '/api/upload-url',
+                })
+                fileIds.projectFileId = blob.url
             }
 
             // Create text-only form data for Stripe metadata
@@ -237,17 +241,17 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                 `}</style>
                 
                 <button onClick={handleClose} style={{
-                    position: 'absolute',
+                            position: 'absolute',
                     top: '20px',
                     right: '20px',
                     background: 'none',
-                    border: 'none',
+                            border: 'none',
                     fontSize: '28px',
-                    cursor: 'pointer',
+                            cursor: 'pointer',
                     color: '#666'
                 }}>
                     &times;
-                </button>
+                    </button>
 
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                     <img src="/assets/img/logo/final-logo.png" alt="Logo" style={{ maxWidth: '200px', marginBottom: '20px' }} />
@@ -256,7 +260,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                     <p style={{ color: '#666', fontSize: '14px', marginTop: '10px' }}>
                         Fill out the form below. Upon submission, we'll send your nomination details via email and open the payment page.
                     </p>
-                </div>
+                    </div>
 
                     <form onSubmit={handleSubmitAndPay}>
                         {/* Nominator Information */}
@@ -457,7 +461,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     }}
                                 />
                                 <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
-                                    Upload 1 supported file. Max 10 MB
+                                    Upload 1 supported file. Max 3 MB
                                 </small>
                             </div>
                             <div>
@@ -479,7 +483,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                     }}
                                 />
                                 <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
-                                    Upload 1 supported file. Max 10 MB
+                                    Upload 1 supported file. Max 3 MB
                                 </small>
                             </div>
                         </div>
@@ -603,29 +607,47 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                         )}
 
                         <div style={{ marginTop: '30px', textAlign: 'center' }}>
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                style={{
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    style={{
                                     backgroundColor: isSubmitting ? '#ccc' : '#C9A545',
                                     color: 'white',
                                     padding: '15px 40px',
-                                    border: 'none',
+                                        border: 'none',
                                     borderRadius: '8px',
                                     fontSize: '16px',
                                     fontWeight: 'bold',
-                                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                                        cursor: isSubmitting ? 'not-allowed' : 'pointer',
                                     transition: 'background-color 0.3s'
-                                }}
-                            >
+                                    }}
+                                >
                                 {isSubmitting ? 'Submitting...' : 'Submit & Pay'}
-                            </button>
+                                </button>
+
                         </div>
+
                     </form>
+
+                </div>
+
             </div>
-        </div>
+
         </>
+
     )
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
