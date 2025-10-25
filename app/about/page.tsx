@@ -75,7 +75,7 @@ export default function About() {
 										<div className="space16" />
                                         <h2 className="text-anime-style-3">Explore the Future of HR Leadership</h2>
 										<div className="space16" />
-                                        <p data-aos="fade-left" data-aos-duration={900}>Discover the Future of HR Leadership at the <strong>HR Women Leadership Conference & Awards 2026</strong>. The GCC’s premier platform celebrating women who are transforming workplaces and driving inclusive growth. This flagship event inspires bold ideas, sparks collaboration, and redefines leadership through <strong>resilience, equity, and innovation</strong>. From advancing DEI and talent development to shaping future-ready people strategies, it brings together the region’s most influential HR minds to lead the change.</p>
+                                        <p data-aos="fade-left" data-aos-duration={900}>Discover the Future of HR at the <strong>HR Women Leadership Conference & Awards 2026</strong>. The GCC’s premier platform celebrating women who are transforming workplaces and driving inclusive growth. This flagship event inspires bold ideas, sparks collaboration, and redefines leadership through <strong>resilience, equity, and innovation</strong>. From advancing DEI and talent development to shaping future-ready people strategies, it brings together the region’s most influential HR minds to lead the change.</p>
 										<div className="space32" />
 										<div className="about-counter-area">
 											<div className="counter-box">
@@ -106,11 +106,21 @@ export default function About() {
 					{/*===== ABOUT AREA ENDS =======*/}
 
                     {/*===== ABOUT THE EVENT (TEXT) STARTS =======*/}
-                    <div className="about-text-section sp2" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-                        <div className="container">
+                    <div className="about-text-section sp2" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative'}}>
+                        {/* Left Top Image - Desktop Only */}
+                        <div className="d-none d-lg-block" style={{position: 'absolute', top: '40px', left: '40px', width: '150px', height: '150px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 20px rgba(0,0,0,0.3)', zIndex: 2}}>
+                            <img src="/assets/img/all-images/used-images/A4.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        </div>
+                        
+                        {/* Right Bottom Image - Desktop Only */}
+                        <div className="d-none d-lg-block" style={{position: 'absolute', bottom: '40px', right: '40px', width: '150px', height: '150px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 20px rgba(0,0,0,0.3)', zIndex: 2}}>
+                            <img src="/assets/img/all-images/used-images/A31.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                        </div>
+                        
+                        <div className="container" style={{position: 'relative', zIndex: 3}}>
                             <div className="row">
                                 <div className="col-lg-10 m-auto">
-                                    <div className="heading2 text-center space-margin60">
+                                    <div className="heading2 text-center    ">
                                         <h5 style={{color: 'white'}}>About the Event</h5>
                                     </div>
                                 </div>
@@ -119,7 +129,7 @@ export default function About() {
                                 <div className="col-lg-10 m-auto">
                                     <div className="choose-widget-boxarea">
                                         <div className="content-area heading2" style={{textAlign: 'center'}}>
-                                            <p style={{color: 'white'}}>Women Leading Change Conference & Awards 2026 is a one-day transformative experience giving you exclusive access to the region’s most influential HR leaders, changemakers, and vision-driven women who are reshaping workplaces across the GCC. Learn from their journeys, insights, and strategies — so you can accelerate your growth, avoid the challenges they’ve overcome, and lead with confidence, inclusion, and purpose in the new era of HR leadership</p>
+                                            <p style={{color: 'white', fontSize: '30px', lineHeight: '1.6', fontWeight: '400'}}>Women Leading Change Conference & Awards 2026 is a one-day transformative experience giving you exclusive access to the region's most influential HR leaders, changemakers, and vision-driven women who are reshaping workplaces across the GCC. Learn from their journeys, insights, and strategies — so you can accelerate your growth, avoid the challenges they've overcome, and lead with confidence, inclusion, and purpose in the new era of HR leadership</p>
                                             </div>
                                     </div>
                                 </div>

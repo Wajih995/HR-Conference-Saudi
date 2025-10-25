@@ -76,40 +76,95 @@ export async function POST(request: NextRequest) {
 
         console.log('Email transporter created successfully')
 
-        // Handle file uploads - use buffer instead of file system for production
+        // Handle file uploads - check for both direct files and file IDs
         const attachments: any[] = []
         
-        // Process profile picture
-        const profilePictureFile = formData.get('nomineeProfilePicture') as File
-        if (profilePictureFile && profilePictureFile.size > 0) {
-            console.log('Processing profile picture:', profilePictureFile.name)
-            const bytes = await profilePictureFile.arrayBuffer()
-            const buffer = Buffer.from(bytes)
-            
-            attachments.push({
-                filename: profilePictureFile.name,
-                content: buffer, // Use content instead of path for production
-                contentType: profilePictureFile.type
-            })
-            console.log('Profile picture processed:', profilePictureFile.name)
-        }
+        // Check for file IDs (from Stripe payment flow)
+        const profilePictureId = formData.get('profilePictureId') as string
+        const projectFileId = formData.get('projectFileId') as string
         
-        // Process project file
-        const projectFile = formData.get('nomineeProject') as File
-        if (projectFile && projectFile.size > 0) {
-            console.log('Processing project file:', projectFile.name)
-            const bytes = await projectFile.arrayBuffer()
-            const buffer = Buffer.from(bytes)
+        if (profilePictureId || projectFileId) {
+            // Files were uploaded temporarily, retrieve them
+            const { readFile } = await import('fs/promises')
+            const { join } = await import('path')
             
-            attachments.push({
-                filename: projectFile.name,
-                content: buffer, // Use content instead of path for production
-                contentType: projectFile.type
-            })
-            console.log('Project file processed:', projectFile.name)
+            if (profilePictureId) {
+                try {
+                    const filePath = join(process.cwd(), 'temp-uploads', profilePictureId)
+                    const buffer = await readFile(filePath)
+                    const originalName = profilePictureId.split('-').slice(2).join('-') // Extract original filename
+                    
+                    attachments.push({
+                        filename: originalName || 'profile-picture',
+                        content: buffer,
+                    })
+                    console.log('Profile picture retrieved from temp:', profilePictureId)
+                    
+                    // Delete temp file after reading
+                    const { unlink } = await import('fs/promises')
+                    await unlink(filePath).catch(() => {}) // Ignore errors
+                } catch (error) {
+                    console.error('Error reading profile picture:', error)
+                }
+            }
+            
+            if (projectFileId) {
+                try {
+                    const filePath = join(process.cwd(), 'temp-uploads', projectFileId)
+                    const buffer = await readFile(filePath)
+                    const originalName = projectFileId.split('-').slice(2).join('-') // Extract original filename
+                    
+                    attachments.push({
+                        filename: originalName || 'project-file',
+                        content: buffer,
+                    })
+                    console.log('Project file retrieved from temp:', projectFileId)
+                    
+                    // Delete temp file after reading
+                    const { unlink } = await import('fs/promises')
+                    await unlink(filePath).catch(() => {}) // Ignore errors
+                } catch (error) {
+                    console.error('Error reading project file:', error)
+                }
+            }
+        } else {
+            // Direct file upload (old flow, keep for compatibility)
+            // Process profile picture
+            const profilePictureFile = formData.get('nomineeProfilePicture') as File
+            if (profilePictureFile && profilePictureFile.size > 0) {
+                console.log('Processing profile picture:', profilePictureFile.name)
+                const bytes = await profilePictureFile.arrayBuffer()
+                const buffer = Buffer.from(bytes)
+                
+                attachments.push({
+                    filename: profilePictureFile.name,
+                    content: buffer,
+                    contentType: profilePictureFile.type
+                })
+                console.log('Profile picture processed:', profilePictureFile.name)
+            }
+            
+            // Process project file
+            const projectFile = formData.get('nomineeProject') as File
+            if (projectFile && projectFile.size > 0) {
+                console.log('Processing project file:', projectFile.name)
+                const bytes = await projectFile.arrayBuffer()
+                const buffer = Buffer.from(bytes)
+                
+                attachments.push({
+                    filename: projectFile.name,
+                    content: buffer,
+                    contentType: projectFile.type
+                })
+                console.log('Project file processed:', projectFile.name)
+            }
         }
 
         console.log('Attachments prepared:', attachments.length, 'files')
+
+        // Determine attachment names for email display
+        const profilePictureName = attachments.length > 0 && attachments[0].filename ? attachments[0].filename : 'None'
+        const projectFileName = attachments.length > 1 && attachments[1].filename ? attachments[1].filename : (attachments.length === 1 ? 'None' : 'None')
 
         // Email content
         const mailOptions = {
@@ -220,7 +275,7 @@ export async function POST(request: NextRequest) {
                                 </div>
                                 <div class="field">
                                     <div class="field-label">Profile Picture:</div>
-                                    <div class="field-value">${profilePictureFile && profilePictureFile.size > 0 ? profilePictureFile.name + ' (attached)' : 'None'}</div>
+                                    <div class="field-value">${profilePictureName !== 'None' ? profilePictureName + ' (attached)' : 'None'}</div>
                                 </div>
                                 <div class="field">
                                     <div class="field-label">Project Details:</div>
@@ -228,7 +283,7 @@ export async function POST(request: NextRequest) {
                                 </div>
                                 <div class="field">
                                     <div class="field-label">Project File:</div>
-                                    <div class="field-value">${projectFile && projectFile.size > 0 ? projectFile.name + ' (attached)' : 'None'}</div>
+                                    <div class="field-value">${projectFileName !== 'None' ? projectFileName + ' (attached)' : 'None'}</div>
                                 </div>
                                 <div class="field">
                                     <div class="field-label">LinkedIn URL:</div>
@@ -269,9 +324,9 @@ City: ${nominatorCity}
 
 NOMINATION DETAILS:
 Category: ${category}
-Profile Picture: ${profilePictureFile && profilePictureFile.size > 0 ? profilePictureFile.name + ' (attached)' : 'None'}
+Profile Picture: ${profilePictureName !== 'None' ? profilePictureName + ' (attached)' : 'None'}
 Project Details: ${nomineeProjectDetails}
-Project File: ${projectFile && projectFile.size > 0 ? projectFile.name + ' (attached)' : 'None'}
+Project File: ${projectFileName !== 'None' ? projectFileName + ' (attached)' : 'None'}
 LinkedIn URL: ${nomineeLinkedInURL}
 Instagram Link: ${nomineeInstagramLink}
 Confirmation: ${confirmation ? 'Yes' : 'No'}
@@ -392,17 +447,6 @@ Submitted on: ${new Date().toLocaleString()}
                         </div>
 
                         <div class="info-box">
-                            <h3 style="margin-top: 0; color: #C9A545;">Payment Information</h3>
-                            <p>To complete your nomination, please ensure payment is processed:</p>
-                            <a href="https://buy.stripe.com/test_9B67sL2sQdH3eDBdQsgbm01" class="button" target="_blank">
-                                Complete Payment - $500
-                            </a>
-                            <p style="font-size: 14px; color: #666; margin-top: 10px;">
-                                <em>Note: Your nomination will be processed once payment is confirmed.</em>
-                            </p>
-                        </div>
-
-                        <div class="info-box">
                             <h3 style="margin-top: 0; color: #C9A545;">Contact Information</h3>
                             <p>If you have any questions about your nomination, please contact us:</p>
                             <p><strong>Email:</strong> Yasir@theboredroomx.com</p>
@@ -438,12 +482,6 @@ WHAT HAPPENS NEXT:
 - You will receive updates on the evaluation process
 - Finalists will be announced on our website
 - Winners will be celebrated at our awards ceremony
-
-PAYMENT INFORMATION:
-To complete your nomination, please ensure payment is processed:
-https://buy.stripe.com/test_9B67sL2sQdH3eDBdQsgbm01
-
-Note: Your nomination will be processed once payment is confirmed.
 
 CONTACT INFORMATION:
 If you have any questions about your nomination, please contact us:

@@ -97,70 +97,80 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
         setSubmitMessage('')
 
         try {
-            // Create FormData to handle file uploads
-            const formDataToSend = new FormData()
-            
-            // Add text fields
-            formDataToSend.append('nominatorFullName', formData.nominatorFullName)
-            formDataToSend.append('nominatorEmail', formData.nominatorEmail)
-            formDataToSend.append('nominatorCountryCode', formData.nominatorCountryCode)
-            formDataToSend.append('nominatorMobileNumber', formData.nominatorMobileNumber)
-            formDataToSend.append('nominatorCompany', formData.nominatorCompany)
-            formDataToSend.append('nominatorDesignation', formData.nominatorDesignation)
-            formDataToSend.append('nominatorCity', formData.nominatorCity)
-            formDataToSend.append('category', formData.category)
-            formDataToSend.append('nomineeProjectDetails', formData.nomineeProjectDetails)
-            formDataToSend.append('nomineeLinkedInURL', formData.nomineeLinkedInURL)
-            formDataToSend.append('nomineeInstagramLink', formData.nomineeInstagramLink)
-            formDataToSend.append('confirmation', formData.confirmation.toString())
+            // First, upload files and get temporary IDs
+            const formDataToUpload = new FormData()
             
             // Add files if they exist
             if (formData.nomineeProfilePicture) {
-                formDataToSend.append('nomineeProfilePicture', formData.nomineeProfilePicture)
+                formDataToUpload.append('nomineeProfilePicture', formData.nomineeProfilePicture)
             }
             if (formData.nomineeProject) {
-                formDataToSend.append('nomineeProject', formData.nomineeProject)
+                formDataToUpload.append('nomineeProject', formData.nomineeProject)
             }
 
-            console.log('Submitting nomination with files:', {
-                profilePicture: formData.nomineeProfilePicture?.name || 'None',
-                projectFile: formData.nomineeProject?.name || 'None'
-            })
+            // Upload files and get temporary file IDs
+            let fileIds = { profilePictureId: '', projectFileId: '' }
+            
+            if (formData.nomineeProfilePicture || formData.nomineeProject) {
+                const uploadResponse = await fetch('/api/upload-temp-files', {
+                    method: 'POST',
+                    body: formDataToUpload
+                })
 
-            // Submit the form via email with files
-            const response = await fetch('/api/submit-nomination', {
-                method: 'POST',
-                body: formDataToSend // Don't set Content-Type header, let browser set it with boundary
-            })
-
-            const result = await response.json()
-            console.log('API Response:', result)
-
-            if (response.ok) {
-                setSubmitMessage('Nomination submitted successfully! Check your email for confirmation. Opening payment page...')
-                
-                // Open Stripe payment link in new tab
-                const stripeWindow = window.open('https://buy.stripe.com/test_9B67sL2sQdH3eDBdQsgbm01', '_blank')
-                
-                // Check if popup was blocked
-                if (!stripeWindow || stripeWindow.closed || typeof stripeWindow.closed == 'undefined') {
-                    setSubmitMessage('Nomination submitted successfully! Check your email for confirmation. Please click the payment link below to complete payment.')
-                    setShowPaymentLink(true)
-                } else {
-                    // Close modal and reset form after 2 seconds
-                setTimeout(() => {
-                    onClose()
-                    resetForm()
-                    }, 2000)
+                if (!uploadResponse.ok) {
+                    throw new Error('Failed to upload files')
                 }
-            } else {
-                console.error('API Error:', result)
-                setSubmitMessage(result.error || 'Error submitting nomination. Please try again.')
+
+                const uploadResult = await uploadResponse.json()
+                fileIds = uploadResult.fileIds
             }
+
+            // Create text-only form data for Stripe metadata
+            const textFormData = {
+                nominatorFullName: formData.nominatorFullName,
+                nominatorEmail: formData.nominatorEmail,
+                nominatorCountryCode: formData.nominatorCountryCode,
+                nominatorMobileNumber: formData.nominatorMobileNumber,
+                nominatorCompany: formData.nominatorCompany,
+                nominatorDesignation: formData.nominatorDesignation,
+                nominatorCity: formData.nominatorCity,
+                category: formData.category,
+                nomineeProjectDetails: formData.nomineeProjectDetails,
+                nomineeLinkedInURL: formData.nomineeLinkedInURL,
+                nomineeInstagramLink: formData.nomineeInstagramLink,
+                confirmation: formData.confirmation,
+                profilePictureId: fileIds.profilePictureId,
+                projectFileId: fileIds.projectFileId
+            }
+
+            // Create Stripe Checkout Session with text data and file IDs
+            const response = await fetch('/api/create-checkout-session', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: 'nomination',
+                    formData: textFormData,
+                }),
+            })
+
+            const data = await response.json()
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to create checkout session')
+            }
+
+            // Redirect to Stripe Checkout
+            if (data.url) {
+                window.location.href = data.url
+            } else {
+                throw new Error('No checkout URL received')
+            }
+
         } catch (error) {
             console.error('Error:', error)
-            setSubmitMessage('Error submitting nomination. Please check your connection and try again.')
-        } finally {
+            setSubmitMessage(error instanceof Error ? error.message : 'Error processing nomination. Please try again.')
             setIsSubmitting(false)
         }
     }
@@ -194,78 +204,66 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
     return (
         <>
-            <div className="modal-overlay" onClick={handleClose} style={{
+            <div style={{
                 position: 'fixed',
                 top: 0,
                 left: 0,
                 right: 0,
                 bottom: 0,
                 backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                zIndex: 9998,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
-            }} />
-            <div className="nomination-modal" style={{
-                position: 'fixed',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                backgroundColor: '#1a1a1a',
+                justifyContent: 'center',
+                zIndex: 1000,
+                overflowY: 'auto',
+                padding: '20px'
+            }}>
+            <div style={{
+                background: 'white',
                 padding: '40px',
-                borderRadius: '12px',
-                zIndex: 9999,
+                borderRadius: '15px',
                 maxWidth: '900px',
                 width: '95%',
                 maxHeight: '90vh',
                 overflowY: 'auto',
-                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)'
+                position: 'relative'
             }}>
                 <style jsx>{`
                     @media (max-width: 768px) {
-                        .nomination-modal {
-                            width: 98% !important;
-                            padding: 20px !important;
-                            max-height: 95vh !important;
-                        }
                         .form-grid {
                             grid-template-columns: 1fr !important;
                         }
                     }
                 `}</style>
-                <div style={{ position: 'relative' }}>
-                    <button
-                        onClick={handleClose}
-                        style={{
-                            position: 'absolute',
-                            top: '-20px',
-                            right: '-20px',
-                            background: 'transparent',
-                            border: 'none',
-                            fontSize: '30px',
-                            cursor: 'pointer',
-                            color: '#fff',
-                            lineHeight: '1'
-                        }}
-                    >
-                        ×
-                    </button>
+                
+                <button onClick={handleClose} style={{
+                    position: 'absolute',
+                    top: '20px',
+                    right: '20px',
+                    background: 'none',
+                    border: 'none',
+                    fontSize: '28px',
+                    cursor: 'pointer',
+                    color: '#666'
+                }}>
+                    &times;
+                </button>
 
-                    <div className="modal-header" style={{ marginBottom: '30px' }}>
-                        <h2 style={{ color: '#C9A545', fontSize: '28px', marginBottom: '10px' }}>
-                            Submit Your Nomination
-                        </h2>
-                            <p style={{ color: '#fff', fontSize: '14px' }}>
-                            Fill out the form below. Upon submission, we'll send your nomination details via email and open the payment page.
-                            </p>
-                    </div>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                    <img src="/assets/img/logo/final-logo.png" alt="Logo" style={{ maxWidth: '200px', marginBottom: '20px' }} />
+                    <h2 style={{ color: '#0e062e', marginBottom: '10px' }}>Women Who Lead: HR Leadership Conference & Awards 2026</h2>
+                    <p style={{ color: '#666' }}>Award Nomination Form</p>
+                    <p style={{ color: '#666', fontSize: '14px', marginTop: '10px' }}>
+                        Fill out the form below. Upon submission, we'll send your nomination details via email and open the payment page.
+                    </p>
+                </div>
 
                     <form onSubmit={handleSubmitAndPay}>
                         {/* Nominator Information */}
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Full Name <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Full Name <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                 type="text"
@@ -276,17 +274,15 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
                         </div>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Official Email ID <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Official Email ID <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                 type="email"
@@ -297,10 +293,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
@@ -309,8 +303,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Country Code <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Country Code <span style={{ color: 'red' }}>*</span>
                             </label>
                             <select
                                 name="nominatorCountryCode"
@@ -320,10 +314,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             >
@@ -336,8 +328,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                             </select>
                         </div>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Mobile Number <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Mobile Number <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                 type="tel"
@@ -349,10 +341,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
@@ -361,8 +351,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Company Name <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Company Name <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                 type="text"
@@ -373,17 +363,15 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
                         </div>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Designation <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Designation <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                 type="text"
@@ -394,10 +382,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
@@ -406,8 +392,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                City <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                City <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                 type="text"
@@ -418,17 +404,15 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
                         </div>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Category of Nomination <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Category of Nomination <span style={{ color: 'red' }}>*</span>
                             </label>
                             <select
                                 name="category"
@@ -438,10 +422,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             >
@@ -456,8 +438,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                    Upload your profile picture <span style={{ color: '#C9A545' }}>*</span>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                    Upload your profile picture <span style={{ color: 'red' }}>*</span>
                                 </label>
                                 <input
                                     type="file"
@@ -474,12 +456,12 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                         fontSize: '14px'
                                     }}
                                 />
-                                <small style={{ color: '#888', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                                <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
                                     Upload 1 supported file. Max 10 MB
                                 </small>
                             </div>
                             <div>
-                                <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
+                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
                                     Upload Your Project (if any)
                                 </label>
                                 <input
@@ -496,15 +478,15 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                         fontSize: '14px'
                                     }}
                                 />
-                                <small style={{ color: '#888', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                                <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
                                     Upload 1 supported file. Max 10 MB
                                 </small>
                             </div>
                         </div>
 
                         <div style={{ marginBottom: '20px' }}>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Write Project Details <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Write Project Details <span style={{ color: 'red' }}>*</span>
                             </label>
                             <textarea
                                 name="nomineeProjectDetails"
@@ -515,10 +497,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px',
                                     resize: 'vertical'
                                 }}
@@ -527,8 +507,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Provide your LinkedIn URL <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Provide your LinkedIn URL <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                     type="text"
@@ -540,17 +520,15 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
                         </div>
                             <div>
-                            <label style={{ display: 'block', color: '#fff', marginBottom: '8px', fontSize: '14px' }}>
-                                Provide your Instagram Link for collaboration post <span style={{ color: '#C9A545' }}>*</span>
+                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
+                                Provide your Instagram Link for collaboration post <span style={{ color: 'red' }}>*</span>
                             </label>
                             <input
                                     type="text"
@@ -562,10 +540,8 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                 style={{
                                     width: '100%',
                                     padding: '12px',
-                                    backgroundColor: '#2a2a2a',
-                                    border: '1px solid #444',
-                                    borderRadius: '6px',
-                                    color: '#fff',
+                                    border: '1px solid #ddd',
+                                    borderRadius: '8px',
                                     fontSize: '14px'
                                 }}
                             />
@@ -573,7 +549,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                         </div>
 
                         <div style={{ marginBottom: '30px' }}>
-                            <label style={{ display: 'flex', alignItems: 'flex-start', color: '#fff', fontSize: '14px', cursor: 'pointer' }}>
+                            <label style={{ display: 'flex', alignItems: 'flex-start', fontSize: '14px', cursor: 'pointer' }}>
                                 <input
                                     type="checkbox"
                                     name="confirmation"
@@ -588,7 +564,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                         cursor: 'pointer'
                                     }}
                                 />
-                                <span>I confirm that the provided information is accurate and consent to being contacted by Event Company <span style={{ color: '#C9A545' }}>*</span></span>
+                                <span>I confirm that the provided information is accurate and consent to being contacted by Event Company <span style={{ color: 'red' }}>*</span></span>
                             </label>
                         </div>
 
@@ -596,10 +572,10 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                             <div style={{
                                 padding: '15px',
                                 marginBottom: '20px',
-                                backgroundColor: submitMessage.includes('success') ? '#1a4d1a' : '#4d1a1a',
-                                color: '#fff',
-                                borderRadius: '6px',
-                                fontSize: '14px'
+                                backgroundColor: submitMessage.includes('success') ? '#d4edda' : '#f8d7da',
+                                color: submitMessage.includes('success') ? '#155724' : '#721c24',
+                                borderRadius: '8px',
+                                textAlign: 'center'
                             }}>
                                 {submitMessage}
                                 {showPaymentLink && (
@@ -612,9 +588,9 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                                                 display: 'inline-block',
                                                 padding: '12px 24px',
                                                 backgroundColor: '#C9A545',
-                                                color: '#000',
+                                                color: 'white',
                                                 textDecoration: 'none',
-                                                borderRadius: '6px',
+                                                borderRadius: '8px',
                                                 fontWeight: 'bold',
                                                 fontSize: '16px'
                                             }}
@@ -626,70 +602,28 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                             </div>
                         )}
 
-                        <div style={{ display: 'flex', gap: '15px' }}>
-                            {!showPaymentLink ? (
-                                <>
-                                    <button
-                                        type="button"
-                                        onClick={handleClose}
-                                        style={{
-                                            flex: 1,
-                                            padding: '14px',
-                                            backgroundColor: 'transparent',
-                                            border: '2px solid #C9A545',
-                                            color: '#C9A545',
-                                            borderRadius: '6px',
-                                            cursor: 'pointer',
-                                            fontSize: '16px',
-                                            fontWeight: 'bold'
-                                        }}
-                                    >
-                                        Cancel
-                                    </button>
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    style={{
-                                            flex: 1,
-                                        padding: '14px',
-                                        backgroundColor: isSubmitting ? '#666' : '#C9A545',
-                                        border: 'none',
-                                        color: '#000',
-                                        borderRadius: '6px',
-                                        cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold'
-                                    }}
-                                >
-                                        {isSubmitting ? 'Submitting...' : 'Submit & Pay'}
-                                    </button>
-                                </>
-                            ) : (
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        onClose()
-                                        resetForm()
-                                    }}
-                                    style={{
-                                        width: '100%',
-                                        padding: '14px',
-                                        backgroundColor: '#C9A545',
-                                        border: 'none',
-                                        color: '#000',
-                                        borderRadius: '6px',
-                                        cursor: 'pointer',
-                                        fontSize: '16px',
-                                        fontWeight: 'bold'
-                                    }}
-                                >
-                                    Close
-                                </button>
-                            )}
+                        <div style={{ marginTop: '30px', textAlign: 'center' }}>
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                style={{
+                                    backgroundColor: isSubmitting ? '#ccc' : '#C9A545',
+                                    color: 'white',
+                                    padding: '15px 40px',
+                                    border: 'none',
+                                    borderRadius: '8px',
+                                    fontSize: '16px',
+                                    fontWeight: 'bold',
+                                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                                    transition: 'background-color 0.3s'
+                                }}
+                            >
+                                {isSubmitting ? 'Submitting...' : 'Submit & Pay'}
+                            </button>
                         </div>
                     </form>
-                </div>
             </div>
+        </div>
         </>
     )
 }

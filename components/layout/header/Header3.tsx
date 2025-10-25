@@ -1,6 +1,11 @@
+'use client'
+import { useState } from 'react'
 import Link from 'next/link'
+import RegistrationModal from '@/components/layout/RegistrationModal'
 
 export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSearch, handleSearch }: any) {
+	const [isRegistrationOpen, setIsRegistrationOpen] = useState(false)
+	
 	return (
 		<>
 			<header>
@@ -10,7 +15,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 							<div className="col-lg-12">
 								<div className="menu-top-area">
 									<div className="top-menu-area">
-										<p>Join the Future of HR Leadership<Link href="/#">Buy Ticket</Link></p>
+										<p>Join the Future of HR Leadership<button onClick={() => setIsRegistrationOpen(true)} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline', padding: 0, marginLeft: '5px'}}>Buy Ticket</button></p>
 										<ul>
 											<li>
 												<Link href="/mailto:eventifyconference@.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com<span> | </span></Link>
@@ -73,10 +78,10 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 									<div className="btn-area">
 										<ul>
 											<li>
-												<Link href="https://www.instagram.com/brxeventsksa/"><i className="fa-brands fa-instagram" /></Link>
+												<Link href="https://www.instagram.com/brxeventsksa/" target="_blank"><i className="fa-brands fa-instagram" /></Link>
 											</li>
 											<li>
-												<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
+												<Link href="https://www.linkedin.com/company/brx-events/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 											</li>
 										</ul>
 									</div>
@@ -97,6 +102,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 				</div>
 			</header >
 
+			<RegistrationModal isOpen={isRegistrationOpen} onClose={() => setIsRegistrationOpen(false)} />
 		</>
 	)
 }

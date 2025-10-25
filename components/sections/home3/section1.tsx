@@ -2,10 +2,12 @@
 import { useState } from 'react'
 import CircleText from '@/components/elements/CircleText'
 import NominationModal from '@/components/layout/NominationModal'
+import RegistrationModal from '@/components/layout/RegistrationModal'
 import Link from 'next/link'
 
 export default function Section1() {
 	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [isRegistrationOpen, setIsRegistrationOpen] = useState(false)
 	
 	return (
 		<>
@@ -23,7 +25,7 @@ export default function Section1() {
 								
 								<div className="space24" />
 								<div className="btn-area1">
-									<button onClick={() => setIsModalOpen(true)} className="vl-btn3" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Reserve premium Seat</button>
+									<button onClick={() => setIsRegistrationOpen(true)} className="vl-btn3" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Reserve premium Seat</button>
 									<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Submit Your Nomination</button>
 								</div>
 								<div className="arrow-btnarea">
@@ -46,9 +48,10 @@ export default function Section1() {
 						</div>
 					</div>
 				</div>
-			</div>
+		</div>
 
-			<NominationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-		</>
-	)
+		<NominationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+		<RegistrationModal isOpen={isRegistrationOpen} onClose={() => setIsRegistrationOpen(false)} />
+	</>
+)
 }

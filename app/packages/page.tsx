@@ -2,11 +2,14 @@
 import { useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import PackagePasswordModal from "@/components/layout/PackagePasswordModal"
+import SponsorshipModal from "@/components/layout/SponsorshipModal"
 import Link from "next/link"
 
 export default function Packages() {
 	const [isAuthenticated, setIsAuthenticated] = useState(false)
 	const [showModal, setShowModal] = useState(true)
+	const [isSponsorModalOpen, setIsSponsorModalOpen] = useState(false)
+	const [selectedPackage, setSelectedPackage] = useState<string>('')
 
 	useEffect(() => {
 		// Always show modal on page load
@@ -24,6 +27,11 @@ export default function Packages() {
 		setShowModal(false)
 		// Redirect to home if user closes without entering password
 		window.location.href = '/'
+	}
+
+	const handleContactClick = (packageName: string) => {
+		setSelectedPackage(packageName)
+		setIsSponsorModalOpen(true)
 	}
 
 	if (!isAuthenticated) {
@@ -91,7 +99,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Platinum Partner')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -117,7 +125,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Gold Partner')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -142,7 +150,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Silver Partner')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -155,7 +163,7 @@ export default function Packages() {
 								{/* Giveaway Bags */}
 								<div className="col-lg-4 col-md-6 d-flex">
 									<div className="pricing-boxarea w-100 d-flex flex-column">
-										<h5>Giveaway Bags / Accessories</h5>
+										<h5>Networking Bright + Accessories Sponsorship</h5>
 										<div className="space20" />
 										<div className="space8" />
 										<ul style={{flexGrow: 1}}>
@@ -171,7 +179,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Networking Bright + Accessories Sponsorship')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -193,7 +201,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Speaker Package')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -216,7 +224,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Tech Sponsor')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -242,7 +250,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Co-Sponsors')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -264,7 +272,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('F&B Chocolate/Sweets')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -287,7 +295,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Training Partner')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -315,7 +323,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Insurance Partner')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -335,7 +343,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Gala Dinner Sponsor')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -357,7 +365,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<Link href="https://api.whatsapp.com/send?phone=966597183683" target="_blank" className="vl-btn1">Contact Us</Link>
+											<button onClick={() => handleContactClick('Entertainment Sponsor')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -368,6 +376,12 @@ export default function Packages() {
 
 				</div>
 			</Layout>
+			
+			<SponsorshipModal 
+				isOpen={isSponsorModalOpen} 
+				onClose={() => setIsSponsorModalOpen(false)}
+				preSelectedPackage={selectedPackage}
+			/>
 		</>
 	)
 }

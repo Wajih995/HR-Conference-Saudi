@@ -13,7 +13,7 @@ export default function PackagePasswordModal({ isOpen, onClose, onSuccess }: Pac
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
-		if (password === 'WLCA-BRX26') {
+		if (password.toLocaleLowerCase() === 'wlca-brx26') {
 			setError('')
 			onSuccess()
 		} else {
@@ -115,6 +115,14 @@ export default function PackagePasswordModal({ isOpen, onClose, onSuccess }: Pac
 							}}>
 								+966 59 718 3683
 							</a>
+							<br />
+							<a href="mailto:yasir@theboredroomx.com"style={{
+								color: '#C9A545',
+								textDecoration: 'none',
+								fontWeight: '600',
+								fontSize: '18px'
+							}}>yasir@theboredroomx.com</a>
+							
 						</p>
 
 						<form onSubmit={handleSubmit}>
