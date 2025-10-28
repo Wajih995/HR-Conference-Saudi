@@ -67,7 +67,12 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
         "HR Team of the Year",
         "HR's Rising Star of the Year",
         "DEI Changemaker Award",
-        "People Analytics Leader"
+        "People Analytics Leader",
+        "Entrepreneurial Leader of the Year",
+        "Business Transformation Leader of the Year",
+        "Visionary Woman Leader of the Year",
+        "Influential Woman of the Year",
+        "GAME Changemaker Woman of the Year"
     ]
 
     // No need for localStorage or payment flow checks anymore
