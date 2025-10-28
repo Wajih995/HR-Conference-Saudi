@@ -438,10 +438,10 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="ETREPRENEURIAL, LEADER, OF THE YEAR" fontSize="16px" />
+											<LaurelWreathWithText title="ENTREPRENEURIAL, LEADER, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates excellence in leveraging data and analytics for strategic HR decisions.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrating a woman entrepreneur or founder who has built a successful and sustainable business.</p>
 
 										</div>
 									</div>
@@ -452,7 +452,7 @@ export default function Awards() {
 											<LaurelWreathWithText title="BUSINESS, TRANSFORMATION, LEADER, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates excellence in leveraging data and analytics for strategic HR decisions.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Honoring a woman who has successfully driven organizational transformation.</p>
 
 										</div>
 									</div>
@@ -463,7 +463,7 @@ export default function Awards() {
 											<LaurelWreathWithText title="VISIONARY, WOMAN LEADER, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates excellence in leveraging data and analytics for strategic HR decisions.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Recognizing a woman whose foresight, creativity, and leadership have set new benchmarks.</p>
 
 										</div>
 									</div>
@@ -474,7 +474,7 @@ export default function Awards() {
 											<LaurelWreathWithText title="INFLUENTIAL, WOMAN, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates excellence in leveraging data and analytics for strategic HR decisions.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Acknowledging a leader whose actions, advocacy, and influence have created lasting impact.</p>
 
 										</div>
 									</div>
@@ -485,7 +485,7 @@ export default function Awards() {
 											<LaurelWreathWithText title="GAME CHANGER, WOMAN, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrates excellence in leveraging data and analytics for strategic HR decisions.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrating a woman who has challenged conventions, broken barriers, and transformed her industry through courage, innovation.</p>
 
 										</div>
 									</div>
