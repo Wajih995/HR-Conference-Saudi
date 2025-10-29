@@ -10,7 +10,7 @@ export default function Speakers() {
 
 			<Layout headerStyle={3} footerStyle={3}>
 				<div>
-					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/all-images/used-images/speakers-banner.jpg)' }}>
+					<div className="inner-page-header" style={{ backgroundImage: 'url(assets/img/all-images/used-images/speakers-banner.png)' }}>
 					<div style={{
 							position: 'absolute',
 							top: 0,
@@ -32,7 +32,7 @@ export default function Speakers() {
 					</div>
 					{/*===== HERO AREA ENDS =======*/}
 					{/*===== AMBASSADORS AREA STARTS =======*/}
-					<div className="team-sperkers-section-area sp1">
+					{/* <div className="team-sperkers-section-area sp1">
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-8 m-auto">
@@ -47,10 +47,8 @@ export default function Speakers() {
 								<div className="col-lg-3 col-md-6">
 									<div className="our-team-boxarea">
 										<div className="team-widget-area">
-											<Image src="/assets/img/elements/elements25.png" alt="" className="elements21" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
-											<Image src="/assets/img/elements/elements26.png" alt="" className="elements22" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
-											<div className="img1">
-												<Image src="/assets/img/all-images/team/team-img12.png" alt="Speaker" className="team-img4" width={400} height={500} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/Ambassador-1.webp" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
 													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
@@ -58,19 +56,17 @@ export default function Speakers() {
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Sarah Al-Mansouri</Link>
+										    <Link href="/speakers-single">H.E OMAR LEBBE  AMEER AJWAD</Link>
 											<div className="space16" />
-											<p>Event Ambassador</p>
+											<p>Ambassador of Sri Lanka to the Kingdom of Saudi ArabiaEvent Ambassador</p>
 										</div>
 									</div>
 								</div>
 								<div className="col-lg-3 col-md-6">
 									<div className="our-team-boxarea">
 										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img13.png" alt="" className="team-img4" />
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/Ambassador-2.jpeg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
 													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
@@ -78,78 +74,18 @@ export default function Speakers() {
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Fatima Al-Zahra</Link>
+											<Link href="/speakers-single">H.E. Mohammed Barrie</Link>
 											<div className="space16" />
-											<p>Event Ambassador</p>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-3 col-md-6">
-									<div className="our-team-boxarea">
-										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img14.png" alt="" className="team-img4" />
-												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-												</div>
-											</div>
-										</div>
-										<div className="space28" />
-										<div className="content-area">
-											<Link href="/speakers-single">Aisha Al-Rashid</Link>
-											<div className="space16" />
-											<p>Event Ambassador</p>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-3 col-md-6">
-									<div className="our-team-boxarea">
-										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img15.png" alt="" className="team-img4" />
-												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-												</div>
-											</div>
-										</div>
-										<div className="space28" />
-										<div className="content-area">
-											<Link href="/speakers-single">Mariam Al-Sabah</Link>
-											<div className="space16" />
-											<p>Event Ambassador</p>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-3 col-md-6">
-									<div className="our-team-boxarea">
-										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img16.png" alt="" className="team-img4" />
-												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-												</div>
-											</div>
-										</div>
-										<div className="space28" />
-										<div className="content-area">
-											<Link href="/speakers-single">Noura Al-Kuwaiti</Link>
-											<div className="space16" />
-											<p>Event Ambassador</p>
+											<p>Ambassador of Sierra Leone to the Kingdom of Saudi ArabiaEvent Ambassador</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 					{/*===== AMBASSADORS AREA ENDS =======*/}
 					{/*===== CHROs AREA STARTS =======*/}
-					<div className="team-sperkers-section-area sp1">
+					{/* <div className="team-sperkers-section-area sp1">
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-8 m-auto">
@@ -223,7 +159,7 @@ export default function Speakers() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 					{/*===== CHROs AREA ENDS =======*/}
 					{/*===== SPEAKERS AREA STARTS =======*/}
 					<div className="team-sperkers-section-area sp1">
@@ -238,13 +174,11 @@ export default function Speakers() {
 								</div>
 							</div>
 							<div className="row">
-								<div className="col-lg-3 col-md-6">
+							<div className="col-lg-3 col-md-6">
 									<div className="our-team-boxarea">
 										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img12.png" alt="" className="team-img4" />
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/Ambassador-1.webp" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
 													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
@@ -252,19 +186,17 @@ export default function Speakers() {
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Alex Robertson</Link>
+										    <Link href="/speakers-single">H.E OMAR LEBBE  AMEER AJWAD</Link>
 											<div className="space16" />
-											<p>HR Leadership Expert</p>
+											<p>Ambassador of Sri Lanka to the Kingdom of Saudi ArabiaEvent Ambassador</p>
 										</div>
 									</div>
 								</div>
 								<div className="col-lg-3 col-md-6">
 									<div className="our-team-boxarea">
 										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img13.png" alt="" className="team-img4" />
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/Ambassador-2.jpeg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
 													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
@@ -272,19 +204,35 @@ export default function Speakers() {
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Alexy Sammony</Link>
+											<Link href="/speakers-single">H.E. Mohammed Barrie</Link>
 											<div className="space16" />
-											<p>Diversity & Inclusion Specialist</p>
+											<p>Ambassador of Sierra Leone to the Kingdom of Saudi ArabiaEvent Ambassador</p>
+										</div>
+									</div>
+								</div>	
+								<div className="col-lg-3 col-md-6">
+									<div className="our-team-boxarea">
+										<div className="team-widget-area">
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-1.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
+												<div className="share">
+													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+												</div>
+											</div>
+										</div>
+										<div className="space28" />
+										<div className="content-area">
+											<Link href="/speakers-single">Razan Al-Ajmi</Link>
+											<div className="space16" />
+											<p>1st Saudi Female Skydiver</p>
 										</div>
 									</div>
 								</div>
 								<div className="col-lg-3 col-md-6">
 									<div className="our-team-boxarea">
 										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img14.png" alt="" className="team-img4" />
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-2.jpeg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
 													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
@@ -292,29 +240,9 @@ export default function Speakers() {
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Kireon Pollardy</Link>
+											<Link href="/speakers-single">Reem Algasim</Link>
 											<div className="space16" />
-											<p>Talent Management Expert</p>
-										</div>
-									</div>
-								</div>
-								<div className="col-lg-3 col-md-6">
-									<div className="our-team-boxarea">
-										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
-											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img15.png" alt="" className="team-img4" />
-												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
-												</div>
-											</div>
-										</div>
-										<div className="space28" />
-										<div className="content-area">
-											<Link href="/speakers-single">Dr. Sarah Johnson</Link>
-											<div className="space16" />
-											<p>Organizational Psychology Expert</p>
+											<p>Head of Human Resource - Airbus</p>
 										</div>
 									</div>
 								</div>
@@ -335,10 +263,10 @@ export default function Speakers() {
 										</div>
 										<ul>
 											<li>
-												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />30 January 2025 - 6pm to 11:30pm</Link>
+												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />20 January 2026</Link>
 											</li>
 											<li className="m-0">
-												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Secret Location In The UK</Link>
+												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 											</li>
 										</ul>
 									</div>
@@ -361,10 +289,10 @@ export default function Speakers() {
 										</div>
 										<ul>
 											<li>
-												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />30 January 2025 - 6pm to 11:30pm</Link>
+												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />20 February 2026</Link>
 											</li>
 											<li className="m-0">
-												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Secret Location In The UK</Link>
+												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
 											</li>
 										</ul>
 									</div>

@@ -16837,11 +16837,11 @@ html {
 	transition: all 0.4s;
 }
 
-.team3-section-area .team-slider-area2 .our-team-boxarea .team-widget-area:hover .elements21 {
+/* .team3-section-area .team-slider-area2 .our-team-boxarea .team-widget-area:hover .elements21 {
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.4s;
-}
+} */
 
 .team3-section-area .team-slider-area2 .our-team-boxarea .team-widget-area:hover .elements22 {
 	visibility: visible;
@@ -17206,11 +17206,11 @@ html {
 	transition: all 0.4s;
 }
 
-.team-sperkers-section-area .our-team-boxarea .team-widget-area:hover .elements21 {
+/* .team-sperkers-section-area .our-team-boxarea .team-widget-area:hover .elements21 {
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.4s;
-}
+} */
 
 .team-sperkers-section-area .our-team-boxarea .team-widget-area:hover .elements22 {
 	visibility: visible;
@@ -17447,11 +17447,11 @@ html {
 	z-index: -1;
 }
 
-.team-details-section-area .speakers-details-box .our-team-boxarea .team-widget-area:hover .elements21 {
+/* .team-details-section-area .speakers-details-box .our-team-boxarea .team-widget-area:hover .elements21 {
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.4s;
-}
+} */
 
 .team-details-section-area .speakers-details-box .our-team-boxarea .team-widget-area:hover .elements22 {
 	visibility: visible;
@@ -24208,11 +24208,11 @@ html {
 	transition: all 0.4s;
 }
 
-.event-sidepage-section-area .event-side-images .our-team-boxarea .team-widget-area:hover .elements21 {
+/* .event-sidepage-section-area .event-side-images .our-team-boxarea .team-widget-area:hover .elements21 {
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.4s;
-}
+} */
 
 .event-sidepage-section-area .event-side-images .our-team-boxarea .team-widget-area:hover .elements22 {
 	visibility: visible;
