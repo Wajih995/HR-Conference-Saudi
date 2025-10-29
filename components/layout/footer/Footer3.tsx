@@ -1,7 +1,13 @@
 
+'use client'
+import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import PrivacyPolicyModal from '@/components/layout/PrivacyPolicyModal'
 
 export default function Footer3() {
+	const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
+	
 	return (
 		<>
 			<div className="footer3-sertion-area">
@@ -9,7 +15,7 @@ export default function Footer3() {
 					<div className="row">
 						<div className="col-lg-3 col-md-6">
 							<div className="footer-logo-area">
-								<img src="/assets/img/all-images/used-images/BRX-logo.webp" alt="" />
+								<Image src="/assets/img/all-images/used-images/BRX-logo.webp" alt="BRX Logo" width={200} height={80} />
 								<div className="space16" />
 								<ul>
 									<li>
@@ -20,9 +26,11 @@ export default function Footer3() {
 									</li>
 								</ul>
 								<div className="cpd-logo-container" style={{marginTop: '30px'}}>
-									<img 
+									<Image 
 										src="/assets/img/all-images/used-images/cpd-logo.png" 
 										alt="CPD Standards Office" 
+										width={300}
+										height={150}
 										style={{
 											maxWidth: '300px',
 											height: 'auto',
@@ -50,14 +58,14 @@ export default function Footer3() {
 								<h3>Contact Us</h3>
 								<ul>
 									<li>
-										<a href="tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</a>
-										<a href="tel:+971522916745"><img src="/assets/img/icons/phn1.svg" alt="" />+971 52 291 6745</a>
+										<a href="tel:+966597183683"><Image src="/assets/img/icons/phn1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />+966 59 718 3683</a>
+										<a href="tel:+971522916745"><Image src="/assets/img/icons/phn1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />+971 52 291 6745</a>
 									</li>
 									<li>
-										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
+										<Link href="/#"><Image src="/assets/img/icons/location1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />Riyadh, Saudi Arabia</Link>
 									</li>
 									<li>
-										<a href="mailto:yasir@theboredroomx.com"><img src="/assets/img/icons/mail1.svg" alt="" />Yasir@theboredroomx.com</a>
+										<a href="mailto:yasir@theboredroomx.com"><Image src="/assets/img/icons/mail1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />Yasir@theboredroomx.com</a>
 									</li>
 								</ul>
 							</div>
@@ -68,38 +76,38 @@ export default function Footer3() {
 								<div className="space12" />
 								<div className="row">
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-1.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/footer-1.png" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-2.png" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/footer-2.png" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-3.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/footer-3.jpg" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-4.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/footer-4.jpg" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-5.webp" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/footer-5.webp" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden'}}>
-											<img src="/assets/img/all-images/used-images/footer-6.avif" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/footer-6.avif" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
@@ -111,13 +119,17 @@ export default function Footer3() {
 					<div className="row">
 						<div className="col-lg-12">
 							<div className="copyright">
-								<p>© Copyright {new Date().getFullYear()} -BRX Events. All Right Reserved</p>
+								<p>© Copyright {new Date().getFullYear()} -BRX Events. All Right Reserved | <a href="#" onClick={(e) => { e.preventDefault(); setIsPrivacyModalOpen(true); }} style={{ color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>Privacy Policy</a></p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<PrivacyPolicyModal 
+				isOpen={isPrivacyModalOpen} 
+				onClose={() => setIsPrivacyModalOpen(false)} 
+			/>
 		</>
 	)
 }

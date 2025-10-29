@@ -1,5 +1,6 @@
 
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Section8() {
@@ -20,7 +21,7 @@ export default function Section8() {
 
 			<div className="contact-bg-section">
 				<div className="img1">
-					<img src="/assets/img/all-images/contact/news-10.jpg" alt="" className="contact-img1" />
+					<Image src="/assets/img/all-images/contact/news-10.jpg" alt="Contact Background" className="contact-img1" width={1200} height={800}/>
 				</div>
 				<div className="container">
 					<div className="row">
@@ -30,7 +31,7 @@ export default function Section8() {
 								<div className="">
 									<div className="contact-boxarea" data-aos="zoom-in" data-aos-duration={900}>
 										<div className="icons">
-											<img src="/assets/img/icons/mail1.svg" alt="" />
+											<Image src="/assets/img/icons/mail1.svg" alt="" width={24} height={24} />
 										</div>
 										<div className="text">
 											<h5>Our Email</h5>
@@ -41,7 +42,7 @@ export default function Section8() {
 									<div className="space18" />
 									<div className="contact-boxarea" data-aos="zoom-in" data-aos-duration={1000}>
 										<div className="icons">
-											<img src="/assets/img/icons/location1.svg" alt="" />
+											<Image src="/assets/img/icons/location1.svg" alt="" width={24} height={24} />
 										</div>
 										<div className="text">
 											<h5>our location</h5>
@@ -56,7 +57,7 @@ export default function Section8() {
 									<div className="space20 d-md-none d-block" />
 									<div className="contact-boxarea" data-aos="zoom-in" data-aos-duration={1000}>
 										<div className="icons">
-											<img src="/assets/img/icons/phn1.svg" alt="" />
+											<Image src="/assets/img/icons/phn1.svg" alt="" width={24} height={24} />
 										</div>
 										<div className="text">
 											<h5>Call/Message</h5>
@@ -67,7 +68,7 @@ export default function Section8() {
 									<div className="space18" />
 									<div className="contact-boxarea" data-aos="zoom-in" data-aos-duration={1200}>
 										<div className="icons">
-											<img src="/assets/img/icons/instagram.svg" alt="" />
+											<Image src="/assets/img/icons/instagram.svg" alt="" width={24} height={24} />
 										</div>
 										<div className="text">
 											<h5>Instagram</h5>
@@ -140,10 +141,10 @@ export default function Section8() {
 			</div>
 			
 			
-				<div className="mapouter">
+						<div className="mapouter">
 					<div className="gmap_canvas">
 						{/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4506257.120552435!2d88.67021924228865!3d21.954385721237916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1704088968016!5m2!1sen!2sbd" width='100%' height={450} style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade" /> */}
-						<img src="/assets/img/all-images/used-images/location.jpg" alt="" />
+						<Image src="/assets/img/all-images/used-images/location.jpg" alt="Location Map" width={1200} height={450} style={{width: '100%', height: 'auto'}} />
 					</div>
 				</div>
 

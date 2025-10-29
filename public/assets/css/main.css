@@ -20189,8 +20189,8 @@ html {
 	position: absolute;
 	max-width: 200px !important;
 	max-height: 200px !important;
-	left: -15px;
-	top: -15px;
+	left: 0px;
+	top: 0px;
 }
 
 .cta3-section-area .cta-counter-box h2 {

@@ -1,5 +1,6 @@
 
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -74,7 +75,7 @@ export default function Section9() {
 							<Swiper {...swiperOptions} className=" owl-carousel">
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-1.jpg" alt="" />
+										<Image src="/assets/img/all-images/used-images/slider-1.jpg" alt="Memory" width={600} height={400}/>
 									</div>
 									{/* <div className="content-area">
 										<p>Event 2024</p>
@@ -87,7 +88,7 @@ export default function Section9() {
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-2.jpg" alt="" />
+										<Image src="/assets/img/all-images/used-images/slider-2.jpg" alt="Memory" width={600} height={400}/>
 									</div>
 									{/* <div className="content-area">
 										<p>Event 2024</p>
@@ -100,7 +101,7 @@ export default function Section9() {
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-4.jpg" alt="" />
+										<Image src="/assets/img/all-images/used-images/slider-4.jpg" alt="Memory" width={600} height={400}/>
 									</div>
 									{/* <div className="content-area">
 										<p>Event 2024</p>
@@ -113,7 +114,7 @@ export default function Section9() {
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/rec-memory.JPG" alt="" />
+										<Image src="/assets/img/all-images/used-images/rec-memory.JPG" alt="Memory" width={600} height={400}/>
 									</div>
 									{/* <div className="content-area">
 										<p>Event 2024</p>
@@ -126,7 +127,7 @@ export default function Section9() {
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-2.jpg" alt="" />
+										<Image src="/assets/img/all-images/used-images/slider-2.jpg" alt="Memory" width={600} height={400}/>
 									</div>
 									{/* <div className="content-area">
 										<p>Event 2024</p>
@@ -139,7 +140,7 @@ export default function Section9() {
 								</SwiperSlide>
 								<SwiperSlide className="memory3-boxarea">
 									<div className="img1">
-										<img src="/assets/img/all-images/used-images/slider-4.jpg" alt="" />
+										<Image src="/assets/img/all-images/used-images/slider-4.jpg" alt="Memory" width={600} height={400}/>
 									</div>
 									{/* <div className="content-area">
 										<p>Event 2024</p>

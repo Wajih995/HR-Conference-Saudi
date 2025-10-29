@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import CountUp from 'react-countup'
 import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
@@ -11,7 +12,7 @@ const LaurelWreathWithText = ({ title, fontSize = '16px' }: { title: string, fon
 	const lines = title.split(',');
 	return (
 		<div style={{position: 'relative', display: 'inline-block'}}>
-			<img src="/assets/img/icons/laurel-wreath.svg" alt="" style={{width: '300px', height: '260px', filter: 'brightness(0) invert(1)'}} />
+			<Image src="/assets/img/icons/laurel-wreath.svg" alt="" width={300} height={260} style={{filter: 'brightness(0) invert(1)'}} />
 			<div style={{position: 'absolute', top: '44%', left: '50%', transform: 'translate(-50%, -50%)', width: '80%', textAlign: 'center'}}>
 				<div style={{color: '#C9A545', fontSize, fontWeight: 'bold', fontFamily: 'Arial, sans-serif', lineHeight: '1.2'}}>
 					{lines.map((line, index) => (
@@ -199,7 +200,7 @@ export default function Awards() {
 
 					{/*===== DEADLINES TIMELINE STARTS =======*/}
 					<div>
-						<img src="/assets/img/all-images/used-images/WWL-Roadmap.jpg" alt="" />
+						<Image src="/assets/img/all-images/used-images/WWL-Roadmap.jpg" alt="Awards Timeline Roadmap" width={1200} height={800} style={{width: '100%', height: 'auto'}} />
 
                         </div>
 					{/*===== DEADLINES TIMELINE ENDS =======*/}

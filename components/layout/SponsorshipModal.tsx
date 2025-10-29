@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface SponsorshipModalProps {
 	isOpen: boolean
@@ -144,7 +145,7 @@ export default function SponsorshipModal({ isOpen, onClose, preSelectedPackage }
 				</button>
 
 				<div style={{ textAlign: 'center', marginBottom: '30px' }}>
-					<img src="/assets/img/logo/final-logo.png" alt="Logo" style={{ maxWidth: '200px', marginBottom: '20px' }} />
+					<Image src="/assets/img/logo/final-logo.png" alt="Logo" width={200} height={60} style={{ maxWidth: '200px', marginBottom: '20px', height: 'auto' }} />
 					<h2 style={{ color: '#0e062e', marginBottom: '10px' }}>Women Who Lead: HR Leadership Conference & Awards 2026</h2>
 					<p style={{ color: '#666' }}>Sponsorship Application Form</p>
 				</div>

@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import CircleText from '@/components/elements/CircleText'
 import NominationModal from '@/components/layout/NominationModal'
 import RegistrationModal from '@/components/layout/RegistrationModal'
@@ -13,8 +14,8 @@ export default function Section1() {
 		<>
 
 			<div className="hero3-section-area">
-				<img src="/assets/img/elements/elements18.png" alt="" className="elements18" />
-				<img src="/assets/img/elements/elements9.png" alt="" className="elements9" />
+				<Image src="/assets/img/elements/elements18.png" alt="" className="elements18" width={200} height={200} style={{width: 'auto', height: 'auto'}} />
+				<Image src="/assets/img/elements/elements9.png" alt="" className="elements9" width={200} height={200} style={{width: 'auto', height: 'auto'}} />
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8 m-auto">
@@ -32,7 +33,7 @@ export default function Section1() {
 									<Link href="/about">
 										<div className="content aniamtion-key-1" >
 											{/* <CircleText text="Build LEAD INSPIRE EMPOWER." /> */}
-											<img src="/assets/img/all-images/used-images/cpd-circle.jpeg" alt="" className="arrow1" />
+											<Image src="/assets/img/all-images/used-images/cpd-circle.jpeg" alt="CPD Circle" className="arrow1" width={300} height={300} style={{width: 'auto', height: 'auto'}} />
 										</div>
 										{/* <img src="/assets/img/icons/arrow1.svg" alt="" className="arrow1" /> */}
 									</Link>
