@@ -10,6 +10,10 @@ import Section6 from '@/components/sections/home3/section6'
 import Section7 from '@/components/sections/home3/section7'
 import Section8 from '@/components/sections/home3/section8'
 import Section9 from '@/components/sections/home3/section9'
+
+// Cache this page for 1 hour (3600 seconds)
+export const revalidate = 3600
+
 export default function Home3() {
 
 	return (

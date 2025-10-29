@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
@@ -46,10 +47,10 @@ export default function Speakers() {
 								<div className="col-lg-3 col-md-6">
 									<div className="our-team-boxarea">
 										<div className="team-widget-area">
-											<img src="/assets/img/elements/elements25.png" alt="" className="elements21" />
-											<img src="/assets/img/elements/elements26.png" alt="" className="elements22" />
+											<Image src="/assets/img/elements/elements25.png" alt="" className="elements21" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
+											<Image src="/assets/img/elements/elements26.png" alt="" className="elements22" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
 											<div className="img1">
-												<img src="/assets/img/all-images/team/team-img12.png" alt="" className="team-img4" />
+												<Image src="/assets/img/all-images/team/team-img12.png" alt="Speaker" className="team-img4" width={400} height={500} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 												<div className="share">
 													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>

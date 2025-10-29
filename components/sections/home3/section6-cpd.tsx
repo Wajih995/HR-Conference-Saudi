@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 export default function Section6CPD() {
 	return (
@@ -25,9 +26,11 @@ export default function Section6CPD() {
 							<div className="event2-header heading5 text-center mb-4">
 								<div className="space18" />
 								<div className="cpd-logo-container" style={{marginBottom: '30px'}}>
-									<img 
+									<Image 
 										src="/assets/img/all-images/used-images/cpd-logo.png" 
 										alt="CPD Standards Office" 
+										width={300}
+										height={150}
 										style={{
 											maxWidth: '300px',
 											height: 'auto',

@@ -1,5 +1,6 @@
 'use client'
 import CountUp from 'react-countup'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Section10() {
@@ -7,9 +8,9 @@ export default function Section10() {
 		<>
 
 			<div className="cta3-section-area sp1">
-				<img src="/assets/img/elements/elements9.png" alt="" className="elements9" />
-				<img src="/assets/img/elements/elements18.png" alt="" className="elements18" />
-				<img src="/assets/img/elements/elements24.png" alt="" className="elements24" />
+				<Image src="/assets/img/elements/elements9.png" alt="" className="elements9" width={200} height={200}/>
+				<Image src="/assets/img/elements/elements18.png" alt="" className="elements18" width={200} height={200}/>
+				<Image src="/assets/img/elements/elements24.png" alt="" className="elements24" width={200} height={200}/>
 				<div className="date-btn aniamtion-key-1">
 					<h4>20</h4>
 					<div className="space14" />
@@ -23,7 +24,7 @@ export default function Section10() {
 							<div className="row">
 								<div className="col-lg-4 col-md-4">
 									<div className="cta-counter-box">
-										<img src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" />
+										<Image src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" width={100} height={100} style={{width: '100%', height: 'auto'}}/>
 										<h2><CountUp className="odometer" enableScrollSpy={true} end={100} />+</h2>
 										<div className="space14" />
 										<p>Attendance</p>
@@ -31,7 +32,7 @@ export default function Section10() {
 								</div>
 								<div className="col-lg-4 col-md-4">
 									<div className="cta-counter-box">
-										<img src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" />
+										<Image src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" width={100} height={100} style={{width: '100%', height: 'auto'}}/>
 										<h2><CountUp className="odometer" enableScrollSpy={true} end={20} />+</h2>
 										<div className="space14" />
 										<p>Award Categories</p>
@@ -39,7 +40,7 @@ export default function Section10() {
 								</div>
 								<div className="col-lg-4 col-md-4">
 									<div className="cta-counter-box">
-										<img src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" />
+										<Image src="/assets/img/elements/elements23.png" alt="" className="elements23 keyframe5" width={100} height={100} style={{width: '100%', height: 'auto'}}/>
 										<h2><CountUp className="odometer" enableScrollSpy={true} end={15} /></h2>
 										<div className="space14" />
 										<p>Speakers</p>
@@ -50,7 +51,7 @@ export default function Section10() {
 						<div className="col-lg-1" />
 						<div className="col-lg-3">
 							<div className="img1">
-								<img src="/assets/img/all-images/used-images/about-1-removebg.png" alt="" />
+								<Image src="/assets/img/all-images/used-images/about-1-removebg.png" alt="About" width={400} height={500}/>
 							</div>
 						</div>
 					</div>

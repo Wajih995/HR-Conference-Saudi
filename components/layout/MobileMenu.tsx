@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
@@ -15,7 +16,7 @@ const handleAccordion = (key: any) => {
 					<div className="col-12">
 						<div className="mobile-header-elements">
 							<div className="mobile-logo">
-								<Link href="/"><img src="/assets/img/logo/final-logo.png" alt="" /></Link>
+								<Link href="/"><Image src="/assets/img/logo/final-logo.png" alt="Logo" width={200} height={60} style={{width: 'auto', height: 'auto'}} /></Link>
 							</div>
 							<div className="mobile-nav-icon dots-menu" onClick={handleMobileMenu}>
 								<i className="fa-solid fa-bars-staggered" />
@@ -27,7 +28,7 @@ const handleAccordion = (key: any) => {
 			<div className={`mobile-sidebar mobile-sidebar1 ${isMobileMenu ? 'mobile-menu-active' : ''}`}>
 				<div className="logosicon-area">
 					<div className="logos">
-						<img src="/assets/img/logo/final-logo.png" alt="" />
+						<Image src="/assets/img/logo/final-logo.png" alt="Logo" width={200} height={60} style={{width: 'auto', height: 'auto'}} />
 					</div>
 					<div className="menu-close" onClick={handleMobileMenu}>
 						<i className="fa-solid fa-xmark" />

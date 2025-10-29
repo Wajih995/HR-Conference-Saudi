@@ -1,5 +1,6 @@
 
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -74,12 +75,12 @@ export default function Section4() {
 							<Swiper {...swiperOptions} className=" owl-carousel">
 								<SwiperSlide className="our-team-boxarea">
 									<div className="team-widget-area">
-										<img src="/assets/img/elements/elements21.png" alt="" className="elements21" />
-										<img src="/assets/img/elements/elements22.png" alt="" className="elements22" />
+										<Image src="/assets/img/elements/elements21.png" alt="" className="elements21" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
+										<Image src="/assets/img/elements/elements22.png" alt="" className="elements22" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
 										<div className="img1">
-											<img src="/assets/img/all-images/team/team-img8.png" alt="" className="team-img4" />
+											<Image src="/assets/img/all-images/team/team-img8.png" alt="Speaker" className="team-img4" width={400} height={500} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="share">
-												<Link href="/#"><img src="/assets/img/icons/share1.svg" alt="" /></Link>
+												<Link href="/#"><Image src="/assets/img/icons/share1.svg" alt="" width={24} height={24} /></Link>
 											</div>
 											<ul>
 												<li>
@@ -202,12 +203,12 @@ export default function Section4() {
 								</SwiperSlide>
 								<SwiperSlide className="our-team-boxarea">
 									<div className="team-widget-area">
-										<img src="/assets/img/elements/elements21.png" alt="" className="elements21" />
-										<img src="/assets/img/elements/elements22.png" alt="" className="elements22" />
+										<Image src="/assets/img/elements/elements21.png" alt="" className="elements21" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
+										<Image src="/assets/img/elements/elements22.png" alt="" className="elements22" width={100} height={100} style={{width: 'auto', height: 'auto'}} />
 										<div className="img1">
-											<img src="/assets/img/all-images/team/team-img8.png" alt="" className="team-img4" />
+											<Image src="/assets/img/all-images/team/team-img8.png" alt="Speaker" className="team-img4" width={400} height={500} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 											<div className="share">
-												<Link href="/#"><img src="/assets/img/icons/share1.svg" alt="" /></Link>
+												<Link href="/#"><Image src="/assets/img/icons/share1.svg" alt="" width={24} height={24} /></Link>
 											</div>
 											<ul>
 												<li>

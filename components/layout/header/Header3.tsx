@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import RegistrationModal from '@/components/layout/RegistrationModal'
 
@@ -18,10 +19,10 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 										<p>Join the Future of HR Leadership<button onClick={() => setIsRegistrationOpen(true)} style={{background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline', padding: 0, marginLeft: '5px'}}>Buy Ticket</button></p>
 										<ul>
 											<li>
-												<a href="mailto:yasir@theboredroomx.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com<span> | </span></a>
+												<a href="mailto:yasir@theboredroomx.com"><Image src="/assets/img/icons/mail1.svg" alt="" width={16} height={16} style={{display: 'inline', marginRight: '6px', verticalAlign: 'middle'}} />yasir@theboredroomx.com<span> | </span></a>
 											</li>
 											<li>
-												<a href="tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683 <span> | </span></a>
+												<a href="tel:+966597183683"><Image src="/assets/img/icons/phn1.svg" alt="" width={16} height={16} style={{display: 'inline', marginRight: '6px', verticalAlign: 'middle'}} />+966 59 718 3683 <span> | </span></a>
 												<a href="tel:+971522916745">+971 52 291 6745</a>
 											</li>
 										</ul>
@@ -29,7 +30,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 								</div>
 								<div className="header-elements">
 									<div className="site-logo">
-										<Link href="/"><img src="/assets/img/logo/final-logo.png" alt="" /></Link>
+										<Link href="/"><Image src="/assets/img/logo/final-logo.png" alt="Logo" width={200} height={60} style={{width: 'auto', height: 'auto'}} /></Link>
 									</div>
 									<div className="main-menu">
 										<ul>
@@ -89,7 +90,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 										<div className="header-search-container">
 											<form role="search" className="search-form">
 												<input type="search" className="search-field" placeholder="Search …" name="s" />
-												<button type="submit" className="search-submit"><img src="/assets/img/icons/search1.svg" alt="" /></button>
+												<button type="submit" className="search-submit"><Image src="/assets/img/icons/search1.svg" alt="Search" width={20} height={20} /></button>
 											</form>
 										</div>
 									</div>

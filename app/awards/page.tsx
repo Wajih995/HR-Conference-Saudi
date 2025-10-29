@@ -1,17 +1,19 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import CountUp from 'react-countup'
 import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
 import BrandSlider from '@/components/slider/BrandSlider'
 import NominationModal from '@/components/layout/NominationModal'
+import OptimizedVideo from '@/components/elements/OptimizedVideo'
 import Link from "next/link"
 // Function to create laurel wreath with text
 const LaurelWreathWithText = ({ title, fontSize = '16px' }: { title: string, fontSize?: string }) => {
 	const lines = title.split(',');
 	return (
 		<div style={{position: 'relative', display: 'inline-block'}}>
-			<img src="/assets/img/icons/laurel-wreath.svg" alt="" style={{width: '300px', height: '260px', filter: 'brightness(0) invert(1)'}} />
+			<Image src="/assets/img/icons/laurel-wreath.svg" alt="" width={300} height={260} style={{filter: 'brightness(0) invert(1)'}} />
 			<div style={{position: 'absolute', top: '44%', left: '50%', transform: 'translate(-50%, -50%)', width: '80%', textAlign: 'center'}}>
 				<div style={{color: '#C9A545', fontSize, fontWeight: 'bold', fontFamily: 'Arial, sans-serif', lineHeight: '1.2'}}>
 					{lines.map((line, index) => (
@@ -32,27 +34,29 @@ export default function Awards() {
 			<Layout headerStyle={3} footerStyle={1}>
 				<div>
 					<div className="inner-page-header" style={{ position: 'relative', overflow: 'hidden' }}>
-						{/* Video Background */}
-						<video
-							autoPlay
-							loop
-							muted
-							playsInline
-							style={{
-								position: 'absolute',
-								top: '50%',
-								left: '50%',
-								minWidth: '100%',
-								minHeight: '100%',
-								width: 'auto',
-								height: 'auto',
-								transform: 'translate(-50%, -50%)',
-								zIndex: 0,
-								objectFit: 'cover'
-							}}
-						>
-							<source src="/assets/img/all-images/used-images/N.mp4" type="video/mp4" />
-						</video>
+						{/* Optimized Video Background */}
+						<div style={{
+							position: 'absolute',
+							top: 0,
+							left: 0,
+							width: '100%',
+							height: '100%',
+							zIndex: 0,
+						}}>
+							<OptimizedVideo
+								src="/assets/img/all-images/used-images/N.mp4"
+								// poster="/assets/img/all-images/used-images/awards-video-poster.jpg" // Add poster image for better performance
+								autoPlay
+								loop
+								muted
+								playsInline
+								preload="metadata"
+								style={{
+									width: '100%',
+									height: '100%',
+								}}
+							/>
+						</div>
 						{/* Dark overlay for better text visibility */}
 						<div style={{
 							position: 'absolute',
@@ -199,7 +203,7 @@ export default function Awards() {
 
 					{/*===== DEADLINES TIMELINE STARTS =======*/}
 					<div>
-						<img src="/assets/img/all-images/used-images/WWL-Roadmap.jpg" alt="" />
+						<Image src="/assets/img/all-images/used-images/WWL-Roadmap.jpg" alt="Awards Timeline Roadmap" width={1200} height={800} style={{width: '100%', height: 'auto'}} />
 
                         </div>
 					{/*===== DEADLINES TIMELINE ENDS =======*/}

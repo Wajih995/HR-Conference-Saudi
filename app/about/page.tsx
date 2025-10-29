@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import CountUp from 'react-countup'
 import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
@@ -43,19 +44,19 @@ export default function About() {
 								<div className="col-lg-6">
 									<div className="about-imges">
 										<div className="img1 reveal image-anime">
-											<img src="/assets/img/all-images/used-images/about-sec-3.avif" alt="" />
+											<Image src="/assets/img/all-images/used-images/about-sec-3.avif" alt="About Conference" width={600} height={400} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 										</div>
 										<div className="row">
 											<div className="col-lg-6 col-md-6">
 												<div className="space30" />
 												<div className="img1 reveal image-anime">
-													<img src="/assets/img/all-images/used-images/about-sec-1.jpg" alt="" />
+													<Image src="/assets/img/all-images/used-images/about-sec-1.jpg" alt="About Event" width={600} height={400} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 												</div>
 											</div>
 											<div className="col-lg-6 col-md-6">
 												<div className="space30" />
 												<div className="img1 reveal image-anime">
-													<img src="/assets/img/all-images/used-images/about-sec-2.webp" alt="" />
+													<Image src="/assets/img/all-images/used-images/about-sec-2.webp" alt="About" width={600} height={400} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 												</div>
 											</div>
 										</div>
@@ -147,12 +148,12 @@ export default function About() {
                     <div className="about-text-section sp2" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative'}}>
                         {/* Left Top Image - Desktop Only */}
                         <div className="d-none d-lg-block" style={{position: 'absolute', top: '40px', left: '40px', width: '150px', height: '150px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 20px rgba(0,0,0,0.3)', zIndex: 2}}>
-                            <img src="/assets/img/all-images/used-images/A4.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                            <Image src="/assets/img/all-images/used-images/A4.jpg" alt="Event" fill style={{objectFit: 'cover'}} />
                         </div>
                         
                         {/* Right Bottom Image - Desktop Only */}
                         <div className="d-none d-lg-block" style={{position: 'absolute', bottom: '40px', right: '40px', width: '150px', height: '150px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 20px rgba(0,0,0,0.3)', zIndex: 2}}>
-                            <img src="/assets/img/all-images/used-images/A31.jpg" alt="" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                            <Image src="/assets/img/all-images/used-images/A31.jpg" alt="Event" fill style={{objectFit: 'cover'}} />
                         </div>
                         
                         <div className="container" style={{position: 'relative', zIndex: 3}}>

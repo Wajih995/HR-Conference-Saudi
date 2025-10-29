@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Layout from "@/components/layout/Layout"
 import PackagePasswordModal from "@/components/layout/PackagePasswordModal"
 import SponsorshipModal from "@/components/layout/SponsorshipModal"
@@ -85,7 +86,7 @@ export default function Packages() {
 										<div className="space20" />
 										<div className="space8" />
 										<ul style={{flexGrow: 1}}>
-											<li><img src="/assets/img/icons/check2.svg" alt="" />Complimentary Booth 6x3m Raw Space</li>
+											<li><Image src="/assets/img/icons/check2.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px'}} />Complimentary Booth 6x3m Raw Space</li>
 											<li><img src="/assets/img/icons/check2.svg" alt="" />4 Delegate Passes</li>
 											<li><img src="/assets/img/icons/check2.svg" alt="" />10 Guaranteed Direct Meetings</li>
 											<li><img src="/assets/img/icons/check2.svg" alt="" />Post Event Data with Contact Details</li>
