@@ -1,4 +1,5 @@
 'use client'
+import OptimizedVideo from '@/components/elements/OptimizedVideo'
 
 export default function Section6Video() {
 	return (
@@ -18,24 +19,20 @@ export default function Section6Video() {
 								paddingTop: '56.25%', // 16:9 Aspect Ratio
 								backgroundColor: '#000'
 							}}>
-								<video
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										objectFit: 'cover'
-									}}
+								<OptimizedVideo
+									src="/assets/img/all-images/used-images/IMG_5799.MP4"
+									// poster="/assets/img/all-images/used-images/video-poster.jpg" // Add poster image for better performance
 									autoPlay
 									muted
 									loop
 									playsInline
-								>
-                                    
-									<source src="/assets/img/all-images/used-images/IMG_5799.MP4" type="video/mp4" />
-									Your browser does not support the video tag.
-								</video>
+									preload="metadata" // Only load metadata initially, not full video
+									style={{
+										position: 'absolute',
+										top: 0,
+										left: 0,
+									}}
+								/>
 							</div>
 						</div>
 					</div>
