@@ -383,7 +383,7 @@ export default function SponsorshipModal({ isOpen, onClose, preSelectedPackage }
 									'Platinum Partner',
 									'Gold Partner',
 									'Silver Partner',
-									'Networking Bright + Accessories Sponsorship',
+									'Giveaway Sponsorship',
 									'Speaker Package',
 									'Awards Sponsorship',
 									'Tech Sponsor',

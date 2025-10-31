@@ -75,8 +75,8 @@ export default function Awards() {
 									</div>
 									<div className="space24" />
 									<div className="btn-area1">
-									<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Submit Your Nomination</button>
-								</div>
+										<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Submit Your Nomination</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -501,10 +501,10 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="Trailblazer, Woman, of the Year" fontSize="16px" />
+											<LaurelWreathWithText title="TRAILBLAZER, WOMAN, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrating a woman who has challenged conventions, broken barriers, and transformed her industry through courage, innovation.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Recognizing a visionary leader who has broken barriers, pioneered change, and set new benchmarks in her industry.</p>
 
 										</div>
 									</div>
@@ -512,10 +512,10 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="Sustainability & ESG Champion" fontSize="16px" />
+											<LaurelWreathWithText title="SUSTAINABILITY, & ESG CHAMPION" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrating a woman who has challenged conventions, broken barriers, and transformed her industry through courage, innovation.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Acknowledging a leader who has integrated environmental, social, and governance (ESG) values into her organization’s strategy and culture.</p>
 
 										</div>
 									</div>
@@ -523,10 +523,10 @@ export default function Awards() {
 								<div className="col-lg-3 col-md-6 mb-4">
 									<div className="choose-widget-boxarea text-center h-100" style={{backgroundImage: 'url(/assets/img/bg/header-bg4.png)', backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)'}}>
 										<div className="icons" style={{marginBottom: '20px', position: 'relative'}}>
-											<LaurelWreathWithText title="Global, Impact Woman, of the Year" fontSize="16px" />
+											<LaurelWreathWithText title="GLOBAL, IMPACT WOMAN, OF THE YEAR" fontSize="16px" />
 										</div>
 										<div className="content-area">
-											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Celebrating a woman who has challenged conventions, broken barriers, and transformed her industry through courage, innovation.</p>
+											<p style={{color: 'white', fontSize: '14px', lineHeight: '1.5', margin: '0', opacity: '0.9'}}>Recognizing a woman leader whose influence extends beyond borders, promoting cross-cultural collaboration, inclusion, and global leadership</p>
 
 										</div>
 									</div>
@@ -569,7 +569,7 @@ export default function Awards() {
 										</div>
 										<ul>
 											<li>
-												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />30 January 2026 - 6pm to 11:30pm</Link>
+												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />20 January 2026</Link>
 											</li>
 											<li className="m-0">
 												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>

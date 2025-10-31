@@ -82,20 +82,20 @@ export default function Footer3() {
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
-											<Image src="/assets/img/all-images/used-images/footer-2.png" alt="Gallery" fill style={{objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/A1.jpg" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
-											<Image src="/assets/img/all-images/used-images/footer-3.jpg" alt="Gallery" fill style={{objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/A2.jpg" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>
 									<div className="col-lg-4 col-md-4 col-4">
-										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', position: 'relative'}}>
-											<Image src="/assets/img/all-images/used-images/footer-4.jpg" alt="Gallery" fill style={{objectFit: 'cover'}} />
+										<div className="img1" style={{aspectRatio: '1/1', overflow: 'hidden', borderRadius: '8px', position: 'relative'}}>
+											<Image src="/assets/img/all-images/used-images/A3.jpg" alt="Gallery" fill style={{objectFit: 'cover'}} />
 											
 										</div>
 									</div>

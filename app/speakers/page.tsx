@@ -198,7 +198,7 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/Ambassador-2.jpeg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/company/brx-events/"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>

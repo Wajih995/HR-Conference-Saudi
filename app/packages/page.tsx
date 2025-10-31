@@ -50,14 +50,22 @@ export default function Packages() {
 			<Layout headerStyle={3} footerStyle={3}>
 				<div>
 					{/*===== HERO AREA STARTS =======*/}
-					<div className="inner-page-header" style={{ backgroundImage: 'url(/assets/img/all-images/used-images/1.jpg)' }}>
-						<div className="container">
+					<div className="inner-page-header" style={{ backgroundImage: 'url(/assets/img/all-images/used-images/package-banner.jpg)' }}>
+					{/* Dark overlay for better text visibility */}
+					<div style={{
+							position: 'absolute',
+							top: 0,
+							left: 0,
+							right: 0,
+							bottom: 0,
+							backgroundColor: 'rgba(0, 0, 0, 0.5)',
+							zIndex: 1
+						}}></div>
+						<div className="container" style={{ position: 'relative', zIndex: 2 }}>
 							<div className="row">
 								<div className="col-lg-4 m-auto">
 									<div className="heading1 text-center">
-										<h1>Sponsorship Packages</h1>
-										<div className="space20" />
-										<Link href="/">Home <i className="fa-solid fa-angle-right" /> <span>Packages</span></Link>
+										<h1 style={{ color: 'white', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Sponsorship Packages</h1>
 									</div>
 								</div>
 							</div>
@@ -164,7 +172,7 @@ export default function Packages() {
 								{/* Giveaway Bags */}
 								<div className="col-lg-4 col-md-6 d-flex">
 									<div className="pricing-boxarea w-100 d-flex flex-column">
-										<h5>Networking Bright + Accessories Sponsorship</h5>
+										<h5>Giveaway Sponsorship</h5>
 										<div className="space20" />
 										<div className="space8" />
 										<ul style={{flexGrow: 1}}>
@@ -180,7 +188,7 @@ export default function Packages() {
 										</ul>
 										<div className="space28" />
 										<div className="btn-area1">
-											<button onClick={() => handleContactClick('Networking Bright + Accessories Sponsorship')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
+											<button onClick={() => handleContactClick('Giveaway Sponsorship')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
@@ -367,6 +375,36 @@ export default function Packages() {
 										<div className="space28" />
 										<div className="btn-area1">
 											<button onClick={() => handleContactClick('Entertainment Sponsor')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div className="space50" />
+
+							{/* Fifth Row */}
+							<div className="row">
+								{/* Engagement Partner */}
+								<div className="col-lg-4 col-md-6 d-flex">
+									<div className="pricing-boxarea w-100 d-flex flex-column">
+										<h5>Engagement Partner</h5>
+										<div className="space20" />
+										<div className="space8" />
+										<ul style={{flexGrow: 1}}>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />Official Industry Positioning</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />Exhibition Booth Space</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />Speaking / Session Opportunity</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />Targeted Audience Access</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />Website Branding</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />Social Media Branding</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />Logo on Brochure</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />On-site Branding</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />VIP Networking Invitations</li>
+											<li><img src="/assets/img/icons/check2.svg" alt="" />1 Free Pass for Gala Dinner</li>
+										</ul>
+										<div className="space28" />
+										<div className="btn-area1">
+											<button onClick={() => handleContactClick('Engagement Partner')} className="vl-btn1" style={{border: 'none', cursor: 'pointer'}}>Contact Us</button>
 										</div>
 									</div>
 								</div>
