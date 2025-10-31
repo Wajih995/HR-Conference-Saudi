@@ -180,13 +180,13 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/Ambassador-1.webp" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/omar-lebbe-ameer-ajwad-58390a25/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-										    <Link href="/speakers-single">H.E OMAR LEBBE  AMEER AJWAD</Link>
+										    <Link href="/#">H.E OMAR LEBBE AMEER AJWAD</Link>
 											<div className="space16" />
 											<p>Ambassador of Sri Lanka to the Kingdom of Saudi ArabiaEvent Ambassador</p>
 										</div>
@@ -204,7 +204,7 @@ export default function Speakers() {
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">H.E. Mohammed Barrie</Link>
+											<Link href="/#">H.E. Mohammed Barrie</Link>
 											<div className="space16" />
 											<p>Ambassador of Sierra Leone to the Kingdom of Saudi ArabiaEvent Ambassador</p>
 										</div>
@@ -216,13 +216,13 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/speaker-1.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/razan-al-ajmi-%D8%B1%D8%A7%D8%B2%D8%A7%D9%86-%D8%A7%D9%84%D8%B9%D8%AC%D9%85%D9%8A-7778a3282/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Razan Al-Ajmi</Link>
+											<Link href="/#">Razan Al-Ajmi</Link>
 											<div className="space16" />
 											<p>1st Saudi Female Skydiver</p>
 										</div>
@@ -234,13 +234,13 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/speaker-2.jpeg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/reem-algasim/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Reem Algasim</Link>
+											<Link href="/#">Reem Algasim</Link>
 											<div className="space16" />
 											<p>Head of Human Resource - Airbus</p>
 										</div>
@@ -252,13 +252,13 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/speaker-3.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/kanarikurayim/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
 										<div className="space28" />
 										<div className="content-area">
-											<Link href="/speakers-single">Kanari Kurayim</Link>
+											<Link href="/#">Kanari Kurayim</Link>
 											<div className="space16" />
 											<p>GCC People & Culture Leader </p>
 										</div>

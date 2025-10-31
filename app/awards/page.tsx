@@ -69,10 +69,14 @@ export default function Awards() {
 						}}></div>
 						<div className="container" style={{ position: 'relative', zIndex: 2 }}>
 							<div className="row">
-								<div className="col-lg-4 m-auto">
+								<div className="col-lg-4 m-auto" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
 									<div className="heading1 text-center">
 										<h1 style={{ color: 'white', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Awards</h1>
 									</div>
+									<div className="space24" />
+									<div className="btn-area1">
+									<button onClick={() => setIsModalOpen(true)} className="vl-btn3 btn2" style={{fontSize: 'var(--ztc-font-size-font-s16)', padding: '16px 18px', border: 'none', cursor: 'pointer'}}>Submit Your Nomination</button>
+								</div>
 								</div>
 							</div>
 						</div>
