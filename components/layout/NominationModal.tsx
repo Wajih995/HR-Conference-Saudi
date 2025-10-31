@@ -73,7 +73,10 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
         "Business Transformation Leader of the Year",
         "Visionary Woman Leader of the Year",
         "Influential Woman of the Year",
-        "GAME Changemaker Woman of the Year"
+        "Game Changer Woman of the Year",
+        "Trailblazer Woman of the Year",
+        "Sustainability & ESG Champion",
+        "Global Impact Woman of the Year"
     ]
 
     // No need for localStorage or payment flow checks anymore

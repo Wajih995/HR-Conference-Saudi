@@ -246,6 +246,24 @@ export default function Speakers() {
 										</div>
 									</div>
 								</div>
+								<div className="col-lg-3 col-md-6">
+									<div className="our-team-boxarea">
+										<div className="team-widget-area">
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-3.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
+												<div className="share">
+													<Link href="/#"><i className="fa-brands fa-linkedin-in" /></Link>
+												</div>
+											</div>
+										</div>
+										<div className="space28" />
+										<div className="content-area">
+											<Link href="/speakers-single">Kanari Kurayim</Link>
+											<div className="space16" />
+											<p>GCC People & Culture Leader </p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
