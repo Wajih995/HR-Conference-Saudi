@@ -260,7 +260,8 @@ export default function Speakers() {
 										<div className="content-area">
 											<Link href="/#">Kanari Kurayim</Link>
 											<div className="space16" />
-											<p>GCC People & Culture Leader </p>
+											<p>GCC People & Culture Leader<br />
+											Formerly - PepsiCo, Johnson & Johnson, and Schneider Electric </p>
 										</div>
 									</div>
 								</div>
