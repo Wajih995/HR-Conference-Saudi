@@ -53,42 +53,46 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 		}
 	}
 
-	const handleSubmitAndPay = async (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 		setIsSubmitting(true)
 		setSubmitStatus('idle')
 		setErrorMessage('')
 
 		try {
-			// Create Stripe Checkout Session with form data
-			const response = await fetch('/api/create-checkout-session', {
+			// Create FormData from form data
+			const formDataToSend = new FormData()
+			formDataToSend.append('fullName', formData.fullName)
+			formDataToSend.append('officialEmail', formData.officialEmail)
+			formDataToSend.append('companyName', formData.companyName)
+			formDataToSend.append('jobTitle', formData.jobTitle)
+			formDataToSend.append('countryCode', formData.countryCode)
+			formDataToSend.append('contactNo', formData.contactNo)
+			formDataToSend.append('city', formData.city)
+			formDataToSend.append('linkedInURL', formData.linkedInURL)
+			formDataToSend.append('instagramLink', formData.instagramLink)
+			formDataToSend.append('confirmation', formData.confirmation.toString())
+
+			// Submit registration form
+			const response = await fetch('/api/submit-registration', {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					type: 'registration',
-					formData: formData,
-				}),
+				body: formDataToSend,
 			})
 
 			const data = await response.json()
 
 			if (!response.ok) {
-				throw new Error(data.error || 'Failed to create checkout session')
+				throw new Error(data.error || 'Failed to submit registration')
 			}
 
-			// Redirect to Stripe Checkout
-			if (data.url) {
-				window.location.href = data.url
-			} else {
-				throw new Error('No checkout URL received')
-			}
+			// Show success message
+			setSubmitStatus('success')
+			setIsSubmitting(false)
 
 		} catch (error) {
-			console.error('Error processing registration:', error)
+			console.error('Error submitting registration:', error)
 			setSubmitStatus('error')
-			setErrorMessage(error instanceof Error ? error.message : 'Failed to process registration')
+			setErrorMessage(error instanceof Error ? error.message : 'Failed to submit registration')
 			setIsSubmitting(false)
 		}
 	}
@@ -146,20 +150,54 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 					<h2 style={{ color: '#0e062e', marginBottom: '10px' }}>Women Who Lead: HR Leadership Conference & Awards 2026</h2>
 					<p style={{ color: '#666' }}>Registration Form</p>
 					<p style={{ color: '#666', fontSize: '14px', marginTop: '10px' }}>
-						Fill out the form below. Upon submission, we'll send your registration details via email and open the payment page.
+						Fill out the form below. Upon submission, we'll send your registration details via email.
 					</p>
 				</div>
 
 				{submitStatus === 'success' && (
 					<div style={{
-						padding: '15px',
-						marginBottom: '20px',
+						padding: '40px',
+						marginBottom: '30px',
 						backgroundColor: '#d4edda',
 						color: '#155724',
 						borderRadius: '8px',
-						textAlign: 'center'
+						textAlign: 'center',
+						border: '2px solid #28a745'
 					}}>
-						Registration submitted successfully! Redirecting to payment...
+						<div style={{
+							fontSize: '48px',
+							marginBottom: '20px'
+						}}>✓</div>
+						<h3 style={{
+							color: '#155724',
+							marginBottom: '15px',
+							fontSize: '24px'
+						}}>Registration Successful!</h3>
+						<p style={{
+							color: '#155724',
+							fontSize: '16px',
+							marginBottom: '20px'
+						}}>
+							Your registration has been submitted successfully. A confirmation email has been sent to your inbox.
+						</p>
+						<button
+							onClick={handleClose}
+							style={{
+								backgroundColor: '#28a745',
+								color: 'white',
+								padding: '12px 30px',
+								border: 'none',
+								borderRadius: '8px',
+								fontSize: '16px',
+								fontWeight: 'bold',
+								cursor: 'pointer',
+								transition: 'background-color 0.3s'
+							}}
+							onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#218838'}
+							onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#28a745'}
+						>
+							Close
+						</button>
 					</div>
 				)}
 
@@ -176,7 +214,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 					</div>
 				)}
 
-				<form onSubmit={handleSubmitAndPay}>
+				{submitStatus !== 'success' && (
+				<form onSubmit={handleSubmit}>
 					{/* Personal Information */}
 					<div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
 						<div>
@@ -413,10 +452,11 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 								transition: 'background-color 0.3s'
 							}}
 						>
-							{isSubmitting ? 'Submitting...' : 'Submit & Pay'}
+							{isSubmitting ? 'Submitting...' : 'Submit Registration'}
 						</button>
 					</div>
 				</form>
+				)}
 			</div>
 		</div>
 	)
