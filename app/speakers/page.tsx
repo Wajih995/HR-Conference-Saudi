@@ -279,7 +279,7 @@ export default function Speakers() {
 										<div className="content-area">
 											<Link href="/#">Ghada A Ghandourah</Link>
 											<div className="space16" />
-											<p></p>
+											<p>C.Suite Executive</p>
 										</div>
 									</div>
 								</div>
@@ -289,7 +289,7 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/speaker-5.jpeg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="https://www.linkedin.com/in/ghada-ghandourah-79610576" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/dr-roaa-talal-466a42b7/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
