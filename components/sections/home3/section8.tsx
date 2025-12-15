@@ -47,7 +47,7 @@ export default function Section8() {
 										<div className="text">
 											<h5>our location</h5>
 											<div className="space14" />
-											<Link href="/#">Riyadh, Saudi Arabia</Link>
+											<Link href="https://albustanvillage.com/">Al Bustan Village, Riyadh, Saudi Arabia</Link>
 										</div>
 									</div>
 								</div>
@@ -103,7 +103,7 @@ export default function Section8() {
 					zIndex: 1
 				}}></div>
 			<div style={{position: 'relative', zIndex: 2}}>
-				<Link href="https://doratnajd.sa/" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
+				<Link href="https://albustanvillage.com/" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
 					<h2 className="venue-heading" style={{
 						fontFamily: 'var(--grotesk)',
 						fontSize: '3.5rem',
@@ -126,7 +126,7 @@ export default function Section8() {
 						e.currentTarget.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.3)';
 					}}
 					>
-						Venue: Dorat Najd Resort
+						Al Bustan Village
 					</h2>
 				</Link>
 					<div style={{
