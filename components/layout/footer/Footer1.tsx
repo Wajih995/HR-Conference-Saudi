@@ -62,7 +62,7 @@ export default function Footer3() {
 										<a href="tel:+971522916745"><Image src="/assets/img/icons/phn1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />+971 52 291 6745</a>
 									</li>
 									<li>
-										<Link href="/#"><Image src="/assets/img/icons/location1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />Riyadh, Saudi Arabia</Link>
+										<Link href="/#"><Image src="/assets/img/icons/location1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />Al Bustan Village, Riyadh, Saudi Arabia</Link>
 									</li>
 									<li>
 										<a href="mailto:yasir@theboredroomx.com"><Image src="/assets/img/icons/mail1.svg" alt="" width={20} height={20} style={{display: 'inline', marginRight: '8px', verticalAlign: 'middle'}} />Yasir@theboredroomx.com</a>

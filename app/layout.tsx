@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 	description: "Women Who Lead: HR Leadership Conference & Awards 2026 - Empowering women leaders and transforming workplaces across the GCC",
 	openGraph: {
 		title: "Women Who Lead: HR Leadership Conference & Awards 2026",
-		description: "Empowering women leaders and transforming workplaces across the GCC. Join us on 20th January 2026 in Riyadh, Saudi Arabia.",
+		description: "Empowering women leaders and transforming workplaces across the GCC. Join us on 20th January 2026 in Al Bustan Village, Riyadh, Saudi Arabia.",
 		url: "https://brxevents.com",
 		siteName: "Women Who Lead Conference",
 		images: [

@@ -279,7 +279,7 @@ export default function About() {
 												<Link href="/#"><img src="/assets/img/icons/calender1.svg" alt="" />20 January 2026</Link>
 											</li>
 											<li className="m-0">
-												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Riyadh, Saudi Arabia</Link>
+												<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Al Bustan Village, Riyadh, Saudi Arabia</Link>
 											</li>
 										</ul>
 									</div>

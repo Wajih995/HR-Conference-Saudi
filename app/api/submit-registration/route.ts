@@ -316,7 +316,7 @@ Submitted on: ${new Date().toLocaleString()}
                         <div class="info-box">
                             <h3 style="margin-top: 0; color: #C9A545;">Event Details</h3>
                             <p><strong>Date:</strong> 20th January 2026</p>
-                            <p><strong>Venue:</strong> Dorat Najd Resort, Riyadh, Saudi Arabia</p>
+                            <p><strong>Venue:</strong> Al Bustan Village, Riyadh, Saudi Arabia</p>
                             <p><strong>Time:</strong> Full Day Conference</p>
                         </div>
 
@@ -364,7 +364,7 @@ Registration Date: ${new Date().toLocaleString()}
 
 EVENT DETAILS:
 Date: 20th January 2026
-Venue: Dorat Najd Resort, Riyadh, Saudi Arabia
+Venue: Al Bustan Village, Riyadh, Saudi Arabia
 Time: Full Day Conference
 
 WHAT TO EXPECT:
