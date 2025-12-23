@@ -1,4 +1,8 @@
-import BrandSlider from '@/components/slider/BrandSlider'
+import dynamic from 'next/dynamic'
+
+const BrandSlider = dynamic(() => import('@/components/slider/BrandSlider'), {
+	ssr: false
+})
 
 
 export default function Section3() {

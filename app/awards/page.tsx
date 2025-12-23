@@ -1,13 +1,17 @@
 'use client'
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import CountUp from 'react-countup'
 import Countdown from '@/components/elements/Countdown'
 import Layout from "@/components/layout/Layout"
-import BrandSlider from '@/components/slider/BrandSlider'
 import NominationModal from '@/components/layout/NominationModal'
 import OptimizedVideo from '@/components/elements/OptimizedVideo'
 import Link from "next/link"
+
+const BrandSlider = dynamic(() => import('@/components/slider/BrandSlider'), {
+	ssr: false
+})
 // Function to create laurel wreath with text
 const LaurelWreathWithText = ({ title, fontSize = '16px' }: { title: string, fontSize?: string }) => {
 	const lines = title.split(',');

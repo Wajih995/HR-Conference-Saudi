@@ -54,6 +54,24 @@ const swiperOptions = {
 export default function BrandSlider() {
 	return (
 		<>
+			<style dangerouslySetInnerHTML={{__html: `
+				.brand-slider-area .brand-box {
+					height: 150px !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
+					padding: 20px !important;
+					background: var(--ztc-text-text-1) !important;
+					border-radius: 8px !important;
+				}
+				.brand-slider-area .brand-box img {
+					max-width: 90% !important;
+					max-height: 90% !important;
+					width: auto !important;
+					height: auto !important;
+					object-fit: contain !important;
+				}
+			`}} />
 			<Swiper {...swiperOptions} className="brand-slider-area owl-carousel">
 				<SwiperSlide className="brand-box">
 					<img src="/assets/img/all-images/used-images/Dorat-Najd-Resort-Logo.png.png" alt="" />
@@ -67,18 +85,22 @@ export default function BrandSlider() {
 				<SwiperSlide className="brand-box">
 					<img src="/assets/img/all-images/used-images/cpd-logo.png" alt="" />
 				</SwiperSlide>
-				{/* <SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img5.png" alt="" />
+				<SwiperSlide className="brand-box">
+					<img src="/assets/img/all-images/used-images/s-logo1.png" alt="" />
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img6.png" alt="" />
+					<img src="/assets/img/all-images/used-images/s-logo2.jpg" alt="" />
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img7.png" alt="" />
+					<img src="/assets/img/all-images/used-images/s-logo3.jpg" alt="" />
 				</SwiperSlide>
 				<SwiperSlide className="brand-box">
-					<img src="/assets/img/elements/brand-img8.png" alt="" />
-				</SwiperSlide> */}
+					<img src="/assets/img/all-images/used-images/s-logo4.jpg" alt="" />
+				</SwiperSlide>
+				<SwiperSlide className="brand-box">
+					<img src="/assets/img/all-images/used-images/s-logo5.jpg" alt="" />
+				</SwiperSlide>
+				
 
 			</Swiper>
 		</>
