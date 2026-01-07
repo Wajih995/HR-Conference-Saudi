@@ -340,6 +340,63 @@ export default function Speakers() {
 										</div>
 									</div>
 								</div>
+								<div className="col-lg-3 col-md-6">
+									<div className="our-team-boxarea">
+										<div className="team-widget-area">
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-8.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
+												<div className="share">
+													<Link href="https://www.linkedin.com/in/gihanam" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+												</div>
+											</div>
+										</div>
+										<div className="space28" />
+										<div className="content-area">
+											<Link href="/#">Dr. Saqlain Sher</Link>
+											<div className="space16" />
+											<p>Chief People Officer<br />
+											Apex Core Engineering</p>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-3 col-md-6">
+									<div className="our-team-boxarea">
+										<div className="team-widget-area">
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-9.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
+												<div className="share">
+													<Link href="https://www.linkedin.com/in/gihanam" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+												</div>
+											</div>
+										</div>
+										<div className="space28" />
+										<div className="content-area">
+											<Link href="/#">Dr. Mona Zoughaib</Link>
+											<div className="space16" />
+											<p>Co-Founder and Managing Partner<br />
+											We Grow Minds FZCO</p>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-3 col-md-6">
+									<div className="our-team-boxarea">
+										<div className="team-widget-area">
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-10.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
+												<div className="share">
+													<Link href="https://www.linkedin.com/in/gihanam" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+												</div>
+											</div>
+										</div>
+										<div className="space28" />
+										<div className="content-area">
+											<Link href="/#">Laila Elkhereiji</Link>
+											<div className="space16" />
+											<p>HR Transformation & Organization Development Consultant<br />
+											Ernst & Young</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
