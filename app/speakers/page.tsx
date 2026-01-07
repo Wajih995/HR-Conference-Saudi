@@ -346,7 +346,7 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/speaker-8.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="https://www.linkedin.com/in/gihanam" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/saqlainsher/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
@@ -365,7 +365,7 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/speaker-9.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="https://www.linkedin.com/in/gihanam" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/drmonazoughaib/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
@@ -384,7 +384,7 @@ export default function Speakers() {
 											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
 													<Image src="/assets/img/all-images/used-images/speaker-10.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
 												<div className="share">
-													<Link href="https://www.linkedin.com/in/gihanam" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+													<Link href="https://www.linkedin.com/in/laila-elkhereiji-a8267447/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
 												</div>
 											</div>
 										</div>
