@@ -397,6 +397,25 @@ export default function Speakers() {
 										</div>
 									</div>
 								</div>
+								<div className="col-lg-3 col-md-6">
+									<div className="our-team-boxarea">
+										<div className="team-widget-area">
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-11.jpg" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
+												<div className="share">
+													<Link href="https://www.linkedin.com/in/ghada-mirdad-cipd-5-9a24921a6/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+												</div>
+											</div>
+										</div>
+										<div className="space28" />
+										<div className="content-area">
+											<Link href="/#">Ghada Mirdad</Link>
+											<div className="space16" />
+											<p>Talent Acquisition<br />
+											Nada Company</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
