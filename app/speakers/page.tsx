@@ -416,6 +416,25 @@ export default function Speakers() {
 										</div>
 									</div>
 								</div>
+								<div className="col-lg-3 col-md-6">
+									<div className="our-team-boxarea">
+										<div className="team-widget-area">
+											<div className="img1" style={{ width: '270px', height: '270px', margin: '0 auto' }}>
+													<Image src="/assets/img/all-images/used-images/speaker-12.png" alt="Speaker" className="team-img4" fill quality={90} style={{ objectFit: 'cover' }} />
+												<div className="share">
+													<Link href="https://www.linkedin.com/in/huda-m-s-ragheb-01101782/" target="_blank"><i className="fa-brands fa-linkedin-in" /></Link>
+												</div>
+											</div>
+										</div>
+										<div className="space28" />
+										<div className="content-area">
+											<Link href="/#">Huda Ragheb</Link>
+											<div className="space16" />
+											<p>CHRO<br />
+											EFSIM Facilities Management Company</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
