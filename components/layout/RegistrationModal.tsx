@@ -8,94 +8,81 @@ interface RegistrationModalProps {
 }
 
 export default function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
-	const [formData, setFormData] = useState({
-		fullName: '',
-		officialEmail: '',
-		companyName: '',
-		jobTitle: '',
-		countryCode: '+971',
-		contactNo: '',
-		city: '',
-		linkedInURL: '',
-		instagramLink: '',
-		confirmation: false
-	})
+	// COMMENTED OUT: Form state management - kept for future restoration
+	// const [formData, setFormData] = useState({
+	// 	fullName: '',
+	// 	officialEmail: '',
+	// 	companyName: '',
+	// 	jobTitle: '',
+	// 	countryCode: '+971',
+	// 	contactNo: '',
+	// 	city: '',
+	// 	linkedInURL: '',
+	// 	instagramLink: '',
+	// 	confirmation: false
+	// })
 
-	const [isSubmitting, setIsSubmitting] = useState(false)
-	const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-	const [errorMessage, setErrorMessage] = useState('')
+	// const [isSubmitting, setIsSubmitting] = useState(false)
+	// const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+	// const [errorMessage, setErrorMessage] = useState('')
 
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-		const { name, value, type } = e.target
-		setFormData(prev => ({
-			...prev,
-			[name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
-		}))
-	}
+	// COMMENTED OUT: Form input change handler - kept for future restoration
+	// const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+	// 	const { name, value, type } = e.target
+	// 	setFormData(prev => ({
+	// 		...prev,
+	// 		[name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+	// 	}))
+	// }
 
 	const handleClose = () => {
-		if (!isSubmitting) {
-			setFormData({
-				fullName: '',
-				officialEmail: '',
-				companyName: '',
-				jobTitle: '',
-				countryCode: '+971',
-				contactNo: '',
-				city: '',
-				linkedInURL: '',
-				instagramLink: '',
-				confirmation: false
-			})
-			setSubmitStatus('idle')
-			setErrorMessage('')
-			onClose()
-		}
+		onClose()
 	}
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault()
-		setIsSubmitting(true)
-		setSubmitStatus('idle')
-		setErrorMessage('')
+	// COMMENTED OUT: Form submit handler - kept for future restoration
+	// const handleSubmit = async (e: React.FormEvent) => {
+	// 	e.preventDefault()
+	// 	setIsSubmitting(true)
+	// 	setSubmitStatus('idle')
+	// 	setErrorMessage('')
 
-		try {
-			// Create FormData from form data
-			const formDataToSend = new FormData()
-			formDataToSend.append('fullName', formData.fullName)
-			formDataToSend.append('officialEmail', formData.officialEmail)
-			formDataToSend.append('companyName', formData.companyName)
-			formDataToSend.append('jobTitle', formData.jobTitle)
-			formDataToSend.append('countryCode', formData.countryCode)
-			formDataToSend.append('contactNo', formData.contactNo)
-			formDataToSend.append('city', formData.city)
-			formDataToSend.append('linkedInURL', formData.linkedInURL)
-			formDataToSend.append('instagramLink', formData.instagramLink)
-			formDataToSend.append('confirmation', formData.confirmation.toString())
+	// 	try {
+	// 		// Create FormData from form data
+	// 		const formDataToSend = new FormData()
+	// 		formDataToSend.append('fullName', formData.fullName)
+	// 		formDataToSend.append('officialEmail', formData.officialEmail)
+	// 		formDataToSend.append('companyName', formData.companyName)
+	// 		formDataToSend.append('jobTitle', formData.jobTitle)
+	// 		formDataToSend.append('countryCode', formData.countryCode)
+	// 		formDataToSend.append('contactNo', formData.contactNo)
+	// 		formDataToSend.append('city', formData.city)
+	// 		formDataToSend.append('linkedInURL', formData.linkedInURL)
+	// 		formDataToSend.append('instagramLink', formData.instagramLink)
+	// 		formDataToSend.append('confirmation', formData.confirmation.toString())
 
-			// Submit registration form
-			const response = await fetch('/api/submit-registration', {
-				method: 'POST',
-				body: formDataToSend,
-			})
+	// 		// Submit registration form
+	// 		const response = await fetch('/api/submit-registration', {
+	// 			method: 'POST',
+	// 			body: formDataToSend,
+	// 		})
 
-			const data = await response.json()
+	// 		const data = await response.json()
 
-			if (!response.ok) {
-				throw new Error(data.error || 'Failed to submit registration')
-			}
+	// 		if (!response.ok) {
+	// 			throw new Error(data.error || 'Failed to submit registration')
+	// 		}
 
-			// Show success message
-			setSubmitStatus('success')
-			setIsSubmitting(false)
+	// 		// Show success message
+	// 		setSubmitStatus('success')
+	// 		setIsSubmitting(false)
 
-		} catch (error) {
-			console.error('Error submitting registration:', error)
-			setSubmitStatus('error')
-			setErrorMessage(error instanceof Error ? error.message : 'Failed to submit registration')
-			setIsSubmitting(false)
-		}
-	}
+	// 	} catch (error) {
+	// 		console.error('Error submitting registration:', error)
+	// 		setSubmitStatus('error')
+	// 		setErrorMessage(error instanceof Error ? error.message : 'Failed to submit registration')
+	// 		setIsSubmitting(false)
+	// 	}
+	// }
 
 	if (!isOpen) return null
 
@@ -148,13 +135,84 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 				<div style={{ textAlign: 'center', marginBottom: '30px' }}>
 					<Image src="/assets/img/logo/final-logo.png" alt="Logo" width={200} height={60} style={{ maxWidth: '200px', marginBottom: '20px', height: 'auto' }} />
 					<h2 style={{ color: '#0e062e', marginBottom: '10px' }}>Women Who Lead: HR Leadership Conference & Awards 2026</h2>
-					<p style={{ color: '#666' }}>Registration Form</p>
-					<p style={{ color: '#666', fontSize: '14px', marginTop: '10px' }}>
-						Fill out the form below. Upon submission, we'll send your registration details via email.
-					</p>
 				</div>
 
-				{submitStatus === 'success' && (
+				{/* Registrations Closed Message */}
+				<div style={{
+					padding: '40px',
+					marginBottom: '30px',
+					textAlign: 'center'
+				}}>
+					<div style={{
+						fontSize: '64px',
+						marginBottom: '20px',
+						color: '#C9A545'
+					}}>🔒</div>
+					<h3 style={{
+						color: '#0e062e',
+						marginBottom: '20px',
+						fontSize: '28px',
+						fontWeight: 'bold'
+					}}>Registrations Are Closed</h3>
+					<p style={{
+						color: '#666',
+						fontSize: '16px',
+						lineHeight: '1.6',
+						marginBottom: '30px',
+						maxWidth: '600px',
+						margin: '0 auto 30px'
+					}}>
+						Thank you for your interest in the Women Who Lead: HR Leadership Conference & Awards 2026. Registrations are currently closed. Please check back later or contact us for more information.
+					</p>
+					<div style={{
+						padding: '20px',
+						backgroundColor: '#f8f9fa',
+						borderRadius: '8px',
+						marginBottom: '30px'
+					}}>
+						<p style={{
+							color: '#333',
+							fontSize: '14px',
+							marginBottom: '10px',
+							fontWeight: '500'
+						}}>Contact Us:</p>
+						<p style={{
+							color: '#666',
+							fontSize: '14px',
+							marginBottom: '5px'
+						}}>
+							<a href="mailto:yasir@theboredroomx.com" style={{ color: '#C9A545', textDecoration: 'none' }}>yasir@theboredroomx.com</a>
+						</p>
+						<p style={{
+							color: '#666',
+							fontSize: '14px',
+							margin: 0
+						}}>
+							<a href="tel:+966597183683" style={{ color: '#C9A545', textDecoration: 'none' }}>+966 59 718 3683</a> | <a href="tel:+971522916745" style={{ color: '#C9A545', textDecoration: 'none' }}>+971 52 291 6745</a>
+						</p>
+					</div>
+					<button
+						onClick={handleClose}
+						style={{
+							backgroundColor: '#C9A545',
+							color: 'white',
+							padding: '15px 40px',
+							border: 'none',
+							borderRadius: '8px',
+							fontSize: '16px',
+							fontWeight: 'bold',
+							cursor: 'pointer',
+							transition: 'background-color 0.3s'
+						}}
+						onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#b8943a'}
+						onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#C9A545'}
+					>
+						Close
+					</button>
+				</div>
+
+				{/* COMMENTED OUT: Original form code - kept for future restoration */}
+				{/* {submitStatus === 'success' && (
 					<div style={{
 						padding: '40px',
 						marginBottom: '30px',
@@ -216,7 +274,6 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
 				{submitStatus !== 'success' && (
 				<form onSubmit={handleSubmit}>
-					{/* Personal Information */}
 					<div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
 						<div>
 							<label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
@@ -301,7 +358,6 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 						</div>
 					</div>
 
-					{/* Contact Information */}
 					<div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '20px', marginBottom: '20px' }}>
 						<div>
 							<label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
@@ -370,7 +426,6 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 						/>
 					</div>
 
-					{/* Social Media Links */}
 					<div style={{ marginBottom: '20px' }}>
 						<label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
 							Provide your LinkedIn URL <span style={{ color: 'red' }}>*</span>
@@ -413,7 +468,6 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 						/>
 					</div>
 
-					{/* Confirmation */}
 					<div style={{ marginBottom: '30px' }}>
 						<label style={{ display: 'flex', alignItems: 'flex-start', cursor: 'pointer' }}>
 							<input
@@ -456,7 +510,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 						</button>
 					</div>
 				</form>
-				)}
+				)} */}
 			</div>
 		</div>
 	)

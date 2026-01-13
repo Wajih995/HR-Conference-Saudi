@@ -8,221 +8,224 @@ interface NominationModalProps {
     onClose: () => void
 }
 
-
-interface FormData {
-    nominatorFullName: string
-    nominatorEmail: string
-    nominatorCountryCode: string
-    nominatorMobileNumber: string
-    nominatorCompany: string
-    nominatorDesignation: string
-    nominatorCity: string
-    category: string
-    nomineeProfilePicture: File | null
-    nomineeProjectDetails: string
-    nomineeProject: File | null
-    nomineeLinkedInURL: string
-    nomineeInstagramLink: string
-    confirmation: boolean
-}
+// COMMENTED OUT: FormData interface - kept for future restoration
+// interface FormData {
+//     nominatorFullName: string
+//     nominatorEmail: string
+//     nominatorCountryCode: string
+//     nominatorMobileNumber: string
+//     nominatorCompany: string
+//     nominatorDesignation: string
+//     nominatorCity: string
+//     category: string
+//     nomineeProfilePicture: File | null
+//     nomineeProjectDetails: string
+//     nomineeProject: File | null
+//     nomineeLinkedInURL: string
+//     nomineeInstagramLink: string
+//     confirmation: boolean
+// }
 
 export default function NominationModal({ isOpen, onClose }: NominationModalProps) {
-    const [formData, setFormData] = useState<FormData>({
-        nominatorFullName: '',
-        nominatorEmail: '',
-        nominatorCountryCode: '+971',
-        nominatorMobileNumber: '',
-        nominatorCompany: '',
-        nominatorDesignation: '',
-        nominatorCity: '',
-        category: '',
-        nomineeProfilePicture: null,
-        nomineeProjectDetails: '',
-        nomineeProject: null,
-        nomineeLinkedInURL: '',
-        nomineeInstagramLink: '',
-        confirmation: false
-    })
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [submitMessage, setSubmitMessage] = useState('')
-    const [showPaymentLink, setShowPaymentLink] = useState(false)
+    // COMMENTED OUT: Form state management - kept for future restoration
+    // const [formData, setFormData] = useState<FormData>({
+    //     nominatorFullName: '',
+    //     nominatorEmail: '',
+    //     nominatorCountryCode: '+971',
+    //     nominatorMobileNumber: '',
+    //     nominatorCompany: '',
+    //     nominatorDesignation: '',
+    //     nominatorCity: '',
+    //     category: '',
+    //     nomineeProfilePicture: null,
+    //     nomineeProjectDetails: '',
+    //     nomineeProject: null,
+    //     nomineeLinkedInURL: '',
+    //     nomineeInstagramLink: '',
+    //     confirmation: false
+    // })
+    // const [isSubmitting, setIsSubmitting] = useState(false)
+    // const [submitMessage, setSubmitMessage] = useState('')
+    // const [showPaymentLink, setShowPaymentLink] = useState(false)
 
-    // Award categories from the awards page
-    const categories = [
-        "Best Diversity & Inclusion Strategy",
-        "Best Employee Engagement Strategy",
-        "Best Employee Wellbeing Programme",
-        "Best Executive & Leadership Development",
-        "Best HR Technology Implementation",
-        "Best HR Transformation Strategy",
-        "Best Flexible Working Initiative",
-        "Best Innovative HR Initiative",
-        "Best L&D Initiative (Private Sector)",
-        "Best Recruitment & Onboarding Strategy",
-        "Best Rewards & Recognition Strategy",
-        "Best Social Impact Initiative",
-        "Best Talent Management Strategy",
-        "Best Women in Leadership Development",
-        "CHRO of the Year",
-        "Employer of the Year",
-        "HR Team of the Year",
-        "HR's Rising Star of the Year",
-        "DEI Changemaker Award",
-        "People Analytics Leader",
-        "Entrepreneurial Leader of the Year",
-        "Business Transformation Leader of the Year",
-        "Visionary Woman Leader of the Year",
-        "Influential Woman of the Year",
-        "Game Changer Woman of the Year",
-        "Trailblazer Woman of the Year",
-        "Sustainability & ESG Champion",
-        "Global Impact Woman of the Year"
-    ]
+    // COMMENTED OUT: Award categories from the awards page - kept for future restoration
+    // const categories = [
+    //     "Best Diversity & Inclusion Strategy",
+    //     "Best Employee Engagement Strategy",
+    //     "Best Employee Wellbeing Programme",
+    //     "Best Executive & Leadership Development",
+    //     "Best HR Technology Implementation",
+    //     "Best HR Transformation Strategy",
+    //     "Best Flexible Working Initiative",
+    //     "Best Innovative HR Initiative",
+    //     "Best L&D Initiative (Private Sector)",
+    //     "Best Recruitment & Onboarding Strategy",
+    //     "Best Rewards & Recognition Strategy",
+    //     "Best Social Impact Initiative",
+    //     "Best Talent Management Strategy",
+    //     "Best Women in Leadership Development",
+    //     "CHRO of the Year",
+    //     "Employer of the Year",
+    //     "HR Team of the Year",
+    //     "HR's Rising Star of the Year",
+    //     "DEI Changemaker Award",
+    //     "People Analytics Leader",
+    //     "Entrepreneurial Leader of the Year",
+    //     "Business Transformation Leader of the Year",
+    //     "Visionary Woman Leader of the Year",
+    //     "Influential Woman of the Year",
+    //     "Game Changer Woman of the Year",
+    //     "Trailblazer Woman of the Year",
+    //     "Sustainability & ESG Champion",
+    //     "Global Impact Woman of the Year"
+    // ]
 
-    // No need for localStorage or payment flow checks anymore
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value, type } = e.target
-        const checked = (e.target as HTMLInputElement).checked
+    // COMMENTED OUT: Form input change handler - kept for future restoration
+    // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    //     const { name, value, type } = e.target
+    //     const checked = (e.target as HTMLInputElement).checked
         
-        setFormData(prev => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value
-        }))
-    }
+    //     setFormData(prev => ({
+    //         ...prev,
+    //         [name]: type === 'checkbox' ? checked : value
+    //     }))
+    // }
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: string) => {
-        if (e.target.files && e.target.files[0]) {
-            const file = e.target.files[0]
-            const maxSize = 3 * 1024 * 1024 // 3MB in bytes
+    // COMMENTED OUT: File change handler - kept for future restoration
+    // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: string) => {
+    //     if (e.target.files && e.target.files[0]) {
+    //         const file = e.target.files[0]
+    //         const maxSize = 3 * 1024 * 1024 // 3MB in bytes
             
-            // Validate file size
-            if (file.size > maxSize) {
-                alert('File size must be less than 3MB. Please choose a smaller file.')
-                e.target.value = '' // Clear the input
-                return
-            }
+    //         // Validate file size
+    //         if (file.size > maxSize) {
+    //             alert('File size must be less than 3MB. Please choose a smaller file.')
+    //             e.target.value = '' // Clear the input
+    //             return
+    //         }
             
-            // Validate image file type for profile picture
-            if (fieldName === 'nomineeProfilePicture') {
-                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png']
-                if (!allowedTypes.includes(file.type.toLowerCase())) {
-                    alert('Only JPG, JPEG, and PNG image formats are allowed. WebP and other formats are not supported.')
-                    e.target.value = '' // Clear the input
-                    return
-                }
-            }
+    //         // Validate image file type for profile picture
+    //         if (fieldName === 'nomineeProfilePicture') {
+    //             const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png']
+    //             if (!allowedTypes.includes(file.type.toLowerCase())) {
+    //                 alert('Only JPG, JPEG, and PNG image formats are allowed. WebP and other formats are not supported.')
+    //                 e.target.value = '' // Clear the input
+    //                 return
+    //             }
+    //         }
             
-            setFormData(prev => ({
-                ...prev,
-                [fieldName]: file
-            }))
-        }
-    }
+    //         setFormData(prev => ({
+    //             ...prev,
+    //             [fieldName]: file
+    //         }))
+    //     }
+    // }
 
-    const handleSubmitAndPay = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setIsSubmitting(true)
-        setSubmitMessage('')
+    // COMMENTED OUT: Form submit handler - kept for future restoration
+    // const handleSubmitAndPay = async (e: React.FormEvent) => {
+    //     e.preventDefault()
+    //     setIsSubmitting(true)
+    //     setSubmitMessage('')
 
-        try {
-            // Upload files directly to Vercel Blob (client-side)
-            let fileIds = { profilePictureId: '', projectFileId: '' }
+    //     try {
+    //         // Upload files directly to Vercel Blob (client-side)
+    //         let fileIds = { profilePictureId: '', projectFileId: '' }
             
-            // Upload profile picture
-            if (formData.nomineeProfilePicture) {
-                const { upload } = await import('@vercel/blob/client')
-                const timestamp = Date.now()
-                const fileName = `nomination-profile-${timestamp}-${formData.nomineeProfilePicture.name}`
-                const blob = await upload(fileName, formData.nomineeProfilePicture, {
-                    access: 'public',
-                    handleUploadUrl: '/api/upload-url',
-                })
-                fileIds.profilePictureId = blob.url
-            }
+    //         // Upload profile picture
+    //         if (formData.nomineeProfilePicture) {
+    //             const { upload } = await import('@vercel/blob/client')
+    //             const timestamp = Date.now()
+    //             const fileName = `nomination-profile-${timestamp}-${formData.nomineeProfilePicture.name}`
+    //             const blob = await upload(fileName, formData.nomineeProfilePicture, {
+    //                 access: 'public',
+    //                 handleUploadUrl: '/api/upload-url',
+    //             })
+    //             fileIds.profilePictureId = blob.url
+    //         }
             
-            // Upload project file
-            if (formData.nomineeProject) {
-                const { upload } = await import('@vercel/blob/client')
-                const timestamp = Date.now()
-                const fileName = `nomination-project-${timestamp}-${formData.nomineeProject.name}`
-                const blob = await upload(fileName, formData.nomineeProject, {
-                    access: 'public',
-                    handleUploadUrl: '/api/upload-url',
-                })
-                fileIds.projectFileId = blob.url
-            }
+    //         // Upload project file
+    //         if (formData.nomineeProject) {
+    //             const { upload } = await import('@vercel/blob/client')
+    //             const timestamp = Date.now()
+    //             const fileName = `nomination-project-${timestamp}-${formData.nomineeProject.name}`
+    //             const blob = await upload(fileName, formData.nomineeProject, {
+    //                 access: 'public',
+    //                 handleUploadUrl: '/api/upload-url',
+    //             })
+    //             fileIds.projectFileId = blob.url
+    //         }
 
-            // Create text-only form data for Stripe metadata
-            const textFormData = {
-                nominatorFullName: formData.nominatorFullName,
-                nominatorEmail: formData.nominatorEmail,
-                nominatorCountryCode: formData.nominatorCountryCode,
-                nominatorMobileNumber: formData.nominatorMobileNumber,
-                nominatorCompany: formData.nominatorCompany,
-                nominatorDesignation: formData.nominatorDesignation,
-                nominatorCity: formData.nominatorCity,
-                category: formData.category,
-                nomineeProjectDetails: formData.nomineeProjectDetails,
-                nomineeLinkedInURL: formData.nomineeLinkedInURL,
-                nomineeInstagramLink: formData.nomineeInstagramLink,
-                confirmation: formData.confirmation,
-                profilePictureId: fileIds.profilePictureId,
-                projectFileId: fileIds.projectFileId
-            }
+    //         // Create text-only form data for Stripe metadata
+    //         const textFormData = {
+    //             nominatorFullName: formData.nominatorFullName,
+    //             nominatorEmail: formData.nominatorEmail,
+    //             nominatorCountryCode: formData.nominatorCountryCode,
+    //             nominatorMobileNumber: formData.nominatorMobileNumber,
+    //             nominatorCompany: formData.nominatorCompany,
+    //             nominatorDesignation: formData.nominatorDesignation,
+    //             nominatorCity: formData.nominatorCity,
+    //             category: formData.category,
+    //             nomineeProjectDetails: formData.nomineeProjectDetails,
+    //             nomineeLinkedInURL: formData.nomineeLinkedInURL,
+    //             nomineeInstagramLink: formData.nomineeInstagramLink,
+    //             confirmation: formData.confirmation,
+    //             profilePictureId: fileIds.profilePictureId,
+    //             projectFileId: fileIds.projectFileId
+    //         }
 
-            // Create Stripe Checkout Session with text data and file IDs
-            const response = await fetch('/api/create-checkout-session', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    type: 'nomination',
-                    formData: textFormData,
-                }),
-            })
+    //         // Create Stripe Checkout Session with text data and file IDs
+    //         const response = await fetch('/api/create-checkout-session', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 type: 'nomination',
+    //                 formData: textFormData,
+    //             }),
+    //         })
 
-            const data = await response.json()
+    //         const data = await response.json()
 
-            if (!response.ok) {
-                throw new Error(data.error || 'Failed to create checkout session')
-            }
+    //         if (!response.ok) {
+    //             throw new Error(data.error || 'Failed to create checkout session')
+    //         }
 
-            // Redirect to Stripe Checkout
-            if (data.url) {
-                window.location.href = data.url
-            } else {
-                throw new Error('No checkout URL received')
-            }
+    //         // Redirect to Stripe Checkout
+    //         if (data.url) {
+    //             window.location.href = data.url
+    //         } else {
+    //             throw new Error('No checkout URL received')
+    //         }
 
-        } catch (error) {
-            console.error('Error:', error)
-            setSubmitMessage(error instanceof Error ? error.message : 'Error processing nomination. Please try again.')
-            setIsSubmitting(false)
-        }
-    }
+    //     } catch (error) {
+    //         console.error('Error:', error)
+    //         setSubmitMessage(error instanceof Error ? error.message : 'Error processing nomination. Please try again.')
+    //         setIsSubmitting(false)
+    //     }
+    // }
 
-    const resetForm = () => {
-        setFormData({
-            nominatorFullName: '',
-            nominatorEmail: '',
-            nominatorCountryCode: '+971',
-            nominatorMobileNumber: '',
-            nominatorCompany: '',
-            nominatorDesignation: '',
-            nominatorCity: '',
-            category: '',
-            nomineeProfilePicture: null,
-            nomineeProjectDetails: '',
-            nomineeProject: null,
-            nomineeLinkedInURL: '',
-            nomineeInstagramLink: '',
-            confirmation: false
-        })
-        setSubmitMessage('')
-        setShowPaymentLink(false)
-    }
+    // COMMENTED OUT: Reset form handler - kept for future restoration
+    // const resetForm = () => {
+    //     setFormData({
+    //         nominatorFullName: '',
+    //         nominatorEmail: '',
+    //         nominatorCountryCode: '+971',
+    //         nominatorMobileNumber: '',
+    //         nominatorCompany: '',
+    //         nominatorDesignation: '',
+    //         nominatorCity: '',
+    //         category: '',
+    //         nomineeProfilePicture: null,
+    //         nomineeProjectDetails: '',
+    //         nomineeProject: null,
+    //         nomineeLinkedInURL: '',
+    //         nomineeInstagramLink: '',
+    //         confirmation: false
+    //     })
+    //     setSubmitMessage('')
+    //     setShowPaymentLink(false)
+    // }
 
     const handleClose = () => {
         onClose()
@@ -280,14 +283,85 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                     <Image src="/assets/img/logo/final-logo.png" alt="Logo" width={200} height={60} style={{ maxWidth: '200px', marginBottom: '20px', height: 'auto' }} />
                     <h2 style={{ color: '#0e062e', marginBottom: '10px' }}>Women Who Lead: HR Leadership Conference & Awards 2026</h2>
-                    <p style={{ color: '#666' }}>Award Nomination Form</p>
-                    <p style={{ color: '#666', fontSize: '14px', marginTop: '10px' }}>
-                        Fill out the form below. Upon submission, we'll send your nomination details via email and open the payment page.
-                    </p>
-                    </div>
+                </div>
 
-                    <form onSubmit={handleSubmitAndPay}>
-                        {/* Nominator Information */}
+                {/* Nominations Closed Message */}
+                <div style={{
+                    padding: '40px',
+                    marginBottom: '30px',
+                    textAlign: 'center'
+                }}>
+                    <div style={{
+                        fontSize: '64px',
+                        marginBottom: '20px',
+                        color: '#C9A545'
+                    }}>🔒</div>
+                    <h3 style={{
+                        color: '#0e062e',
+                        marginBottom: '20px',
+                        fontSize: '28px',
+                        fontWeight: 'bold'
+                    }}>Nominations Are Closed</h3>
+                    <p style={{
+                        color: '#666',
+                        fontSize: '16px',
+                        lineHeight: '1.6',
+                        marginBottom: '30px',
+                        maxWidth: '600px',
+                        margin: '0 auto 30px'
+                    }}>
+                        Thank you for your interest in nominating for the Women Who Lead: HR Leadership Conference & Awards 2026. Nominations are currently closed. Please check back later or contact us for more information.
+                    </p>
+                    <div style={{
+                        padding: '20px',
+                        backgroundColor: '#f8f9fa',
+                        borderRadius: '8px',
+                        marginBottom: '30px'
+                    }}>
+                        <p style={{
+                            color: '#333',
+                            fontSize: '14px',
+                            marginBottom: '10px',
+                            fontWeight: '500'
+                        }}>Contact Us:</p>
+                        <p style={{
+                            color: '#666',
+                            fontSize: '14px',
+                            marginBottom: '5px'
+                        }}>
+                            <a href="mailto:yasir@theboredroomx.com" style={{ color: '#C9A545', textDecoration: 'none' }}>yasir@theboredroomx.com</a>
+                        </p>
+                        <p style={{
+                            color: '#666',
+                            fontSize: '14px',
+                            margin: 0
+                        }}>
+                            <a href="tel:+966597183683" style={{ color: '#C9A545', textDecoration: 'none' }}>+966 59 718 3683</a> | <a href="tel:+971522916745" style={{ color: '#C9A545', textDecoration: 'none' }}>+971 52 291 6745</a>
+                        </p>
+                    </div>
+                    <button
+                        onClick={handleClose}
+                        style={{
+                            backgroundColor: '#C9A545',
+                            color: 'white',
+                            padding: '15px 40px',
+                            border: 'none',
+                            borderRadius: '8px',
+                            fontSize: '16px',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            transition: 'background-color 0.3s'
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#b8943a'}
+                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#C9A545'}
+                    >
+                        Close
+                    </button>
+                </div>
+
+                {/* COMMENTED OUT: Original form code - kept for future restoration */}
+                {/* <form onSubmit={handleSubmitAndPay}>
+                        Nominator Information
                         <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                             <div>
                             <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
@@ -651,7 +725,7 @@ export default function NominationModal({ isOpen, onClose }: NominationModalProp
 
                         </div>
 
-                    </form>
+                    </form> */}
 
                 </div>
 
