@@ -1,48 +1,17 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import Layout from "@/components/layout/Layout"
-import PackagePasswordModal from "@/components/layout/PackagePasswordModal"
 import SponsorshipModal from "@/components/layout/SponsorshipModal"
 import Link from "next/link"
 
 export default function Packages() {
-	const [isAuthenticated, setIsAuthenticated] = useState(false)
-	const [showModal, setShowModal] = useState(true)
 	const [isSponsorModalOpen, setIsSponsorModalOpen] = useState(false)
 	const [selectedPackage, setSelectedPackage] = useState<string>('')
-
-	useEffect(() => {
-		// Always show modal on page load
-		setShowModal(true)
-		setIsAuthenticated(false)
-	}, [])
-
-	const handleSuccess = () => {
-		setIsAuthenticated(true)
-		setShowModal(false)
-		// Removed sessionStorage to require password on every visit
-	}
-
-	const handleClose = () => {
-		setShowModal(false)
-		// Redirect to home if user closes without entering password
-		window.location.href = '/'
-	}
 
 	const handleContactClick = (packageName: string) => {
 		setSelectedPackage(packageName)
 		setIsSponsorModalOpen(true)
-	}
-
-	if (!isAuthenticated) {
-		return (
-			<PackagePasswordModal 
-				isOpen={showModal} 
-				onClose={handleClose}
-				onSuccess={handleSuccess}
-			/>
-		)
 	}
 
 	return (
