@@ -15899,7 +15899,8 @@ html {
 }
 
 .brands5-section-area {
-	/* Keyframes for scrolling effect */
+	/* Container for marquee section */
+	position: relative;
 }
 
 .brands5-section-area .marquee-container {
@@ -16336,6 +16337,15 @@ html {
 	position: relative;
 	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 	animation: popupSlide 0.5s ease forwards;
+}
+
+.popup-content.popup-content--wide {
+	width: min(560px, 95vw);
+	padding: 20px;
+}
+
+.popup-image {
+	width: 100%;
 }
 
 .popup-content .popup-icon img {

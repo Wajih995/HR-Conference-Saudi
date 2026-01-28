@@ -35,6 +35,77 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 									<div className="main-menu">
 										<ul>
 											<li><Link href="/">Home</Link></li>
+											<li>
+												<Link href="/#">Conferences <i className="fa-solid fa-angle-down" /></Link>
+												<ul className="dropdown-padding conferences-dropdown" style={{
+													width: '550px',
+													display: 'grid',
+													gridTemplateColumns: '1fr 1fr',
+													gap: '30px',
+													padding: '25px'
+												}}>
+													<div>
+														<h4 style={{
+															fontSize: '16px',
+															fontWeight: 'bold',
+															marginBottom: '15px',
+															color: '#0e062e',
+															paddingBottom: '10px',
+															borderBottom: '2px solid #C9A545'
+														}}>Past Conferences</h4>
+														<ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+															<li style={{ marginBottom: '10px' }}>
+																<Link href="/wwl26" style={{
+																	display: 'block',
+																	padding: '8px',
+																	color: '#666',
+																	textDecoration: 'none',
+																	transition: 'all 0.3s',
+																	borderRadius: '4px'
+																}}
+																onMouseEnter={(e) => {
+																	e.currentTarget.style.paddingLeft = '15px'
+																	e.currentTarget.style.color = '#C9A545'
+																}}
+																onMouseLeave={(e) => {
+																	e.currentTarget.style.paddingLeft = '8px'
+																	e.currentTarget.style.color = '#666'
+																}}>WWL'26 Gallery</Link>
+															</li>
+														</ul>
+													</div>
+													<div>
+														<h4 style={{
+															fontSize: '16px',
+															fontWeight: 'bold',
+															marginBottom: '15px',
+															color: '#0e062e',
+															paddingBottom: '10px',
+															borderBottom: '2px solid #C9A545'
+														}}>Future Conferences</h4>
+														<ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+															<li style={{ marginBottom: '10px' }}>
+																<Link href="/opex-summit" style={{
+																	display: 'block',
+																	padding: '8px',
+																	color: '#666',
+																	textDecoration: 'none',
+																	transition: 'all 0.3s',
+																	borderRadius: '4px'
+																}}
+																onMouseEnter={(e) => {
+																	e.currentTarget.style.paddingLeft = '15px'
+																	e.currentTarget.style.color = '#C9A545'
+																}}
+																onMouseLeave={(e) => {
+																	e.currentTarget.style.paddingLeft = '8px'
+																	e.currentTarget.style.color = '#666'
+																}}>OPEX Summit</Link>
+															</li>
+														</ul>
+													</div>
+												</ul>
+											</li>
 											<li><Link href="/about">About Event</Link></li>
                                             <li><Link href="/awards">Awards</Link></li>
 											<li>
@@ -49,6 +120,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 													<li><Link href="/packages">Packages</Link></li>
 												</ul>
 											</li>
+											
 											{/* <li>
 												<Link href="/#">Schedule <i className="fa-solid fa-angle-down" /></Link>
 												<ul className="dropdown-padding">

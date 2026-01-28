@@ -1,76 +1,53 @@
 'use client'
-import Link from 'next/link'
-import { useEffect } from 'react'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Popup() {
+	const [isOpen, setIsOpen] = useState(false)
+
 	useEffect(() => {
-		// Ensure the elements are properly typed, and add event listeners in useEffect
-		const popup = document.getElementById('popup') as HTMLElement | null
-		const closeBtn = document.getElementById('close-popup') as HTMLElement | null
-		const noThanksBtn = document.querySelector('.no-thanks') as HTMLElement | null
-
-		// Display the popup after a short delay
-		if (popup) {
-			setTimeout(() => {
-				popup.style.display = 'flex'
-			}, 100)
-		}
-
-		// Close the popup when the close button is clicked
-		if (closeBtn) {
-			closeBtn.addEventListener('click', () => {
-				if (popup) {
-					popup.style.display = 'none'
-				}
-			})
-		}
-
-		// Close the popup when the "No thanks" button is clicked
-		if (noThanksBtn) {
-			noThanksBtn.addEventListener('click', () => {
-				if (popup) {
-					popup.style.display = 'none'
-				}
-			})
-		}
-
-		// Cleanup event listeners on component unmount
-		return () => {
-			if (closeBtn) {
-				closeBtn.removeEventListener('click', () => { })
-			}
-			if (noThanksBtn) {
-				noThanksBtn.removeEventListener('click', () => { })
-			}
-		}
+		const t = window.setTimeout(() => setIsOpen(true), 100)
+		return () => window.clearTimeout(t)
 	}, [])
 
 	return (
 		<>
-			<div id="popup" className="popup-overlay">
-				<div className="popup-content">
-					<span className="close-btn" id="close-popup">×</span>
-					<div className="popup-icon">
-						<img src="/assets/img/logo/final-logo.png" alt="" />
+			<div
+				id="popup"
+				className="popup-overlay"
+				style={{ display: isOpen ? 'flex' : 'none' }}
+				role="dialog"
+				aria-modal="true"
+			>
+				<div className="popup-content popup-content--wide">
+					<button
+						type="button"
+						className="close-btn"
+						aria-label="Close"
+						onClick={() => setIsOpen(false)}
+					>
+						×
+					</button>
+
+					<div className="popup-image">
+						<Image
+							src="/assets/img/all-images/used-images/Opex-riyadh.jpeg"
+							alt="Global EPC Projects Riyadh Summit 2026"
+							width={900}
+							height={900}
+							priority
+							style={{ width: '100%', height: 'auto', borderRadius: 10 }}
+						/>
 					</div>
-					<div className="space32" />
-					<div className="heading2">
-						<h2>Empower Your Leadership Journey</h2>
-						<div className="space8" />
-						<ul>
-							<li><img src="/assets/img/icons/check3.svg" alt="" />Celebrate Women Transforming Workplaces</li>
-							<li><img src="/assets/img/icons/check3.svg" alt="" /> Gain Insights from Top CHROs & HR Visionaries</li>
-							<li><img src="/assets/img/icons/check3.svg" alt="" />Join the GCC’s Premier HR Leadership Conference</li>
-						</ul>
-					</div>
-					<div className="space50" />
-					<Link className="vl-btn2" href="/contact">
-						<span className="demo">Buy Ticket Now</span>
-						<span className="arrow">
-							<i className="fa-solid fa-arrow-right" />
-						</span>
-					</Link>
-					<p className="no-thanks">No thanks</p>
+
+					<a
+						className="cta-button"
+						href="https://opex-project-management.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Register now
+					</a>
 				</div>
 			</div>
 		</>

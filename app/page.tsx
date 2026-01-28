@@ -28,14 +28,14 @@ export default function Home() {
 				<Section6CPD />
 				<Section6Video />
 				<Section7 />
-				<Section8 />
+				{/* <Section8 /> */}
 				<Section5 />
 				<Section6 />
 				<Section9 />
 				<Section10 />
 			</Layout>
 			
-			{/* <Popup /> */}
+			<Popup />
 		</>
 	)
 }

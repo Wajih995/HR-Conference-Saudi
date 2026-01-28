@@ -49,9 +49,6 @@ export default function Footer2() {
 										<a href="tel:+966597183683"><img src="/assets/img/icons/phn1.svg" alt="" />+966 59 718 3683</a>
 									</li>
 									<li>
-										<Link href="/#"><img src="/assets/img/icons/location1.svg" alt="" />Al Bustan Village, Riyadh, Saudi Arabia</Link>
-									</li>
-									<li>
 										<a href="mailto:yasir@theboredroomx.com"><img src="/assets/img/icons/mail1.svg" alt="" />yasir@theboredroomx.com</a>
 									</li>
 									<li>

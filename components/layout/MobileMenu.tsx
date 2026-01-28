@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
-	const [isAccordion, setIsAccordion] = useState(1)
+	const [isAccordion, setIsAccordion] = useState(null)
 
 const handleAccordion = (key: any) => {
     setIsAccordion(prevState => prevState === key ? null : key)
@@ -41,9 +41,27 @@ const handleAccordion = (key: any) => {
 						</li>
 						<li className="hash-has-sub"><Link href="/about" className="hash-nav">About Event</Link></li>
 						<li className="hash-has-sub"><Link href="/awards" className="hash-nav">Awards</Link></li>
-						<li className="has-sub hash-has-sub"><span className={`submenu-button ${isAccordion  == 2 ? "submenu-opened" : ""}`}onClick={() => handleAccordion (2)}><em /></span>
+						<li className="has-sub hash-has-sub">
+							<span className={`submenu-button ${isAccordion == 2 ? "submenu-opened" : ""}`} onClick={() => handleAccordion(2)}><em /></span>
+							<Link href="/#" className="hash-nav">Conferences</Link>
+							<ul className={`sub-menu ${isAccordion == 2 ? "open-sub" : ""}`} style={{ display: `${isAccordion == 2 ? "block" : "none"}` }}>
+								<li style={{ marginBottom: '15px', paddingBottom: '10px', borderBottom: '1px solid #ddd' }}>
+									<h4 style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '10px', color: '#0e062e' }}>Past Conferences</h4>
+								</li>
+								<li className="hash-has-sub"><Link href="/wwl26" className="hash-nav" style={{ paddingLeft: '20px' }}>WWL'26 Gallery</Link></li>
+								<li style={{ marginTop: '15px', marginBottom: '10px', paddingTop: '15px', paddingBottom: '10px', borderTop: '1px solid #ddd', borderBottom: '1px solid #ddd' }}>
+									<h4 style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '10px', color: '#0e062e' }}>Future Conferences</h4>
+								</li>
+								<li className="hash-has-sub">
+									<Link href="/opex-summit" className="hash-nav" style={{ paddingLeft: '20px' }}>
+										OPEX Summit
+									</Link>
+								</li>
+							</ul>
+						</li>
+						<li className="has-sub hash-has-sub"><span className={`submenu-button ${isAccordion == 3 ? "submenu-opened" : ""}`} onClick={() => handleAccordion(3)}><em /></span>
 							<Link href="/#" className="hash-nav">Sponsors</Link>
-							<ul className={`sub-menu ${isAccordion  == 2 ? "open-sub" : ""}`} style={{ display: `${isAccordion  == 2 ? "block" : "none"}` }}>
+							<ul className={`sub-menu ${isAccordion == 3 ? "open-sub" : ""}`} style={{ display: `${isAccordion == 3 ? "block" : "none"}` }}>
 								<li className="hash-has-sub"><Link href="/packages" className="hash-nav">Packages</Link></li>
 							</ul>
 						</li>
