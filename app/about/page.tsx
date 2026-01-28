@@ -257,7 +257,7 @@ export default function About() {
 					</div>
                     {/*===== WHY ATTEND AREA ENDS =======*/}
 					{/*===== CTA AREA STARTS =======*/}
-					<div className="cta1-section-area d-lg-block d-block">
+					{/* <div className="cta1-section-area d-lg-block d-block">
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-10 m-auto">
@@ -283,7 +283,7 @@ export default function About() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 					{/*===== CTA AREA ENDS =======*/}
 					{/*===== CTA AREA STARTS =======*/}
 					{/* <div className="cta1-section-area d-lg-none d-block">

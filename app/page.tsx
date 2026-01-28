@@ -29,7 +29,7 @@ export default function Home() {
 				<Section6Video />
 				<Section7 />
 				{/* <Section8 /> */}
-				<Section5 />
+				{/* <Section5 /> */}
 				<Section6 />
 				<Section9 />
 				<Section10 />
