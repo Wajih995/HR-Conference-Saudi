@@ -10,7 +10,7 @@ export default function OpexSummitPage() {
 				<div
 					className="inner-page-header"
 					style={{
-						backgroundImage: "url(/assets/img/all-images/used-images/Opex-banner.PNG)",
+						backgroundImage: "url(/assets/img/all-images/used-images/opex-banner.PNG)",
 						backgroundPosition: "center",
 						backgroundSize: "cover",
 						position: "relative",
