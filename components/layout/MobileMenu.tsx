@@ -53,8 +53,23 @@ const handleAccordion = (key: any) => {
 									<h4 style={{ fontSize: '14px', fontWeight: 'bold', marginBottom: '10px', color: '#0e062e' }}>Future Conferences</h4>
 								</li>
 								<li className="hash-has-sub">
-									<Link href="/opex-summit" className="hash-nav" style={{ paddingLeft: '20px' }}>
-										OPEX Summit
+									<Link href="/wwl-dec26" className="hash-nav" style={{ paddingLeft: '20px' }}>
+										Women Who Lead Dec 2026
+									</Link>
+								</li>
+								<li className="hash-has-sub">
+									<Link href="/opex-summit-amsterdam" className="hash-nav" style={{ paddingLeft: '20px' }}>
+										OPEX Summit Amsterdam Apr 2026
+									</Link>
+								</li>
+								<li className="hash-has-sub">
+									<Link href="/opex-summit-london" className="hash-nav" style={{ paddingLeft: '20px' }}>
+										OPEX Summit London Sep 2026
+									</Link>
+								</li>
+								<li className="hash-has-sub">
+									<Link href="/opex-summit-houston" className="hash-nav" style={{ paddingLeft: '20px' }}>
+										OPEX Summit Houston Oct 2026
 									</Link>
 								</li>
 							</ul>

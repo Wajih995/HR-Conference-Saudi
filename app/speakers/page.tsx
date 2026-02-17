@@ -224,7 +224,8 @@ export default function Speakers() {
 										<div className="content-area">
 											<Link href="/#">Razan Al-Ajmi</Link>
 											<div className="space16" />
-											<p>1st Saudi Female Skydiver</p>
+											<p>Founder and CEO of<br />
+											POWEREXP</p>
 										</div>
 									</div>
 								</div>
@@ -242,7 +243,8 @@ export default function Speakers() {
 										<div className="content-area">
 											<Link href="/#">Reem Algasim</Link>
 											<div className="space16" />
-											<p>Head of Human Resource - Airbus</p>
+											<p>Head of Human Resource <br />
+											 Airbus</p>
 										</div>
 									</div>
 								</div>
@@ -279,7 +281,8 @@ export default function Speakers() {
 										<div className="content-area">
 											<Link href="/#">Ghada A Ghandourah</Link>
 											<div className="space16" />
-											<p>C.Suite Executive</p>
+											<p>Former CHRO <br />
+											Royal commission of makkah and holy sites</p>
 										</div>
 									</div>
 								</div>

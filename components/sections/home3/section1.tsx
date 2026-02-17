@@ -21,7 +21,7 @@ export default function Section1() {
 						<div className="col-lg-8 m-auto">
 							<div className="hero3-header text-center">
 								<h1 className="text-anime-style-3 conferences" style={{fontSize: '45px'}}>Women Who Lead:</h1>
-								<h1 className="text-anime-style-3 hr-conference-title" style={{fontSize: '57px'}}>HR Leadership Conference</h1>
+								<h1 className="text-anime-style-3 hr-conference-title" style={{fontSize: '57px'}}>Leadership Conference</h1>
 								<h1 className="text-anime-style-3 hr-conference-title" style={{fontSize: '57px'}}>& Awards 2026</h1>
 								
 								<div className="space24" />
@@ -39,9 +39,9 @@ export default function Section1() {
 									</Link>
 								</div>
 								<div className="date-btn aniamtion-key-1" style={{right: '-300px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
-									<h4 style={{fontSize: '48px', fontWeight: 'bold', margin: 0, lineHeight: 1}}>20</h4>
+									{/* <h4 style={{fontSize: '48px', fontWeight: 'bold', margin: 0, lineHeight: 1}}></h4> */}
 									<div className="space14" />
-									<p style={{fontSize: '16px', margin: 0, textTransform: 'uppercase', letterSpacing: '1px'}}>January</p>
+									<p style={{fontSize: '35px', margin: 0, textTransform: 'uppercase', letterSpacing: '1px'}}>December</p>
 									<div className="space10" />
 									<h4 style={{fontSize: '28px', fontWeight: 'bold', margin: 0, lineHeight: 1}}>2026</h4>
 								</div>

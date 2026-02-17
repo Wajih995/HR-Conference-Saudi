@@ -12,9 +12,11 @@ export default function Section10() {
 				<Image src="/assets/img/elements/elements18.png" alt="" className="elements18" width={200} height={200}/>
 				<Image src="/assets/img/elements/elements24.png" alt="" className="elements24" width={200} height={200}/>
 				<div className="date-btn aniamtion-key-1">
-					<h4>20</h4>
+					{/* <h4></h4> */}
 					<div className="space14" />
-					<p>January</p>
+					<p style={{fontSize: '25px', margin: 0, textTransform: 'uppercase', letterSpacing: '1px'}}>December</p>
+					<div className="space10" />
+					<h4 style={{fontSize: '28px', fontWeight: 'bold', margin: 0, lineHeight: 1}}>2026</h4>
 					<div className="space20" />
 					<Link href="/pricing-plan">Buy Ticket</Link>
 				</div>

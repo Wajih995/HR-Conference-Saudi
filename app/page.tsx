@@ -35,7 +35,7 @@ export default function Home() {
 				<Section10 />
 			</Layout>
 			
-			<Popup />
+			{/* <Popup /> */}
 		</>
 	)
 }

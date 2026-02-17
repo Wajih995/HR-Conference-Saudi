@@ -70,20 +70,8 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 																onMouseLeave={(e) => {
 																	e.currentTarget.style.paddingLeft = '8px'
 																	e.currentTarget.style.color = '#666'
-																}}>WWL'26 Gallery</Link>
+																}}>Women Who Lead January 2026</Link>
 															</li>
-														</ul>
-													</div>
-													<div>
-														<h4 style={{
-															fontSize: '16px',
-															fontWeight: 'bold',
-															marginBottom: '15px',
-															color: '#0e062e',
-															paddingBottom: '10px',
-															borderBottom: '2px solid #C9A545'
-														}}>Future Conferences</h4>
-														<ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
 															<li style={{ marginBottom: '10px' }}>
 																<Link href="/opex-summit" style={{
 																	display: 'block',
@@ -100,7 +88,91 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu, isSear
 																onMouseLeave={(e) => {
 																	e.currentTarget.style.paddingLeft = '8px'
 																	e.currentTarget.style.color = '#666'
-																}}>OPEX Summit</Link>
+																}}>OPEX Summit Riyadh Feb 2026</Link>
+															</li>
+														</ul>
+													</div>
+													<div>
+														<h4 style={{
+															fontSize: '16px',
+															fontWeight: 'bold',
+															marginBottom: '15px',
+															color: '#0e062e',
+															paddingBottom: '10px',
+															borderBottom: '2px solid #C9A545'
+														}}>Future Conferences</h4>
+														<ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+														<li style={{ marginBottom: '10px' }}>
+																<Link href="/wwl-dec26" style={{
+																	display: 'block',
+																	padding: '8px',
+																	color: '#666',
+																	textDecoration: 'none',
+																	transition: 'all 0.3s',
+																	borderRadius: '4px'
+																}}
+																onMouseEnter={(e) => {
+																	e.currentTarget.style.paddingLeft = '15px'
+																	e.currentTarget.style.color = '#C9A545'
+																}}
+																onMouseLeave={(e) => {
+																	e.currentTarget.style.paddingLeft = '8px'
+																	e.currentTarget.style.color = '#666'
+																}}>Women Who Lead Dec 2026</Link>
+															</li>
+															<li style={{ marginBottom: '10px' }}>
+																<Link href="/opex-summit-amsterdam" style={{
+																	display: 'block',
+																	padding: '8px',
+																	color: '#666',
+																	textDecoration: 'none',
+																	transition: 'all 0.3s',
+																	borderRadius: '4px'
+																}}
+																onMouseEnter={(e) => {
+																	e.currentTarget.style.paddingLeft = '15px'
+																	e.currentTarget.style.color = '#C9A545'
+																}}
+																onMouseLeave={(e) => {
+																	e.currentTarget.style.paddingLeft = '8px'
+																	e.currentTarget.style.color = '#666'
+																}}>OPEX Summit Amsterdam Apr 2026</Link>
+															</li>
+															<li style={{ marginBottom: '10px' }}>
+																<Link href="/opex-summit-london" style={{
+																	display: 'block',
+																	padding: '8px',
+																	color: '#666',
+																	textDecoration: 'none',
+																	transition: 'all 0.3s',
+																	borderRadius: '4px'
+																}}
+																onMouseEnter={(e) => {
+																	e.currentTarget.style.paddingLeft = '15px'
+																	e.currentTarget.style.color = '#C9A545'
+																}}
+																onMouseLeave={(e) => {
+																	e.currentTarget.style.paddingLeft = '8px'
+																	e.currentTarget.style.color = '#666'
+																}}>OPEX Summit London Sep 2026</Link>
+															</li>
+															<li style={{ marginBottom: '10px' }}>
+																<Link href="/opex-summit-houston" style={{
+																	display: 'block',
+																	padding: '8px',
+																	color: '#666',
+																	textDecoration: 'none',
+																	transition: 'all 0.3s',
+																	borderRadius: '4px'
+																}}
+																onMouseEnter={(e) => {
+																	e.currentTarget.style.paddingLeft = '15px'
+																	e.currentTarget.style.color = '#C9A545'
+																}}
+																onMouseLeave={(e) => {
+																	e.currentTarget.style.paddingLeft = '8px'
+																	e.currentTarget.style.color = '#666'
+																}}>OPEX Summit Houston Oct 2026</Link>
 															</li>
 														</ul>
 													</div>

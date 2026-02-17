@@ -17,13 +17,13 @@ export default function Section2() {
 							<div className="about3-images">
 								{/* <img src="/assets/img/all-images/about/about-img10.png" alt="" className="about-img10 aniamtion-key-1" /> */}
 								<div className="img1" data-aos="zoom-in" data-aos-duration={1000}>
-									<Image src="/assets/img/all-images/used-images/slider-3.jpg" alt="Conference Image" width={600} height={400} />
+									<Image src="/assets/img/all-images/WWL-Gallery/LMS-410.jpg" alt="Conference Image" width={600} height={400} />
 								</div>
 								<div className="img2" data-aos="zoom-in" data-aos-duration={1100}>
-									<Image src="/assets/img/all-images/about/about-2.webp" alt="About Conference" width={600} height={400} />
+									<Image src="/assets/img/all-images/WWL-Gallery/LMS-625.jpg" alt="About Conference" width={600} height={400} />
 								</div>
 								<div className="img3" data-aos="zoom-in" data-aos-duration={1200}>
-									<Image src="/assets/img/all-images/about/about-3.jpg" alt="About Event" width={600} height={400} />
+									<Image src="/assets/img/all-images/WWL-Gallery/LMS-794.jpg" alt="About Event" width={600} height={400} />
 								</div>
 							</div>
 						</div>
@@ -31,15 +31,15 @@ export default function Section2() {
 							<div className="about-header heading5">
 								<h5 data-aos="fade-left" data-aos-duration={800}>About Our Conference</h5>
 								<div className="space18" />
-								<h2 className="text-anime-style-3" style={{fontSize: 'var(--ztc-font-size-font-s26)', lineHeight: '33px'}}>Discover the Future of HR at the Women Leadership Conference & Awards 2026. A premier platform celebrating women shaping workplaces across the GCC.</h2>
+								<h2 className="text-anime-style-3" style={{fontSize: 'var(--ztc-font-size-font-s26)', lineHeight: '33px'}}>Women Leadership Conference & Awards 2026. A premier platform celebrating women shaping workplaces across the GCC.</h2>
 								<div className="space18" />
-								<p data-aos="fade-left" data-aos-duration={900}>Focused on inclusion, equity, resilience, and Vision 2030, the event brings together top HR leaders and experts to share insights, inspire change, and build the future of work.</p>
+								<p data-aos="fade-left" data-aos-duration={900}>Focused on inclusion, equity, resilience, and Vision 2030, the event brings together top leaders and experts to share insights, inspire change, and build the future of work.</p>
 								<div className="space12" />
 								<div className="counter-area" data-aos="fade-left" data-aos-duration={1000}>
 									<div className="counter-box">
 										<h3><CountUp className="odometer" enableScrollSpy={true} end={80} />+</h3>
 										<div className="space18" />
-										<p>Top HR Leaders</p>
+										<p>Top Leaders</p>
 									</div>
 									<div className="counter-box">
 										<h3><CountUp className="odometer" enableScrollSpy={true} end={15} />+</h3>
