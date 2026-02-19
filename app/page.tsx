@@ -25,10 +25,10 @@ export default function Home() {
 				<Section2 />
 				{/* <Section3 />
 				<Section4 /> */}
-				<Section6CPD />
 				<Section6Video />
 				<Section7 />
 				{/* <Section8 /> */}
+				<Section6CPD />
 				{/* <Section5 /> */}
 				<Section6 />
 				<Section9 />
